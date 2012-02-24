@@ -72,4 +72,11 @@ end
 
 # see `read_and_check` and `get_corrections` (User Story 4)
 def read_and_correct(s)
+    n = read_and_check(s)
+    if ((/\d$/ =~ n)) # OK
+        return n
+    end
+
+    # ILL / ERR
+
 end
