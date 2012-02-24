@@ -28,16 +28,16 @@ end
 def read_digit(s)
     Numbers.each_with_index {|n,i|
         if (s === n)
-            return i
+            return "#{i}"
         end
     }
-    raise Exception.new 'No digit corresponding'
+    return '?'
 end
 
 def read_number(s)
     value = ''
     cut_digits(s).each {|n|
-        value += "#{read_digit(n)}"
+        value += read_digit(n)
     }
     return value
 end
