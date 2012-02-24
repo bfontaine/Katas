@@ -41,3 +41,10 @@ def read_number(s)
     }
     return value
 end
+
+# check the validity of an account number (String)
+def check_validity(s)
+    checksum = 0
+    s.reverse.split('').each_with_index {|c,i| checksum += c.to_i*(i+1)}
+    return (checksum%11 === 0)
+end
