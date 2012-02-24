@@ -55,7 +55,9 @@ class KataBankOCRTest < Test::Unit::TestCase
     @@tests_u2 = [
         ["000000000", true],
         ["111111111", false],
-        ["111111110", true]
+        ["111111110", true],
+        ["664371495", false],
+        ["457508000", true]
     ]
 
     def test_u1
