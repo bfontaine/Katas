@@ -64,3 +64,12 @@ def read_and_check(s)
 
     return n
 end
+
+# return an array of possible corrections for the given
+# numbers string (User Story 4)
+def get_corrections(s)
+end
+
+# see `read_and_check` and `get_corrections` (User Story 4)
+def read_and_correct(s)
+end
