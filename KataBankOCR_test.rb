@@ -60,6 +60,21 @@ class KataBankOCRTest < Test::Unit::TestCase
         ["457508000", true]
     ]
 
+    # User Story 3
+    @@tests_u3 = [
+[" _  _  _  _  _  _  _  _    \n"\
++"| || || || || || || ||_   |\n"\
++"|_||_||_||_||_||_||_| _|  |", "000000051"],
+
+["    _  _  _  _  _  _     _ \n"\
++"|_||_|| || ||_   |  |  | _ \n"\
++"  | _||_||_||_|  |  |  | _|", "49006771? ILL"],
+
+["    _  _     _  _  _  _  _ \n"\
++"  | _| _||_| _ |_   ||_||_|\n"\
++"  ||_  _|  | _||_|  ||_| _ ", "1234?678? ILL"]
+    ]
+
     def test_u1
         @@tests_u1.each {|val, ref|
             assert_equal(read_number(val), ref)
@@ -69,6 +84,12 @@ class KataBankOCRTest < Test::Unit::TestCase
     def test_u2
         @@tests_u2.each {|val, ref|
             assert_equal(check_validity(val), ref, val)
+        }
+    end
+
+    def test_u3
+        @@tests_u3.each {|val, ref|
+            assert_equal(read_and_check(val), ref)
         }
     end
 end
