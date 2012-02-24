@@ -19,9 +19,10 @@ def cut_digits(s)
     chunks = []
     digits = []
     lines.each {|l| chunks << l.scan(/.{3}/)}
-    for i in 0..9 do
+    for i in 0..8 do
         digits << [chunks[0][i], chunks[1][i], chunks[2][i]]
     end
+    return digits
 end
 
 def read_digit(s)
@@ -30,12 +31,13 @@ def read_digit(s)
             return i
         end
     }
+    raise Exception.new 'No digit corresponding'
 end
 
 def read_number(s)
     value = ''
     cut_digits(s).each {|n|
-        value += read_digit(n)
+        value += "#{read_digit(n)}"
     }
     return value
 end
