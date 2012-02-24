@@ -2,8 +2,18 @@ Here are some solved katas in various languages.
 See : http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue
 
 KataBankOCR (Solved)
------------
+--------------------
+
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR
 Language: Ruby
 Solution: solved/KataBankOCR.rb
 Tests:    solved/KataBankOCR_test.rb
+
+
+KataFizzBuzz (Working on [0/2])
+-------------------------------
+
+URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz
+Language: Java
+Solution: KataFizzBuzz.java
+Tests:    KataFizzBuzzTest.java (see also junit.sh)
