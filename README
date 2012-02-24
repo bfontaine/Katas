@@ -4,5 +4,6 @@ See : http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue
 KataBankOCR (Solved)
 -----------
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR
-Solution: KataBankOCR.rb
-Tests:    KataBankOCR_test.rb
+Language: Ruby
+Solution: solved/KataBankOCR.rb
+Tests:    solved/KataBankOCR_test.rb
