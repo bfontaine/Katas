@@ -1,5 +1,7 @@
 #! /usr/bin/python3.2
 
+import math
+
 class TooManyBooksException(Exception):
     def __init__(self,*args):
         super(*args)
@@ -26,28 +28,36 @@ def calculate_price(*books):
         return get_original_price(books[0])
 
     # some books, one for each different title
-    if (min(books) == max(books) <= 5):
-        return apply_discount(len(books)*books[0], len(books))
+    if (min(books) == max(books)):
+        return apply_discount(books[0], len(books))
 
     #TODO
     return 0
 
 # returns the discount for n different books, in %
-# (i.e. 0 <= discount <= 25)
+# (i.e. 0 <= discount <= 0.25)
 def get_discount(n):
-    # 1 -> 0
-    # 2 -> -5%
-    # 3 -> -10%
-    # 4 -> -20%
-    # 5 -> -25%
-    return (n-1)*5 if (n<4) else n*5
+    # 1 -> 0    | 2 -> 0.05
+    # 3 -> 0.10 | 4 -> 0.20
+    # 5 -> 0.25
+    return (n-1)/20.0 if (n<4) else n/20.0
 
+# Apply discount for `n` books of `n_diff` different titles
+# e.g. : n=3, n_diff=4 -> 12 books -> 9.6 euros
+def apply_discount(n, n_diff=None):
+    if (n_diff == None): # if only one of each
+        n_diff = n
 
-def apply_discount(n, n_different=None):
-    if (n_different == None):
-        n_different = n
-    return get_original_price(n) * (1 - get_discount(n_different) / 100.0)
+    tmp = n%5
+    n -= tmp
 
+    total = get_original_price(tmp*n_diff) * (1 - get_discount(n_diff))
+
+    while (n > 0):
+        total += get_original_price(n*n_diff) * (1 - get_discount(n_diff))
+        n -= 5
+
+    return total
 
 # returns the price for n books, without discount
 def get_original_price(n):
