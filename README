@@ -10,10 +10,10 @@ Solution: solved/KataBankOCR.rb
 Tests:    solved/KataBankOCR_test.rb
 
 
-KataFizzBuzz (Working on [1/2])
+KataFizzBuzz (Solved)
 -------------------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz
 Language: Java
-Solution: KataFizzBuzz.java
-Tests:    KataFizzBuzzTest.java (see also junit.sh)
+Solution: solved/KataFizzBuzz.java
+Tests:    solved/KataFizzBuzzTest.java (see also solved/junit.sh)
