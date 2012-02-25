@@ -1,9 +1,14 @@
 #! /usr/bin/python3.2
 
 from KataPotter import calculate_price as cp
+from KataPotter import TooManyBooksException
 import unittest
 
 class KataPotterTest(unittest.TestCase):
+
+    def test_too_many_books(self):
+        with self.assertRaises(TooManyBooksException):
+            cp(1,2,3,4,5,6)
 
     def test_no_book(self):
         self.assertEqual(cp(0,0,0,0,0), 0)
@@ -23,8 +28,9 @@ class KataPotterTest(unittest.TestCase):
 
     # -5%
     def test_simple_discount_5(self):
-        self.assertEqual(cp(1,1,0,0,0), 8*2*0.95)
-        self.assertEqual(cp(0,1,0,0,1), 8*2*0.95)
+        self.assertEqual(cp(1,1,0,0,0), 8* 2*0.95)
+        self.assertEqual(cp(0,1,0,0,1), 8* 2*0.95)
+        self.assertEqual(cp(6,0,0,0,6), 8*12*0.95)
 
     # -10%
     def test_simple_discount_10(self):
@@ -43,7 +49,7 @@ class KataPotterTest(unittest.TestCase):
 
     def test_complex_discount(self):
         self.assertEqual(cp(2,2,2,1,1), 51.2)
-        # TODO
+        # TODO add some tests
 
 
 if (__name__ == '__main__'):
