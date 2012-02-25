@@ -1,6 +1,7 @@
 Here are some solved katas in various languages.
 See : http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue
 
+
 KataBankOCR (Solved)
 --------------------
 
@@ -11,9 +12,18 @@ Tests:    solved/KataBankOCR_test.rb
 
 
 KataFizzBuzz (Solved)
--------------------------------
+---------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz
 Language: Java
 Solution: solved/KataFizzBuzz.java
 Tests:    solved/KataFizzBuzzTest.java (see also solved/junit.sh)
+
+
+KataPotter (Working on)
+-----------------------
+
+URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataPotter
+Language: Python
+Solution: KataPotter.py
+Tests:    KataPotter_test.py
