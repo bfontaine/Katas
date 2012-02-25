@@ -31,6 +31,8 @@ def calculate_price(*books):
     if (min(books) == max(books)):
         return apply_discount(books[0], len(books))
 
+    books2 = transpose(books)
+
     #TODO
     return 0
 
@@ -62,4 +64,18 @@ def apply_discount(n, n_diff=None):
 # returns the price for n books, without discount
 def get_original_price(n):
     return 8 * n
+
+# transpose a list of numbers of books for each title (e.g. [2,1,3,5,1])
+# into a list of each book's title (e.g. [0,0,1,2,2,2,3,3,3,3,3,4])
+def transpose(books_list):
+    if (len(books_list) == 1):
+        return books_list
+    
+    transp = [[i]*(books_list[i]) for i in range(0, len(books_list))]
+
+    transp2 = []
+    for e in transp:
+        transp2 += e
+
+    return transp2
 
