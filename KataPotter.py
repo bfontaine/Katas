@@ -27,7 +27,7 @@ def calculate_price(*books):
     if (len(books) == 1):
         return get_original_price(books[0])
 
-    # some books, one for each different title
+    # N books for each different title
     if (min(books) == max(books)):
         return apply_discount(books[0], len(books))
 
