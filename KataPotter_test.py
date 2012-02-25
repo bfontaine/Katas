@@ -42,7 +42,7 @@ class KataPotterTest(unittest.TestCase):
         self.assertEqual(cp(4,4,4,4,4), 8*20*0.75)
 
     def test_complex_discount(self):
-        self/assertEqual(cp(2,2,2,1,1), 51.2)
+        self.assertEqual(cp(2,2,2,1,1), 51.2)
         # TODO
 
 
