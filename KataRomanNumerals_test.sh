@@ -29,6 +29,7 @@ should_returns_10()   { return roman_to_dec "X"; }
 should_returns_50()   { return roman_to_dec "L"; }
 should_returns_100()  { return roman_to_dec "C"; }
 should_returns_500()  { return roman_to_dec "D"; }
+should_returns_501()  { return roman_to_dec "DI"; }
 should_returns_1000() { return roman_to_dec "M"; }
 should_returns_1991() { return roman_to_dec "MCMXCI"; }
 should_returns_2007() { return roman_to_dec "MMVII"; }
@@ -59,7 +60,9 @@ assert "should_returns_10" "10";
 assert "should_returns_50" "50";
 assert "should_returns_100" "100";
 assert "should_returns_500" "500";
+assert "should_returns_501" "501";
 assert "should_returns_1000" "1000";
 assert "should_returns_1991" "1991";
 assert "should_returns_2007" "2007";
-assert_end;
+
+assert_end KataRomanNumerals;
