@@ -16,6 +16,9 @@ def calculate_price(*books):
     if (len(books) > 5):
         raise TooManyBooksException
 
+    # see Notes file
+    COEFS = [8, 7.2, 6.4, 4, 4.4]
+
     # keep ony non-0 elements
     books = [b for b in books if b]
 
@@ -35,13 +38,10 @@ def calculate_price(*books):
     books2.sort()
     books2.reverse()
 
-    # see Notes file
-    COEFS = [8, 7.2, 6.4, 4, 4.4]
+    if ((sum(books) > 7) and (max(books) == 2)):
+        COEFS[-1] = 4
 
-    if (sum(books) <= 7):
-        return sum([a*b for a,b in zip(books2, COEFS)])
-    #TODO
-    return 0
+    return sum([a*b for a,b in zip(books2, COEFS)])
 
 # returns the discount for n different books, in %
 # (i.e. 0 <= discount <= 0.25)
