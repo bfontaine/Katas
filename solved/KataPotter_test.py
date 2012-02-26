@@ -63,8 +63,15 @@ class KataPotterTest(unittest.TestCase):
     def test_complex_discount_8b(self):
         self.assertEqual(r2(cp(2,2,2,1,1)), 51.2)
 
+    # 23 books
+    # taken from
+    # wiki.agile-france.org/cgi-bin/wiki.pl?id=KataPotter
+    def test_complex_discount_23b(self):
+        self.assertEqual(r2(cp(5,5,4,5,4)), 141.2)
+
     # 73 books
     # taken from Thomas Weller's tests file
+    # http://geekswithblogs.net/thomasweller
     def test_complex_discount_73b(self):
         self.assertEqual(r2(cp(12,17,15,8,21)), 468.4)
 

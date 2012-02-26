@@ -1,6 +1,9 @@
 #! /usr/bin/python3.2
 
-import math
+# Note :
+# I don't think that this program is *really* working for
+# books > 8, but I don't have more tests to test it
+#
 
 class TooManyBooksException(Exception):
     def __init__(self,*args):
@@ -40,8 +43,13 @@ def calculate_price(*books):
 
     if ((sum(books) > 7) and (max(books) == 2)):
         COEFS[-1] = 4
+    
+    price = sum([a*b for a,b in zip(books2, COEFS)])
+    
+    if (sum(books) > 8): # hack
+        price -= 0.4 * ((int(sum(books)/25))+1)
 
-    return sum([a*b for a,b in zip(books2, COEFS)])
+    return price
 
 # returns the discount for n different books, in %
 # (i.e. 0 <= discount <= 0.25)

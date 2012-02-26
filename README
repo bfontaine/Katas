@@ -20,10 +20,11 @@ Solution: solved/KataFizzBuzz.java
 Tests:    solved/KataFizzBuzzTest.java (see also solved/junit.sh)
 
 
-KataPotter (Working on)
+KataPotter (Solved)
 -----------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataPotter
 Language: Python
-Solution: KataPotter.py
-Tests:    KataPotter_test.py
+Solution: solved/KataPotter.py
+Tests:    solved/KataPotter_test.py
+Remarque: Need more tests to know if it's *really* solved
