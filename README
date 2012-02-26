@@ -36,4 +36,4 @@ KataRomanNumerals (Working on)
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals
 Language: Bash
 Solution: KataRomanNumerals.sh
-Tests:    KataRomanNumerals_test.sh
+Tests:    KataRomanNumerals_test.sh (see also assert.sh)
