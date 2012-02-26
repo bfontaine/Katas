@@ -28,3 +28,12 @@ Language: Python
 Solution: solved/KataPotter.py
 Tests:    solved/KataPotter_test.py
 Remark:   Need more tests to know if it's *really* solved
+
+
+KataRomanNumerals (Working on)
+------------------------------
+
+URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals
+Language: Bash
+Solution: KataRomanNumerals.sh
+Tests:    KataRomanNumerals_test.sh
