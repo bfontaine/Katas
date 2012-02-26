@@ -50,11 +50,18 @@ class KataPotterTest(unittest.TestCase):
         self.assertEqual(r2(cp(1,1,1,1,1)), r2(8* 5*0.75))
         self.assertEqual(r2(cp(4,4,4,4,4)), r2(8*20*0.75))
 
-    def test_complex_discount(self):
-        self.assertEqual(r2(cp(2,2,2,1,1)), 51.2)
+    # 6 books
+    def test_complex_discount_6b(self):
         self.assertEqual(r2(cp(2,1,1,1,1)), 38)
-        self.assertEquals(r2(cp(0,3,3,0,1)), 52)
-        self.assertEquals(r2(cp(0,1,5,1,0)), 53.6)
+
+     # 7 books
+    def test_complex_discount_7b(self):
+        self.assertEqual(r2(cp(0,3,3,0,1)), 52)
+        self.assertEqual(r2(cp(0,1,5,1,0)), 53.6)
+
+    # 8 books
+    def test_complex_discount_8b(self):
+        self.assertEqual(r2(cp(2,2,2,1,1)), 51.2)
 
 
 if (__name__ == '__main__'):

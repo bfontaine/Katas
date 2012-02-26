@@ -31,8 +31,15 @@ def calculate_price(*books):
     if (min(books) == max(books)):
         return apply_discount(books[0], len(books))
 
-    books2 = books.sort()
+    books2 = books[:]
+    books2.sort()
+    books2.reverse()
 
+    # see Notes file
+    COEFS = [8, 7.2, 6.4, 4, 4.4]
+
+    if (sum(books) <= 7):
+        return sum([a*b for a,b in zip(books2, COEFS)])
     #TODO
     return 0
 
