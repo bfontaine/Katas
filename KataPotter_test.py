@@ -63,6 +63,10 @@ class KataPotterTest(unittest.TestCase):
     def test_complex_discount_8b(self):
         self.assertEqual(r2(cp(2,2,2,1,1)), 51.2)
 
+    # 73 books
+    # taken from Thomas Weller's tests file
+    def test_complex_discount_73b(self):
+        self.assertEqual(r2(cp(12,17,15,8,21)), 468.4)
 
 if (__name__ == '__main__'):
     unittest.main()
