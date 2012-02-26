@@ -21,10 +21,10 @@ Tests:    solved/KataFizzBuzzTest.java (see also solved/junit.sh)
 
 
 KataPotter (Solved)
------------------------
+-------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataPotter
 Language: Python
 Solution: solved/KataPotter.py
 Tests:    solved/KataPotter_test.py
-Remarque: Need more tests to know if it's *really* solved
+Remark:   Need more tests to know if it's *really* solved
