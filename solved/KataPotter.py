@@ -22,7 +22,7 @@ def calculate_price(*books):
     # see Notes file
     COEFS = [8, 7.2, 6.4, 4, 4.4]
 
-    # keep ony non-0 elements
+    # keep only non-0 elements
     books = [b for b in books if b]
 
     # 0 books
