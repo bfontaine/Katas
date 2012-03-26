@@ -30,10 +30,10 @@ Tests:    solved/KataPotter_test.py
 Remark:   Need more tests to know if it's *really* solved
 
 
-KataRomanNumerals (Working on)
+KataRomanNumerals (Solved)
 ------------------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals
 Language: Bash
-Solution: KataRomanNumerals.sh
-Tests:    KataRomanNumerals_test.sh (see also assert.sh)
+Solution: solved/KataRomanNumerals.sh
+Tests:    solved/KataRomanNumerals_test.sh (see also solved/assert.sh)
