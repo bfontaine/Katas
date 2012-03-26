@@ -19,27 +19,32 @@ dec_to_roman() {
     d=$1; # decimal
     r=; #   roman
 
-    # other simple cases: X-XXX, C-CCC, M-MMM
+    # for each of 1000,500,100,… do
+    for i in 1000 500 100 50 10 5 1; do
 
-    # i: 3,2,1,0
-    for i in {3..0..-1}; do
-        dec=$(echo "10^$i" | bc); # 1000,100,10,1
-        n=$(echo "$d/$dec" | bc); # number of 'dec' in $1
+        # count number of $i in $d
+        n=$(echo "$d/$i" | bc);
 
-        # number of M,C,X,I == 0
-        if [ $n -eq 0 ]; then continue; fi
-
-        # number of M,C,X,I <= 3
-        if [ $n -le 3 ]; then
+        # if > 0, add $n times the corresponding letter
+        if [ $n -gt 0 ]; then
             for j in $(seq 1 $n); do
-                r="$r${ROMAN_N[$dec]}";
-            done;
+                r="$r${ROMAN_N[$i]}";
+            done
 
-            d=$(echo "$d%($n*$dec)" | bc);
+            d=$(echo "$d%($i*$n)" | bc);
         fi
 
-        
     done
+
+    # replace DCCCC with CM
+    # …       CCCC       CD
+    # …       LXXXX      XC
+    # …       XXXX       XL
+    # …       VIIII      IX
+    # …       IIII       IV
+    r=$(echo $r | sed 's/DCCCC/CM/g' | sed 's/CCCC/CD/g');
+    r=$(echo $r | sed 's/LXXXX/XC/g' | sed 's/XXXX/XL/g');
+    r=$(echo $r | sed 's/VIIII/IX/g' | sed 's/IIII/IV/g');
 
     echo $r;
     return 0;
