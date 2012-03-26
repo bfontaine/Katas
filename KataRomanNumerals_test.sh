@@ -5,7 +5,7 @@
 
 # Part I
 should_returns_I()      { echo $(dec_to_roman    1); }
-should_returns_VII()    { echo $(dec_to_roman    8); }
+should_returns_VII()    { echo $(dec_to_roman    7); }
 should_returns_IX()     { echo $(dec_to_roman    9); }
 should_returns_XV()     { echo $(dec_to_roman   15); }
 should_returns_XIX()    { echo $(dec_to_roman   19); }
