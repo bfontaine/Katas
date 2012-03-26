@@ -19,21 +19,27 @@ dec_to_roman() {
     d=$1; # decimal
     r=; #   roman
 
+    # other simple cases: X-XXX, C-CCC, M-MMM
+
     # i: 3,2,1,0
     for i in {3..0..-1}; do
         dec=$(echo "10^$i" | bc); # 1000,100,10,1
         n=$(echo "$d/$dec" | bc); # number of 'dec' in $1
 
-        # for numbers like MMM…, XX…, CCC…, CC…, …
-        if [ $n -gt 0 ] && [ $n -le 3 ]; then
+        # number of M,C,X,I == 0
+        if [ $n -eq 0 ]; then continue; fi
+
+        # number of M,C,X,I <= 3
+        if [ $n -le 3 ]; then
             for j in $(seq 1 $n); do
                 r="$r${ROMAN_N[$dec]}";
             done;
 
             d=$(echo "$d%($n*$dec)" | bc);
         fi
-    done
 
+        
+    done
 
     echo $r;
     return 0;
@@ -67,7 +73,7 @@ roman_to_dec() {
     r=$(echo $r | sed 's/XC/LXXXX/g' | sed 's/XL/XXXX/g');
     r=$(echo $r | sed 's/IX/VIIII/g' | sed 's/IV/IIII/g');
 
-    for i in 1 10 50 100 500 1000; do
+    for i in 1 5 10 50 100 500 1000; do
         tmp=${r//[^${ROMAN_N[$i]}]}; # all ${ROMAN_N[$i]} characters
         d=$(echo "$d+(${#tmp}*$i)" | bc);
     done
