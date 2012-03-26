@@ -19,6 +19,7 @@ should_returns_DXCIX()  { echo $(dec_to_roman  599); }
 should_returns_DCCXLIX(){ echo $(dec_to_roman  749); }
 should_returns_M()      { echo $(dec_to_roman 1000); }
 should_returns_MCMXC()  { echo $(dec_to_roman 1990); }
+should_returns_MMCC()   { echo $(dec_to_roman 2200); }
 should_returns_MMVIII() { echo $(dec_to_roman 2008); }
 
 # Part II
@@ -51,6 +52,7 @@ assert "should_returns_DXCIX" "DXCIX";
 assert "should_returns_DCCXLIX" "DCCXLIX";
 assert "should_returns_M" "M";
 assert "should_returns_MCMXC" "MCMXC";
+assert "should_returns_MMCC" "MMCC";
 assert "should_returns_MMVIII" "MMVIII";
 
 assert "should_returns_1" "1";
