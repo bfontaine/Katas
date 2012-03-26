@@ -1,7 +1,7 @@
 Here are some solved katas in various languages.
 See : http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue
 
-All files are in solved/[Kata's name]/ directories.
+All files for solved katas are in solved/[Kata's name]/ directories.
 
 KataBankOCR (Solved)
 --------------------
@@ -32,9 +32,18 @@ Remark:   Need more tests to know if it's *really* solved
 
 
 KataRomanNumerals (Solved)
-------------------------------
+--------------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals
 Language: Bash
 Solution: KataRomanNumerals.sh
 Tests:    KataRomanNumerals_test.sh (see also assert.sh)
+
+
+KataRomanCalculator (Working On)
+--------------------------------
+
+URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator
+Language: JavaScript
+Solution: KataRomanCalculator.js
+Tests:    KataRomanCalculator_tests.js
