@@ -1,14 +1,15 @@
 Here are some solved katas in various languages.
 See : http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue
 
+All files are in solved/[Kata's name]/ directories.
 
 KataBankOCR (Solved)
 --------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR
 Language: Ruby
-Solution: solved/KataBankOCR.rb
-Tests:    solved/KataBankOCR_test.rb
+Solution: KataBankOCR.rb
+Tests:    KataBankOCR_test.rb
 
 
 KataFizzBuzz (Solved)
@@ -16,8 +17,8 @@ KataFizzBuzz (Solved)
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz
 Language: Java
-Solution: solved/KataFizzBuzz.java
-Tests:    solved/KataFizzBuzzTest.java (see also solved/junit.sh)
+Solution: KataFizzBuzz.java
+Tests:    KataFizzBuzzTest.java (see also junit.sh)
 
 
 KataPotter (Solved)
@@ -25,8 +26,8 @@ KataPotter (Solved)
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataPotter
 Language: Python
-Solution: solved/KataPotter.py
-Tests:    solved/KataPotter_test.py
+Solution: KataPotter.py
+Tests:    KataPotter_test.py
 Remark:   Need more tests to know if it's *really* solved
 
 
@@ -35,5 +36,5 @@ KataRomanNumerals (Solved)
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals
 Language: Bash
-Solution: solved/KataRomanNumerals.sh
-Tests:    solved/KataRomanNumerals_test.sh (see also solved/assert.sh)
+Solution: KataRomanNumerals.sh
+Tests:    KataRomanNumerals_test.sh (see also assert.sh)
