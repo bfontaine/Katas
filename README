@@ -47,3 +47,12 @@ URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator
 Language: JavaScript
 Solution: KataRomanCalculator.js
 Tests:    KataRomanCalculator_tests.js
+
+
+KataArgs (Working On)
+---------------------
+
+URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataArgs
+Language: C
+Solution: KataArgs.c
+Tests:    KataArgs_tests.c
