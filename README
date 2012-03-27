@@ -40,8 +40,8 @@ Solution: KataRomanNumerals.sh
 Tests:    KataRomanNumerals_test.sh (see also assert.sh)
 
 
-KataRomanCalculator (Working On)
---------------------------------
+KataRomanCalculator (Solved)
+----------------------------
 
 URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator
 Language: JavaScript
