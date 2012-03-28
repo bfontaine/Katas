@@ -1,0 +1,20 @@
+The solution is in `KataArgs.c`'s functions `read_config_file()` (for informations
+about valid command-line arguments) and `read_args()` (for parsing command-line
+arguments).
+
+Testing is made with `KataArgs_tests.sh`, as below:
+    - `KataArgs_tests.c` is compiled to `KataArgs_test_file` and `KataArgs_test_args`.
+    - `KataArgs_test_file` is a test programm to check if `KataArgs.c` can read
+      informations about valid command-line arguments from a given file. It prints
+      read informations on standard input.
+    - `KataArgs_test_args` is a test programm to check if `KataArgs.c` can parse
+      given command-line arguments with a given schema file. It prints parsed
+      informations on standard input.
+
+    Method:
+
+    1) Create sample schema files
+    2) Launch `./KataArgs_test_file` multiple times with different arguments
+       to check if file parsing is correct.
+    3) Launch `./KataArgs_test_args` multiple times with different arguments
+       to check if command-line arguments parsing is correct.
