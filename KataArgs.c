@@ -1,7 +1,5 @@
 #include "KataArgs.h"
 
-#define SCHEMA_FILE ""
-
 arg* last_config = NULL;
 int  last_config_length = 0;
 

@@ -13,3 +13,9 @@ KataArgs_test_file : KataArgs.c KataArgs.h KataArgs_tests.c
 
 KataArgs_test_args : KataArgs.c KataArgs.h KataArgs_tests.c
 	${CC} -DTEST_ARGS KataArgs_tests.c -o KataArgs_test_args
+
+clean:
+	rm -f KataArgs_test_args
+	rm -f KataArgs_test_file
+	rm -f *~
+
