@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BAD_SCHEMA -1
+#define NOT_IN_SCHEMA -2
+
 #define NONE_VALUE 0
 #define INT_VALUE 1
 #define STR_VALUE 2
@@ -29,7 +32,6 @@ typedef struct {
  * (*): by filling `config` and returning its length.
  **/
 int read_config_file(char* path, arg* config);
-int read_config_file_f(char* path, arg* config, int FLAGS);
 
 /**
  * Fill a given `arg` array with args values read
@@ -37,6 +39,8 @@ int read_config_file_f(char* path, arg* config, int FLAGS);
  **/
 void read_args(int argc, char** argv, arg* config,
         int config_length);
-void read_args_f(int argc, char** argv, arg* config,
-        int config_length, int FLAGS);
 
+/**
+ * Get the value for the specified flag.
+ **/
+int read_flag(char flag_name, void* value);
