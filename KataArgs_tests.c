@@ -5,6 +5,8 @@ char* string_value;
 int   int_value;
 float float_value;
 
+char* schema_file;
+
 int main(int argc, char** argv) {
 
     if (argc == 0) {
@@ -14,7 +16,7 @@ int main(int argc, char** argv) {
     arg* config = NULL;
 
     /* the first argument is the schema file */
-    char* schema_file = strdup(argv[0]);
+    schema_file = strdup(argv[0]);
     argv++;
     argc--;
 
@@ -72,7 +74,6 @@ int main(int argc, char** argv) {
 
     assert( should_set_float_minus_1_7(&float_value) );
     assert( float_value == -1.7                      );
-
 
     return 0;
 }
