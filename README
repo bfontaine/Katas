@@ -49,10 +49,10 @@ Solution: KataRomanCalculator.js
 Tests:    KataRomanCalculator_tests.js
 
 
-KataArgs (Working On)
----------------------
+KataNumberToLCD (Working On)
+----------------------------
 
-URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataArgs
-Language: C
-Solution: KataArgs.c
-Tests:    KataArgs_tests.sh (see also KataArgs_test_notes.txt)
+URL:      http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD
+Language: PHP
+Solution: KataNumberToLCD.php
+Tests:    KataNumberToLCD_tests.php
