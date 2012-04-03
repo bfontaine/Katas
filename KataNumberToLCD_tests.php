@@ -47,7 +47,7 @@ foreach ($tests as $param => $expected) {
         echo("[FAIL] Expected:\n".$expected."\nGot:\n".$value."\n");
         $fails++;
     } else {
-        echo("[OK]\n");
+        echo("[OK] number $param.\n");
     }
 }
 echo(count($tests)." tests: ".(count($tests)-$fails)." ok, and $fails failed.\n");
