@@ -44,7 +44,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests:    `KataRomanCalculator_tests.js`
 
 
-[KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD) (Working on)
+[KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD) (Solved)
 ----------------------------
 
 - Language: PHP
