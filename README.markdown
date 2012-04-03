@@ -8,7 +8,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 
 Language: Ruby
 Solution: `KataBankOCR.rb`
-Tests:    `KataBankOCR\_test.rb`
+Tests:    `KataBankOCR_test.rb`
 
 
 [KataFizzBuzz](http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz) (Solved)
@@ -24,7 +24,7 @@ Tests:    `KataFizzBuzzTest.java` (see also `junit.sh`)
 
 Language: Python
 Solution: `KataPotter.py`
-Tests:    `KataPotter\_test.py`
+Tests:    `KataPotter_test.py`
 Remark:   Need more tests to know if it's *really* solved
 
 
@@ -33,7 +33,7 @@ Remark:   Need more tests to know if it's *really* solved
 
 Language: Bash
 Solution: `KataRomanNumerals.sh`
-Tests:    `KataRomanNumerals\_test.sh` (see also `assert.sh`)
+Tests:    `KataRomanNumerals_test.sh` (see also `assert.sh`)
 
 
 [KataRomanCalculator](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator) (Solved)
@@ -41,7 +41,7 @@ Tests:    `KataRomanNumerals\_test.sh` (see also `assert.sh`)
 
 Language: JavaScript
 Solution: `KataRomanCalculator.js`
-Tests:    `KataRomanCalculator\_tests.js`
+Tests:    `KataRomanCalculator_tests.js`
 
 
 [KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD) (Working on)
@@ -49,4 +49,4 @@ Tests:    `KataRomanCalculator\_tests.js`
 
 Language: PHP
 Solution: `KataNumberToLCD.php`
-Tests:    `KataNumberToLCD\_tests.php`
+Tests:    `KataNumberToLCD_tests.php`
