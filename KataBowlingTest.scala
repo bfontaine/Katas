@@ -1,0 +1,2 @@
+object KataBowlingTest extends Application {
+}
