@@ -52,7 +52,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests:    `KataNumberToLCD_tests.php`
 
 
-[KataTennis](http://codingdojo.org/cgi-bin/wiki.pl?KataTennis) (Working on)
+[KataTennis](http://codingdojo.org/cgi-bin/wiki.pl?KataTennis) (Solved)
 ----------------------------
 
 - Language: C

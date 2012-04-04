@@ -19,6 +19,8 @@ void new_tennis(player* p1, player* p2) {
 
 void beat(player* p1, player* p2) {
 
+    int i;
+
     if ((p1->game_score == 40) && (p2->game_score == 40)) {
         if (p1->has_advantage) {
             p1->score++;
@@ -31,7 +33,11 @@ void beat(player* p1, player* p2) {
         return;
     }
 
-    int i;
+    if ((p1->game_score == 40)) {
+        p1->score++;
+        new_turn(p1, p2);
+        return;
+    }
 
     for (i=0; i<SCORES_LEN-1; i++) {
         if (scores[i] == p1->game_score) {

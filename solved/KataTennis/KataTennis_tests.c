@@ -116,6 +116,7 @@ int main(void) {
 
    /* P2 win */
    beat(p2, p1);
+   beat(p2, p1);
    assert(p1->game_score == 0);
    assert(p1->score      == 1);
    assert(p2->game_score == 0);
