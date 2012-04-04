@@ -69,8 +69,8 @@ int main(void) {
    assert(p1->game_score == 40);
    assert(p2->game_score == 40);
 
-   assert(strcmp(compare_scores(p1, p2), "deuce, player 1 has advantage") == 0);
-   assert(strcmp(compare_scores(p2, p1), "deuce, player 1 has advantage") == 0);
+   assert(strcmp(compare_scores(p1, p2), "deuce") == 0);
+   assert(strcmp(compare_scores(p2, p1), "deuce") == 0);
 
    assert(p1->has_advantage == 1);
    assert(p2->has_advantage == 0);
