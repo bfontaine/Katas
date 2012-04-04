@@ -25,6 +25,9 @@ int main(void) {
 
    assert(strcmp(compare_scores(p1, p2), "15 - 0") == 0);
 
+   assert(p1->has_advantage == 0);
+   assert(p2->has_advantage == 0);
+
    /* 15 - 15 */
    beat(p2, p1);
    assert(p1->game_score == 15);
@@ -68,6 +71,9 @@ int main(void) {
 
    assert(strcmp(compare_scores(p1, p2), "deuce, player 1 has advantage") == 0);
    assert(strcmp(compare_scores(p2, p1), "deuce, player 1 has advantage") == 0);
+
+   assert(p1->has_advantage == 1);
+   assert(p2->has_advantage == 0);
 
    /* player 1 won the game */
    beat(p1, p2);
