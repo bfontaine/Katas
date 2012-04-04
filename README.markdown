@@ -63,4 +63,6 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 [KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling) (Working On)
 ----------------------------
 
-soon…
+- Language: Scala
+- Solution: `KataBowling.scala`
+- Tests:    `KataBowlingTest.scala`
