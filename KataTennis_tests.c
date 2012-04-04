@@ -86,7 +86,40 @@ int main(void) {
 
    /* new turn */
 
-   /* TODO continue */
+   beat(p2, p1); /* 0 - 15 */
+   beat(p2, p1); /* 0 - 30 */
+   beat(p2, p1); /* 0 - 40 */
+   beat(p2, p1); /* 0 - 0 */
+
+   assert(p1->game_score == 0);
+   assert(p1->score      == 1);
+   assert(p2->game_score == 0);
+   assert(p2->score      == 1);
+
+   /* new turn : 40 - 40 */
+   beat(p1, p2); beat(p2, p1);
+   beat(p1, p2); beat(p2, p1);
+   beat(p1, p2); beat(p2, p1);
+
+   assert(p1->game_score == 40);
+   assert(p2->game_score == 40);
+
+   /* advantage to P1 */
+   beat(p1, p2);
+   assert(p1->has_advantage == 1);
+   assert(p2->has_advantage == 0);
+
+   /* P1 loose advantage */
+   beat(p2, p1);
+   assert(p1-> has_advantage == 0);
+   assert(p2-> has_advantage == 0);
+
+   /* P2 win */
+   beat(p2, p1);
+   assert(p1->game_score == 0);
+   assert(p1->score      == 1);
+   assert(p2->game_score == 0);
+   assert(p2->score      == 2);
 
    /* end of tests */
    free(p1);
