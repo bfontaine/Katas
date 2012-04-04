@@ -65,4 +65,4 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 
 - Language: Scala
 - Solution: `KataBowling.scala`
-- Tests:    `KataBowlingTest.scala`
+- Tests:    `KataBowlingTest.scala` (Using [ScalaTest](http://www.scalatest.org/) 1.7.1, see also `KataBowling_tests.sh` for command-line shortcuts)
