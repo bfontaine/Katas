@@ -53,7 +53,7 @@ object KataBowling {
 
     var i:Int = 0
 
-    while (i != rolls_list.length) {
+    while ((i != rolls_list.length) && (i < 10)) {
 
       // normal turn
       if (!rolls_list(i).is_strike && !rolls_list(i).is_spare) {
@@ -63,8 +63,8 @@ object KataBowling {
       else {
         score += 10
 
-        // normal strike & spare (no bonus)
-        if ((i < 20) && (i < rolls_list.length-1)) {
+        // normal (no bonus) strike & spare
+        if (i < rolls_list.length-1) {
           score += rolls_list(i+1).roll_1
 
           if (rolls_list(i).is_strike) { // strike only
