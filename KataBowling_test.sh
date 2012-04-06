@@ -1,4 +1,9 @@
 #! /bin/bash
+#
+# use:
+# $ . KataBowling_test.sh
+# $ tests_compile
+# $ tests_exec
 
 function tests_compile() {
     scalac KataBowling.scala
