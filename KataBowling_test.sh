@@ -6,7 +6,9 @@
 # $ tests_exec
 
 function tests_compile() {
-    scalac KataBowling.scala
+    if ! [ -f KataBowling.class ]; then
+        scalac KataBowling.scala
+    fi
     scalac -cp .:scalatest-1.7.1.jar KataBowlingTest.scala;
 }
 
