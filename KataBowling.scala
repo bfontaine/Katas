@@ -12,20 +12,20 @@ object KataBowling {
       r1_str match {
         case 'X' => is_strike=true;10
         case '-' => 0
-        case _   => r1_str.toInt
+        case _   => (""+r1_str).toInt
       }
     }
 
-    var roll_2:Int = if ((is_strike) || turn.length == 1) 0 else {
+    val roll_2:Int = if ((is_strike) || turn.length == 1) 0 else {
       val r2_str = turn.tail // last char
       r2_str match {
         case "/" => is_spare=true;10
         case "-" => 0
-        case _   => r2_str.toInt
+        case _   => (""+r2_str).toInt
       }
     }
 
-    override def toString = turn
+    val points:Int = if (is_strike || is_spare) 10 else roll_1+roll_2
   }
 
   def stringToList(s:String):List[Char] = s match {
@@ -47,11 +47,42 @@ object KataBowling {
 
   def score(rolls:String):Int = {
 
-    var score = 0
+    var score:Int = 0
 
-    val rolls_list = parseGame(stringToList(rolls))
+    val rolls_list:Array[BowlingTurn] = parseGame(stringToList(rolls)).toArray
+
+    var i:Int = 0
+
+    while (i != rolls_list.length) {
+
+      // normal turn
+      if (!rolls_list(i).is_strike && !rolls_list(i).is_spare) {
+        score += rolls_list(i).points;
+      }
+      // strike & spare
+      else {
+        score += 10
+
+        // normal strike & spare (no bonus)
+        if ((i < 20) && (i < rolls_list.length-1)) {
+          score += rolls_list(i+1).roll_1
+
+          if (rolls_list(i).is_strike) { // strike only
+            
+            // if next turn is not a strike or a spare, we take its second roll
+            if (!rolls_list(i+1).is_strike && !rolls_list(i+1).is_spare) {
+              score += rolls_list(i+1).roll_2
+            
+            // else we take the next next turn's first roll
+            } else if (i < rolls_list.length-2) {
+              score += rolls_list(i+2).roll_1
+            }
+          }
+        }
+      }
+      i += 1
+    }
 
     score
   }
-
 }
