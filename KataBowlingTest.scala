@@ -28,21 +28,21 @@ class KataBowlingTest extends FunSuite {
 
   /* simple test cases */
 
-  test("10 rolls: 10 pairs of miss") {
+  test("20 rolls: 10 pairs of miss") {
 
     val score = KataBowling.score("--"*10)
 
       expect(0) {score}
   }
 
-  test("10 rolls: 10 pairs of 1 and miss") {
+  test("20 rolls: 10 pairs of 1 and miss") {
 
     val score = KataBowling.score("1-"*10)
 
       expect(10) {score}
   }
 
-  test("10 rolls: 10 pairs of 4 and 2") {
+  test("20 rolls: 10 pairs of 4 and 2") {
 
     val score = KataBowling.score("42"*10)
 
@@ -51,13 +51,24 @@ class KataBowlingTest extends FunSuite {
 
   /* medium test cases */
 
-  test("10 rolls: 9 pairs of 7 and 1, a 3 and spare, and a final 8") {
+  test("20 rolls: 9 pairs of 7 and 1, a 3 and spare, and a final 8") {
 
     val score = KataBowling.score("71"*9+"3/8")
 
-      /* 9*(7+1) points, + a spare (10 points + 2 * next turn (8) )
-         = 9*8+10+16 = 98 */
       expect(98) {score}
   }
 
+  test("20 rolls: 5 pairs of 3 and 5, a strike, and 5 pairs of 1 and 1") {
+
+    val score = KataBowling.score("35"*5+"X"+"11"*5)
+        
+      expect(62) {score}
+  }
+
+  test("20 rolls: 9 pairs of 1 and 2, a strike, and a final strike") {
+
+    val score = KataBowling.score("12"*9+"XX")
+
+      expect(57) {score}
+  }
 }
