@@ -58,11 +58,11 @@ class KataBowlingTest extends FunSuite {
       expect(98) {score}
   }
 
-  test("20 rolls: 5 pairs of 3 and 5, a strike, and 5 pairs of 1 and 1") {
+  test("20 rolls: 5 pairs of 3 and 5, a strike, and 4 pairs of 1 and 1") {
 
-    val score = KataBowling.score("35"*5+"X"+"11"*5)
+    val score = KataBowling.score("35"*5+"X"+"11"*4)
         
-      expect(62) {score}
+      expect(60) {score}
   }
 
   test("20 rolls: 9 pairs of 1 and 2, a strike, and a final strike") {
