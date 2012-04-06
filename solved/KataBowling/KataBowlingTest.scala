@@ -55,7 +55,7 @@ class KataBowlingTest extends FunSuite {
 
     val score = KataBowling.score("71"*9+"3/8")
 
-      expect(98) {score}
+      expect(90) {score}
   }
 
   test("20 rolls: 5 pairs of 3 and 5, a strike, and 4 pairs of 1 and 1") {
@@ -69,6 +69,6 @@ class KataBowlingTest extends FunSuite {
 
     val score = KataBowling.score("12"*9+"XX")
 
-      expect(57) {score}
+      expect(47) {score}
   }
 }

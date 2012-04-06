@@ -60,7 +60,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests:    `KataTennis_tests.c`
 
 
-[KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling) (Working On)
+[KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling) (Solved)
 ----------------------------
 
 - Language: Scala
