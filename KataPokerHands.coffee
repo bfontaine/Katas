@@ -1,17 +1,34 @@
 
+hand_types = [ 'High Card', 'Pair', 'Two Pairs', 'Three of a Kind', 'Straight',
+'Flush', 'Full House', 'Four of a kind', 'Straight Flush' ]
+
 compare_hands = (s) ->
 
     regex_hand = /([A-Z]\w+): ((?:[2-9TJQKA][CDHS] ?)+)/g
 
-    [p1_name, p1_hand] = regex_hand.exec(s).slice(1)
-    [p2_name, p2_hand] = regex_hand.exec(s).slice(1)
+    p = [null, {}, {}] # players 1 and 2
 
-    p1_hand = parse_hand(p1_hand)
-    p2_hand = parse_hand(p2_hand)
+    [p[1].name, p[1].hand] = regex_hand.exec(s).slice(1)
+    [p[2].name, p[2].hand] = regex_hand.exec(s).slice(1)
 
-    "not implemented"
+    p[1].hand = parse_hand(p[1].hand)
+    p[2].hand = parse_hand(p[2].hand)
+
+    p[1].type = check_hand_types(p[1].hand)
+    p[2].type = check_hand_types(p[2].hand)
+
+    result = ""
+
+    if (p[1].type == p[2].type)
+        i = 0
+        while ((i < 5) && (p[1].hand[4-i].value == p[2].hand[4-i].value))
+            i++
+
+        return 'Tie.' if (i == 5)
 
 
+check_hand_types = (hand) ->
+    hand_types[0] # not implemented
 
 parse_hand = (s) ->
 
