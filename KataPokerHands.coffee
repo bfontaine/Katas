@@ -8,8 +8,13 @@ compare_hands = (s) ->
 
     p = [null, {}, {}] # players 1 and 2
 
-    [p[1].name, p[1].hand] = regex_hand.exec(s).slice(1)
-    [p[2].name, p[2].hand] = regex_hand.exec(s).slice(1)
+    p1 = regex_hand.exec(s)
+    p2 = regex_hand.exec(s)
+
+    return null if !p1? || !p2?
+
+    [p[1].name, p[1].hand] = p1.slice(1)
+    [p[2].name, p[2].hand] = p2.slice(1)
 
     p[1].hand = parse_hand(p[1].hand)
     p[2].hand = parse_hand(p[2].hand)
