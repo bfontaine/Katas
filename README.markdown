@@ -73,4 +73,5 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 
 - Language: CoffeeScript
 - Solution: `KataPokerHands.coffee`
-- Tests:    `KataPokerHands_tests.coffee`
+- Tests:    `KataPokerHands_tests.coffee` (using
+  [`jasmine-node`](https://github.com/mhevery/jasmine-node))
