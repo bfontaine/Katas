@@ -2,6 +2,10 @@ Poker = require('../KataPokerHands')
 
 describe('Result', () ->
 
+    it('should be null', () ->
+        expect(Poker.compare_hands('bad hands input')).toEqual(null)
+    )
+
     it('should be tie', () ->
         expect(Poker.compare_hands('Black: 2H 3D 5S 9C KD '+
                                    ' White: 2D 3H 5C 9S KH')).toEqual('Tie.')

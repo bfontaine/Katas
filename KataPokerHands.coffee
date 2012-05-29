@@ -6,12 +6,12 @@ compare_hands = (s) ->
 
     regex_hand = /([A-Z]\w+): ((?:[2-9TJQKA][CDHS] ?)+)/g
 
-    p = [null, {}, {}] # players 1 and 2
-
     p1 = regex_hand.exec(s)
     p2 = regex_hand.exec(s)
 
     return null if !p1? || !p2?
+
+    p = [null, {}, {}] # players 1 and 2
 
     [p[1].name, p[1].hand] = p1.slice(1)
     [p[2].name, p[2].hand] = p2.slice(1)
@@ -29,6 +29,7 @@ compare_hands = (s) ->
         while ((i < 5) && (p[1].hand[4-i].value == p[2].hand[4-i].value))
             i++
 
+        # each player has same cards
         return 'Tie.' if (i == 5)
 
 
