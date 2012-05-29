@@ -58,11 +58,16 @@ describe('Result', () ->
         expect(Poker.compare_hands('Black: 5S 4S 7S 2S KS '+
                                    ' White: 9S 8S AS QS 3S')).toEqual('White wins. - with flush')
     )
-
     
     it("should be a Black's winning, with flush", () ->
-        expect(Poker.compare_hands('Black: 2C 4C 4C 2C 4C '+
+        expect(Poker.compare_hands('Black: 2C 4C 8C 9C 3C '+
                                    ' White: 2S 8S AC QS 3S')).toEqual('Black wins. - with flush')
     )
 
+    # == Straight Flush == #
+    
+    it("should be a Black's winning, with straight flush", () ->
+        expect(Poker.compare_hands('Black: 2C 4C 3C 6C 5C '+
+                                   ' White: 2S 8S KC QS 3S')).toEqual('Black wins. - with straight flush')
+    )
 )
