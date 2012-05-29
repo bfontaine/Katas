@@ -81,7 +81,6 @@ has_unique_suit = (hand) ->
 
     true
 
-
 # Return a string representation of the given card value
 value_to_s = (value) ->
     return '' + value if (value <= 10)
@@ -111,19 +110,20 @@ get_hand_type = (hand) ->
     # Straight Flush
     if (same_suit)
         # check if all cards have consecutive values
-        if (!![1..4].reduce (b, i) -> b && (hand[i-1].value + 1 == hand[i].value))
+        if ([1..4].reduce (b, i) -> b && (hand[i-1].value - 1 == hand[i].value)) #FIXME
             return [7].concat(values)
 
+    # Four of a kind
+    # card are ordered, so we check
+    #    if values[1] == values[2] == values[3] == values[0]
+    # or if values[1] == values[2] == values[3] == values[4]
+    for i in [0, 4]
+        if (values[1..3].reduce (b, val) -> b && (val == values[i]))
+            return [6].concat(values)
+
+    if (same_suit)
         # Flush
         return [5].concat(values)
-    else
-        # Four of a kind
-        # card are ordered, so we check
-        #    if values[1] == values[2] == values[3] == values[0]
-        # or if values[1] == values[2] == values[3] == values[4]
-        for i in [0, 4]
-            if (!!values[1..3].reduce (b, c) -> b && (c == values[i]))
-                return [6].concat(values)
 
     # TODO
 
@@ -131,7 +131,7 @@ get_hand_type = (hand) ->
     [0].concat(values)
 
 
-    #renamining hand_types : [ 'High Card', 'Pair', 'Two Pairs', 'Three of a Kind', 'Straight',
-    #'Flush', 'Full House', ]
+    #hand_types = [ 'high card', 'pair', 'two pairs', 'three of a kind', 'straight',
+    #'flush', 'full house', 'four of a kind', 'straight flush' ]
 
 exports.compare_hands = compare_hands
