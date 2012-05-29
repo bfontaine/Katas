@@ -2,14 +2,28 @@ Poker = require('../KataPokerHands')
 
 describe('Result', () ->
 
-    it('should be null', () ->
-        # bad input
+    it('should be null for bad input', () ->
         expect(Poker.compare_hands('bad hands input')).toEqual(null)
-        # bad cards
+    )
+
+    it('should be null for bad card suits', () ->
         expect(Poker.compare_hands('Black: 2X 3D 5S 9C KD '+
                                    ' White: 2A 3H 5C 9S KH')).toEqual(null)
+    )
+
+    it('should be null for bad card values', () ->
         expect(Poker.compare_hands('Black: 1H 3D 5S 9C KD '+
                                    ' White: 2D 3H 5C 9S KH')).toEqual(null)
+    )
+    
+    it('should be null if too many cards for black player', () ->
+        expect(Poker.compare_hands('Black: 1H 3D 5S 9C KS KC KD '+
+                                   ' White: 2D 3H 5C 9S KH')).toEqual(null)
+    )
+    
+    it('should be null if too many cards for white player', () ->
+        expect(Poker.compare_hands('Black: 1H 3D 5S 9C KD '+
+                                   ' White: 2D 3H 2H 5C 9S KH')).toEqual(null)
     )
 
     it('should be tie', () ->
