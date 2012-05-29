@@ -22,8 +22,10 @@ compare_hands = (s) ->
 
     result = '%1 wins. - with %2'
 
+    # same type
     if (p[1].type[0] == p[2].type[0])
         # check if all cards have same values
+        # or apply the 'highest card' rule
         for i in [1..5]
             if (p[1].type[i] > p[2].type[i])
                 return result.replace('%1', p[1].name)
@@ -35,6 +37,13 @@ compare_hands = (s) ->
 
             return 'Tie.' if (i == 5)
 
+    else if (p[1].type[0] > p[2].type[0])
+        return result.replace('%1', p[1].name)
+                     .replace('%2', type_to_s(p[1].type[0]))
+
+    else
+        return result.replace('%1', p[2].name)
+                     .replace('%2', type_to_s(p[2].type[0]))
 
 
 
@@ -102,8 +111,19 @@ get_hand_type = (hand) ->
     # Straight Flush
     if (same_suit)
         # check if all cards have consecutive values
-        if (!![1..4].reduce (b, i) -> b & (hand[i-1].value + 1 == hand[i].value))
+        if (!![1..4].reduce (b, i) -> b && (hand[i-1].value + 1 == hand[i].value))
             return [7].concat(values)
+
+        # Flush
+        return [5].concat(values)
+    else
+        # Four of a kind
+        # card are ordered, so we check
+        #    if values[1] == values[2] == values[3] == values[0]
+        # or if values[1] == values[2] == values[3] == values[4]
+        for i in [0, 4]
+            if (!!values[1..3].reduce (b, c) -> b && (c == values[i]))
+                return [6].concat(values)
 
     # TODO
 
@@ -112,6 +132,6 @@ get_hand_type = (hand) ->
 
 
     #renamining hand_types : [ 'High Card', 'Pair', 'Two Pairs', 'Three of a Kind', 'Straight',
-    #'Flush', 'Full House', 'Four of a kind' ]
+    #'Flush', 'Full House', ]
 
 exports.compare_hands = compare_hands
