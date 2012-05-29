@@ -1,6 +1,6 @@
 
-hand_types = [ 'High Card', 'Pair', 'Two Pairs', 'Three of a Kind', 'Straight',
-'Flush', 'Full House', 'Four of a kind', 'Straight Flush' ]
+hand_types = [ 'high card', 'pair', 'two pairs', 'three of a kind', 'straight',
+'flush', 'full house', 'four of a kind', 'straight flush' ]
 
 compare_hands = (s) ->
 
@@ -24,15 +24,14 @@ compare_hands = (s) ->
 
     if (p[1].type[0] == p[2].type[0])
         # check if all cards have same values
-        # TODO refactor, and set the result type (e.g. 'high card: 9')
         for i in [1..5]
-            return [p[1], p[2]]
-            if (p[1].type[i].value > p[2].type[i].value)
-                result.replace('%1', p[1].name)
-                break
-            else if (p[1].type[i].value < p[2].type[i].value)
-                result.replace('%1', p[2.name])
-                break
+            if (p[1].type[i] > p[2].type[i])
+                return result.replace('%1', p[1].name)
+                             .replace('%2', type_to_s(p[1].type[0], p[1].type[i]))
+
+            else if (p[1].type[i] < p[2].type[i])
+                return result.replace('%1', p[2].name)
+                             .replace('%2', type_to_s(p[2].type[0], p[2].type[i]))
 
             return 'Tie.' if (i == 5)
 
@@ -52,13 +51,11 @@ parse_hand = (s) ->
             else
                 @value = 'TJQKA'.indexOf(value) + 10
 
+        value_s: () -> value_s(@value)
+
         to_s: () ->
             suit = {'C':'clubs','D':'diamonds','H':'hearts','S':'spades'}[@suit]
-            value = @value
-            if (@value > 10)
-                value = {11:'Jack',12:'Queen',13:'King',14:'Ace'}[@value]
-
-            "#{value} of #{suit}"
+            "#{value_s} of #{suit}"
     
     cards = []
     for card in s.split(' ')
@@ -74,6 +71,18 @@ has_unique_suit = (hand) ->
         return false if card.suit != suit
 
     true
+
+
+# Return a string representation of the given card value
+value_to_s = (value) ->
+    return '' + value if (value <= 10)
+    {11:'Jack',12:'Queen',13:'King',14:'Ace'}[value]
+
+# Return a string representation of the given type, with
+# a card value if the type is 0 (= high card)
+type_to_s = (type, val) ->
+    return hand_types[type] if (type > 0)
+    hand_types[type] + ': ' + value_to_s(val)
 
 
 # Return the maximal hand type found in an hand. This is a numbers Array,
