@@ -114,25 +114,38 @@ get_hand_type = (hand) ->
     # Straight Flush
     if (same_suit)
         # check if all cards have consecutive values
-        if (has_consecutive_values)
-            return [8].concat(values)
+        return [8].concat(values) if (has_consecutive_values)
 
         # Flush
         return [5].concat(values)
 
     # Four of a kind
-    if ((values[0] == values[1] == values[2] == values[3]) ||
-    (    values[1] == values[2] == values[3] == values[4]))
+    if (values[0] == values[1] == values[2] == values[3])
         return [7].concat(values)
 
+    if (values[1] == values[2] == values[3] == values[4])
+        return [7].concat(values.slice(1)).concat([values[0]])
+
     # Full House
-    if (((values[0] == values[1]) && (values[2] == values[3] == values[4])) ||
-    ((    values[0] == values[1] == values[2]) && (values[3] == values[4])))
-        return [6].concat(values)
+    if ((values[0] == values[1]) && (values[2] == values[3] == values[4]))
+        return [6].concat(values.slice(2)).concat(values.slice(0,2))
+    
+    if ((values[0] == values[1] == values[2]) && (values[3] == values[4]))
+        return [6].concat(values.slice(0,3)).concat(values.slice(3))
 
     # Straight
     if (has_consecutive_values)
-        return [5].concat(values)
+        return [4].concat(values)
+
+    # Three of a kind
+    if (values[0] == values[1] == values[2])
+        return [3].concat(values)
+    
+    if (values[1] == values[2] == values[3])
+        return [3].concat(values.slice(1,4)).concat([values[0], values[4]])
+    
+    if (values[2] == values[3] == values[4])
+        return [3].concat(values.slice(2)).concat(values.slice(0,2))
     
     # TODO
 

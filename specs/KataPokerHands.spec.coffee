@@ -52,16 +52,33 @@ describe('Result', () ->
                                    ' White: 2C 3H 4S 8C AH')).toEqual('White wins. - with high card: Ace')
     )
 
+    # == Three Of A Kind == #
+    
+    it("should be a Black's winning, with three of a kind (2)", () ->
+        expect(Poker.compare_hands('Black: 2C 2S 3C 5D 2H '+
+                                   ' White: 4S 8S KC QS 5S')).toEqual('Black wins. - with three of a kind')
+    )
+    
+    it("should be a White's winning, with three of a kind (4)", () ->
+        expect(Poker.compare_hands('Black: 2C 2S 3C 2D 9H '+
+                                   ' White: 4S 4C 3H 4D 5S')).toEqual('White wins. - with three of a kind')
+    )
+    
+    it("should be a White's winning, with three of a kind (5)", () ->
+        expect(Poker.compare_hands('Black: 2C 2S 3C 2D 9H '+
+                                   ' White: 5D 5C 3H 4D 5S')).toEqual('White wins. - with three of a kind')
+    )
+
     # == Straight == #
     
     it("should be a Black's winning, with straight (2-6)", () ->
         expect(Poker.compare_hands('Black: 2C 4C 3H 6C 5C '+
-                                   ' White: 2S 8S KD QS 3S')).toEqual('Black wins. - with flush')
+                                   ' White: 2S 8S KD QS 3S')).toEqual('Black wins. - with straight')
     )
     
     it("should be a White's winning, with straight (9-K)", () ->
         expect(Poker.compare_hands('Black: 2H 4C 3S 6C 5C '+
-                                   ' White: 9C JS TD QS KS')).toEqual('White wins. - with flush')
+                                   ' White: 9C JS TD QS KS')).toEqual('White wins. - with straight')
     )
     
     # == Flush == #
@@ -91,7 +108,7 @@ describe('Result', () ->
     # == Four Of A Kind == #
     
     it("should be a Black's winning, with four of a kind (2)", () ->
-        expect(Poker.compare_hands('Black: 2C 2S 3C 2D 2H '+
+        expect(Poker.compare_hands('Black: 2C 2S AC 2D 2H '+
                                    ' White: 4S 8S KC QS 5S')).toEqual('Black wins. - with four of a kind')
     )
     
