@@ -75,3 +75,11 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Solution: `KataPokerHands.coffee`
 - Tests:    `KataPokerHands_tests.coffee` (using
   [`jasmine-node`](https://github.com/mhevery/jasmine-node))
+
+
+[KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper) (Working on)
+----------------------------
+
+- Language: Io
+- Solution: `KataMinesweeper.io`
+- Tests: `KataMinesweeper_tests.io`
