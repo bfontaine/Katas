@@ -147,9 +147,43 @@ get_hand_type = (hand) ->
     if (values[2] == values[3] == values[4])
         return [3].concat(values.slice(2)).concat(values.slice(0,2))
     
-    # TODO
+    paires = []
+    for i1 in [0..4]
+        for i2 in [0..4]
+            continue if (i1 == i2)
+            if ((values[i1] == values[i2]) && !paires.some((e) -> e == values[i1]))
+                # keep only the value
+                paires.push(values[i1])
 
-    # default type : high card
+    if (paires.length > 0)
+
+        # Two pairs
+        if (paires.length == 2)
+            remaining = -1
+            for v in values
+                remaining = v if ((v != paires[0]) && (v != paires[1]))
+
+            [p1,p2] = [[],[]]
+            
+            if (paires[0] > paires[1])
+                [p1,p2] = paires[0..1]
+            else
+                [p2,p1] = paires[0..1]
+
+            return [2].concat([p1,p1]).concat([p2,p2]).concat(remaining)
+
+        # One pair
+        p1 = paires[0]
+        remainings = []
+        for v in values
+            remainings.push(v) if (v != paires[0])
+
+        remainings.sort((a,b) -> a<b)
+
+        return [1].concat([p1,p1]).concat(remainings)
+
+
+    # High card
     [0].concat(values)
 
 

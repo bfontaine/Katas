@@ -52,6 +52,30 @@ describe('Result', () ->
                                    ' White: 2C 3H 4S 8C AH')).toEqual('White wins. - with high card: Ace')
     )
 
+    # == One Paire == #
+    
+    it("should be a Black's winning with one pairs (9)", () ->
+        expect(Poker.compare_hands('Black: 9H 9D 5S 7C 8D '+
+                                   ' White: 2C 3H 4S 8C KH')).toEqual('Black wins. - with pair')
+    )
+
+    it("should be a White's winning, with one pair (Queen)", () ->
+        expect(Poker.compare_hands('Black: 2H QD 3D QD KD '+
+                                   ' White: QC QH 2S 3C AH')).toEqual('White wins. - with pair')
+    )
+
+    # == Two Paires == #
+    
+    it("should be a Black's winning with two pairs (9,8)", () ->
+        expect(Poker.compare_hands('Black: 9H 9D 5S 8C 8D '+
+                                   ' White: 2C 3H 4S 8C KH')).toEqual('Black wins. - with two pairs')
+    )
+
+    it("should be a White's winning, with two pairs (Queen,2)", () ->
+        expect(Poker.compare_hands('Black: 2H QD 2D QD KD '+
+                                   ' White: QC QH 2S 2C AH')).toEqual('White wins. - with two pairs')
+    )
+
     # == Three Of A Kind == #
     
     it("should be a Black's winning, with three of a kind (2)", () ->
