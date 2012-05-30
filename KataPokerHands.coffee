@@ -101,25 +101,25 @@ get_hand_type = (hand) ->
 
     same_suit = has_unique_suit(hand)
 
-    # sort the hand by values
-    hand.sort (a, b) -> a.value < b.value
-
     # hand's cards values
     values = hand.map (card) -> card.value
+
+    values.sort((v1,v2) -> v1<v2)#.reverse()
 
     # Straight Flush
     if (same_suit)
         # check if all cards have consecutive values
-        if ([1..4].reduce (b, i) -> b && (hand[i-1].value - 1 == hand[i].value)) #FIXME
-            return [7].concat(values)
+        if ([1..4].reduce (b, i) -> b && (values[i-1] - 1 == values[i])) #FIXME
+            return [8].concat(values)
 
     # Four of a kind
-    # card are ordered, so we check
-    #    if values[1] == values[2] == values[3] == values[0]
+    # card are ordered, so we check if
+    # values[1] == values[2] == values[3] == values[0]
     # or if values[1] == values[2] == values[3] == values[4]
     for i in [0, 4]
-        if (values[1..3].reduce (b, val) -> b && (val == values[i]))
-            return [6].concat(values)
+        ref = values[i]
+        if (values[1..3].reduce (b, val) -> b && (val == ref))
+            return [7].concat(values)
 
     if (same_suit)
         # Flush
