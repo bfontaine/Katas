@@ -1,6 +1,6 @@
 #! /usr/local/bin/io
 
-tests = Map clone do (
+tests := Map clone do (
 
     atPut("empty 0x0",
             List clone with("0 0", "")
@@ -10,7 +10,7 @@ tests = Map clone do (
             List clone with("1 1\n.", "0")
     )
 
-    atPut("normal 1x1"
+    atPut("normal 1x1",
             List clone with("1 1\n*", "*")
     )
 
@@ -26,5 +26,16 @@ tests = Map clone do (
 
 )
 
-KataMinesweeperTest := UnitTest clone
+km := KataMinesweeper clone
 
+tests foreach(k,v,
+     actual := km sequenceFromList(km addHints(km listFromSequence(v at(0))))
+     expected := v at(1)
+
+     ut := UnitTest clone
+
+     if ( actual != expected,
+            ut fail(k .. ": fail! expected:\n" .. expected .. "\nactual:\n" .. actual .. "\n"),
+            k .. ": ok." println
+     )
+)
