@@ -2,18 +2,18 @@
 
 KataMinesweeper := Object clone do (
 
-    # transform a mines array into a sequence
-    a_to_s := method (a,
-        a #TODO 
+    # transform a mines list into a sequence
+    listFromSequence := method (a,
+        List clone # TODO
     )
 
-    # transform a sequence into a mines array
-    s_to_a := method (s,
-        s #TODO
+    # transform a sequence into a mines list
+    sequenceFromList := method (s,
+        "" # TODO
     )
 
     # add hints to a mines array
-    add_hints := method (a,
+    addHints := method (a,
         a #TODO
     )
 )
