@@ -68,7 +68,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests:    `KataBowlingTest.scala` (Using [ScalaTest](http://www.scalatest.org/) 1.7.1, see also `KataBowling_tests.sh` for command-line shortcuts)
 
 
-[KataPokerHands](http://codingdojo.org/cgi-bin/wiki.pl?KataPokerHands) (Working On)
+[KataPokerHands](http://codingdojo.org/cgi-bin/wiki.pl?KataPokerHands) (Solved)
 ----------------------------
 
 - Language: CoffeeScript
