@@ -35,39 +35,69 @@ describe('Result', () ->
                                    ' White: 2D 3H 5C 9S KH')).toEqual('Tie.')
     )
 
-    # == High card == #
+    it("should be a Tie", () ->
+        expect(Poker.compare_hands('Black: 2C 4C 3C 6C 5C '+
+                                   ' White: 2S 4S 3S 6S 5S')).toEqual('Tie.')
+    )
+
+    # == High Card == #
     
-    it("should be a Black's winning with high card: 9", () ->
+    it("should be a Black's winning with high card (9)", () ->
         expect(Poker.compare_hands('Black: 2H 3D 5S 9C KD '+
                                    ' White: 2C 3H 4S 8C KH')).toEqual('Black wins. - with high card: 9')
     )
 
-    it("should be a White's winning, with high card: Ace", () ->
+    it("should be a White's winning, with high card (Ace)", () ->
         expect(Poker.compare_hands('Black: 2H 3D 5S 9C KD '+
                                    ' White: 2C 3H 4S 8C AH')).toEqual('White wins. - with high card: Ace')
     )
     
     # == Flush == #
     
-    it("should be a White's winning, with flush", () ->
-        expect(Poker.compare_hands('Black: 2H 4S 4C 2D 4H '+
+    it("should be a White's winning, with flush (S)", () ->
+        expect(Poker.compare_hands('Black: 3H 4S 4C 2D 4H '+
                                    ' White: 2S 8S AS QS 3S')).toEqual('White wins. - with flush')
     )
 
-    it("should be a White's winning, with flush", () ->
-        expect(Poker.compare_hands('Black: 5S 4S 7S 2S KS '+
-                                   ' White: 9S 8S AS QS 3S')).toEqual('White wins. - with flush')
+    it("should be a White's winning, with flush (H)", () ->
+        expect(Poker.compare_hands('Black: 5H 4H 7H 2H KH '+
+                                   ' White: 9H 8H AH QH 3H')).toEqual('White wins. - with flush')
     )
     
-    it("should be a Black's winning, with flush", () ->
+    it("should be a Black's winning, with flush (C)", () ->
         expect(Poker.compare_hands('Black: 2C 4C 8C 9C 3C '+
                                    ' White: 2S 8S AC QS 3S')).toEqual('Black wins. - with flush')
     )
 
+    # == Full House == #
+    
+    it("should be a Black's winning, with full house (2,2,2,4,4)", () ->
+        expect(Poker.compare_hands('Black: 2C 2S 2D 4D 4H '+
+                                   ' White: 4S 8S 3C QS 5S')).toEqual('Black wins. - with full house')
+    )
+
+    # == Four Of A Kind == #
+    
+    it("should be a Black's winning, with four of a kind (2)", () ->
+        expect(Poker.compare_hands('Black: 2C 2S 3C 2D 2H '+
+                                   ' White: 4S 8S KC QS 5S')).toEqual('Black wins. - with four of a kind')
+    )
+    
+    it("should be a White's winning, with four of a kind (4)", () ->
+        expect(Poker.compare_hands('Black: 2C 2S 3C 2D 2H '+
+                                   ' White: 4S 4C 4H 4D 5S')).toEqual('White wins. - with four of a kind')
+    )
+
     # == Straight Flush == #
     
-    it("should be a Black's winning, with straight flush", () ->
+    it("should be a Black's winning, with straight flush (C)", () ->
         expect(Poker.compare_hands('Black: 2C 4C 3C 6C 5C '+
                                    ' White: 2S 8S KC QS 3S')).toEqual('Black wins. - with straight flush')
     )
+    
+    it("should be a White's winning, with straight flush (S)", () ->
+        expect(Poker.compare_hands('Black: 2C 4C 3C 6C 5C '+
+                                   ' White: 3S 5S 4S 6S 7S')).toEqual('White wins. - with straight flush')
+    )
+    
 )
