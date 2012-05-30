@@ -29,11 +29,13 @@ compare_hands = (s) ->
         for i in [1..5]
             if (p[1].type[i] > p[2].type[i])
                 return result.replace('%1', p[1].name)
-                             .replace('%2', type_to_s(p[1].type[0], p[1].type[i]))
+                             .replace('%2', type_to_s(p[1].type[0],
+                                                      p[1].type[i]))
 
             else if (p[1].type[i] < p[2].type[i])
                 return result.replace('%1', p[2].name)
-                             .replace('%2', type_to_s(p[2].type[0], p[2].type[i]))
+                             .replace('%2', type_to_s(p[2].type[0],
+                                                      p[2].type[i]))
 
             return 'Tie.' if (i == 5)
 
@@ -63,7 +65,7 @@ parse_hand = (s) ->
         value_s: () -> value_s(@value)
 
         to_s: () ->
-            suit = {'C':'clubs','D':'diamonds','H':'hearts','S':'spades'}[@suit]
+            suit = {C:'clubs', D:'diamonds', H:'hearts', S:'spades'}[@suit]
             "#{value_s} of #{suit}"
     
     cards = []
@@ -104,12 +106,15 @@ get_hand_type = (hand) ->
     # hand's cards values
     values = hand.map (card) -> card.value
 
-    values.sort((v1,v2) -> v1<v2)#.reverse()
+    values.sort((v1,v2) -> v1<v2)
+
+    has_consecutive_values =
+        ([1..4].reduce (b, i) -> b && (values[i-1] - 1 == values[i]))
 
     # Straight Flush
     if (same_suit)
         # check if all cards have consecutive values
-        if ([1..4].reduce (b, i) -> b && (values[i-1] - 1 == values[i]))
+        if (has_consecutive_values)
             return [8].concat(values)
 
         # Flush
@@ -125,14 +130,17 @@ get_hand_type = (hand) ->
     ((    values[0] == values[1] == values[2]) && (values[3] == values[4])))
         return [6].concat(values)
 
-
+    # Straight
+    if (has_consecutive_values)
+        return [5].concat(values)
+    
     # TODO
 
     # default type : high card
     [0].concat(values)
 
 
-    #hand_types = [ 'high card', 'pair', 'two pairs', 'three of a kind', 'straight',
-    #'flush', 'full house', 'four of a kind', 'straight flush' ]
+    #hand_types = [ 'high card', 'pair', 'two pairs', 'three of a kind',
+    #'straight','flush', 'full house', 'four of a kind', 'straight flush' ]
 
 exports.compare_hands = compare_hands
