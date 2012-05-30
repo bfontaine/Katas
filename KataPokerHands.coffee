@@ -109,21 +109,22 @@ get_hand_type = (hand) ->
     # Straight Flush
     if (same_suit)
         # check if all cards have consecutive values
-        if ([1..4].reduce (b, i) -> b && (values[i-1] - 1 == values[i])) #FIXME
+        if ([1..4].reduce (b, i) -> b && (values[i-1] - 1 == values[i]))
             return [8].concat(values)
 
-    # Four of a kind
-    # card are ordered, so we check if
-    # values[1] == values[2] == values[3] == values[0]
-    # or if values[1] == values[2] == values[3] == values[4]
-    for i in [0, 4]
-        ref = values[i]
-        if (values[1..3].reduce (b, val) -> b && (val == ref))
-            return [7].concat(values)
-
-    if (same_suit)
         # Flush
         return [5].concat(values)
+
+    # Four of a kind
+    if ((values[0] == values[1] == values[2] == values[3]) ||
+    (    values[1] == values[2] == values[3] == values[4]))
+        return [7].concat(values)
+
+    # Full House
+    if (((values[0] == values[1]) && (values[2] == values[3] == values[4])) ||
+    ((    values[0] == values[1] == values[2]) && (values[3] == values[4])))
+        return [6].concat(values)
+
 
     # TODO
 
