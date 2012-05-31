@@ -83,3 +83,12 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Language: Io
 - Solution: `KataMinesweeper.io`
 - Tests: `KataMinesweeper_tests.io`
+
+
+[KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Working On)
+----------------------------
+
+- Language: Common Lisp
+- Solution: `KataReversi.lisp`
+- Tests: `KataReversi_tests.lisp` (using
+  [`lisp-unit`](http://www.cs.northwestern.edu/academics/courses/325/readings/lisp-unit.html))
