@@ -24,7 +24,7 @@ tests := Map clone do (
     
     atPut("normal 3x5 with 3 mines",
             List clone with("3 5\n" .. "**...\n.....\n.*...",
-                                       "..100\n33200\n1*100")
+                                       "**100\n33200\n1*100")
     )
 
 )
