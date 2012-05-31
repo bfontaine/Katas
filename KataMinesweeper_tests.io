@@ -46,10 +46,10 @@ tests foreach(k,v,
      actual := km sequenceFromList(km addHints(km listFromSequence(v at(0))))
      expected := v at(1)
 
-     if ( actual == expected) then (
+     if ( actual != expected) then (
             ut := UnitTest clone
-            ut fail(k .. ": fail! expected:\n" .. expected .. "\nactual:\n" .. actual .. "\n")
+            ut fail(k .. ": fail!\nexpected:\n" .. expected .. "\nactual:\n" .. actual .. "\n")
      ) else (
-            k .. ": ok." println
+            (k .. ": ok.") println
      )
 )
