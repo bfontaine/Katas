@@ -31,11 +31,13 @@ KataMinesweeper := Object clone do (
 
                 if (a at(i) at(j) == ".",
                     n := 0
-                    li := List clone with( (i-1) max(0), i, i+1)
-                    lj := List clone with( (j-1) max(0), j, j+1)
+                    li := List clone with(i-1, i, i+1)
+                    lj := List clone with(j-1, j, j+1)
 
                     li foreach(i2,
+                        if (i2 < 0, continue)
                         lj foreach(j2,
+                            if (j2 < 0, continue)
                             if (a at(i2) at(j2) == "*",
                                 n = n+1
                             )
