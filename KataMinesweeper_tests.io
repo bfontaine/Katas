@@ -32,6 +32,12 @@ tests := Map clone do (
                                        "**210\n34*10\n1*210")
     )
 
+    atPut("normal 10x10 with 5 mines",
+            List clone with("8 7\n" ..
+        ".......\n.*.....\n.......\n.*..*..\n..*....\n....*..\n.......\n.......",
+        "1110000\n1*10000\n2221110\n1*22*10\n12*3220\n0112*10\n0001110\n0000000")
+    )
+
 )
 
 km := KataMinesweeper clone
@@ -40,10 +46,10 @@ tests foreach(k,v,
      actual := km sequenceFromList(km addHints(km listFromSequence(v at(0))))
      expected := v at(1)
 
-     ut := UnitTest clone
-
-     if ( actual != expected,
-            ut fail(k .. ": fail! expected:\n" .. expected .. "\nactual:\n" .. actual .. "\n"),
+     if ( actual == expected) then (
+            ut := UnitTest clone
+            ut fail(k .. ": fail! expected:\n" .. expected .. "\nactual:\n" .. actual .. "\n")
+     ) else (
             k .. ": ok." println
      )
 )
