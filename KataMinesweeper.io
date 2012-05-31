@@ -31,8 +31,8 @@ KataMinesweeper := Object clone do (
 
                 if (a at(i) at(j) == ".",
                     n := 0
-                    li := List clone with(i-1, i, i+1)
-                    lj := List clone with(j-1, j, j+1)
+                    li := List clone with( (i-1) max(0), i, i+1)
+                    lj := List clone with( (j-1) max(0), j, j+1)
 
                     li foreach(i2,
                         lj foreach(j2,
