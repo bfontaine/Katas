@@ -77,7 +77,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
   [`jasmine-node`](https://github.com/mhevery/jasmine-node))
 
 
-[KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper) (Working on)
+[KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper) (Solved)
 ----------------------------
 
 - Language: Io
