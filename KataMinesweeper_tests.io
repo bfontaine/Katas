@@ -27,6 +27,11 @@ tests := Map clone do (
                                        "**100\n33200\n1*100")
     )
 
+    atPut("normal 3x5 with 4 mines",
+            List clone with("3 5\n" .. "**...\n..*..\n.*...",
+                                       "**210\n34*10\n1*210")
+    )
+
 )
 
 km := KataMinesweeper clone
