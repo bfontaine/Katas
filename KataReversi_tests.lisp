@@ -16,11 +16,7 @@
                                                     "........\n"
                                                     "........\n"
                                                     "........\n"
-                                                    "B"
-                                 )
-                )
-  )
-)
+                                                    "B"))))
 
 (define-test :empty-board-white
   (assert-equal NIL 
@@ -32,11 +28,7 @@
                                                      "........\n"
                                                      "........\n"
                                                      "........\n"
-                                                     "W"
-                                )
-                )
-  )
-)
+                                                     "W"))))
 
 (define-test :initial-board-black
   (defvar pm (possible-moves (concatenate 'string "........\n"
@@ -47,12 +39,8 @@
                                                   "........\n"
                                                   "........\n"
                                                   "........\n"
-                                                  "B"
-                                    )
-                   )
-  )
+                                                  "B")))
   (assert-true (not(eq pm NIL)))
-  (unordered-equal (list "C5" "D6" "E3" "F4") pm)
-)
+  (unordered-equal (list "C5" "D6" "E3" "F4") pm))
 
 (run-tests)
