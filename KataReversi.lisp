@@ -1,4 +1,4 @@
-; KataReversi
+;;;; KataReversi
 
 (cl:defpackage #:kata-reversi
   (:use #:common-lisp)
@@ -25,8 +25,14 @@
 
 ;;; Returns a list of possible moves for the current player
 (defun possible-moves(s)
-  (let (tab) (coerce s 'list))
-  (let (player) (get-player tab))
+  (defvar tab (coerce s 'list))
+  (defvar tabl (list-length *letters*))
+  (defvar player (get-player tab))
 
-  NIL ;TODO
+  (defvar moves nil)
+
+  (loop for i from 0 below tabl do
+        (loop for j from 0 below tabl)) ; TODO
+
+  moves
 )
