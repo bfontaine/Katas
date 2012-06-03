@@ -85,6 +85,14 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataMinesweeper_tests.io`
 
 
+[KataKarateChop](http://codekata.pragprog.com/2007/01/kata_two_karate.html) (Working On)
+----------------------------
+
+- Language: Lisp
+- Solution: `KataKarateChop.lisp`
+- Tests: `KataKarateChop_tests.lisp`
+
+
 [KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Working On)
 ----------------------------
 
