@@ -1,5 +1,5 @@
 Here are some solved katas in various languages.
-See [the list](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue).
+See [the catalogue](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue).
 
 All files for solved katas are in `solved/[Kata's name]/` directories.
 
