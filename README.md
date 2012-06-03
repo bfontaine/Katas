@@ -88,7 +88,6 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 [KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Working On)
 ----------------------------
 
-- Language: Common Lisp
-- Solution: `KataReversi.lisp`
-- Tests: `KataReversi_tests.lisp` (using
-  [`lisp-unit`](http://www.cs.northwestern.edu/academics/courses/325/readings/lisp-unit.html))
+- Language: Perl
+- Solution: `KataReversi.pl`
+- Tests: `KataReversi_tests.pl`
