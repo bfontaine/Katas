@@ -42,9 +42,9 @@ dec_to_roman() {
     # …       XXXX       XL
     # …       VIIII      IX
     # …       IIII       IV
-    r=$(echo $r | sed 's/DCCCC/CM/g' | sed 's/CCCC/CD/g');
-    r=$(echo $r | sed 's/LXXXX/XC/g' | sed 's/XXXX/XL/g');
-    r=$(echo $r | sed 's/VIIII/IX/g' | sed 's/IIII/IV/g');
+    r=${r//DCCCC/CM}; r=${r//CCCC/CD};
+    r=${r//LXXXX/XC}; r=${r//XXXX/XL};
+    r=${r//VIIII/IX}; r=${r//IIII/IV};
 
     echo $r;
     return 0;
@@ -73,10 +73,9 @@ roman_to_dec() {
     # …       IX      VIIII
     # …       IV      IIII
     # then convert: ((number of M * 1000) + (number of D * 500) + …)
-
-    r=$(echo $r | sed 's/CM/DCCCC/g' | sed 's/CD/CCCC/g');
-    r=$(echo $r | sed 's/XC/LXXXX/g' | sed 's/XL/XXXX/g');
-    r=$(echo $r | sed 's/IX/VIIII/g' | sed 's/IV/IIII/g');
+    r=${r//CM/DCCCC}; r=${r//CD/CCCC};
+    r=${r//XC/LXXXX}; r=${r//XL/XXXX};
+    r=${r//IX/VIIII}; r=${r//IV/IIII};
 
     for i in 1 5 10 50 100 500 1000; do
         tmp=${r//[^${ROMAN_N[$i]}]}; # all ${ROMAN_N[$i]} characters
