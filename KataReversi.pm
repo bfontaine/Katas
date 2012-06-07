@@ -35,21 +35,13 @@ sub get_moves {
 sub at {
     my ($board, $i, $j) = @_;
 
-    # the array is stocked left->right then top->bottom
-    # and we'd like to check it from left->right then bottom->top
     # $i : column, $j : line
-
-    my $indice = $i + $j * 8;
-
-    $$board[$indice];
+    $$board[$i + $j * 8];
 }
 
 # check if $player can play on the square [$i,$j] on the $board.
 sub can_play {
-    my $x = shift;
-    my $y = shift;
-    my $board = shift;
-    my $player = shift;
+    my ($x, $y, $board, $player) = @_;
 
     my $other = ($player eq "B") ? "W" : "B";
 
@@ -59,8 +51,8 @@ sub can_play {
     return 0 if ($square !~ /\./);
 
     # We check, for each direction (top-left, top, top-right, left, etc) if
-    # there is one or more pieces of other players followed by one (or more)
-    # piece(s) of the current player. If so, the current player can play here.
+    # there is one or more pieces of other players followed by one
+    # piece of the current player. If so, the current player can play here.
     my $i;
     my $j;
     my $s = "";
