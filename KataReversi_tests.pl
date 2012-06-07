@@ -139,7 +139,7 @@ EOF
 is( KataReversi::get_moves($test), undef,
     "With empty board, get_moves returns an empty array."); # = undef
 
-# --- initial board
+# --- initial board, black player
 $test = <<EOT
 ........
 ........
@@ -153,12 +153,54 @@ B
 EOT
 ;
 
-@moves = ('C5', 'D6', 'E3', 'F4');
+@moves = qw(C5 D6 E3 F4);
 
 isa_ok ( KataReversi::get_moves($test), 'ARRAY',
     "With good given value, get_moves(…) returns an array." );
 
 is_deeply( KataReversi::get_moves($test), \@moves,
-            "with the initial board, Black player can play in C5/D6/E3/F4");
+            "with the initial board, Black player can play in "
+            . join('/', @moves));
 
-# ---
+
+# --- initial board, white player
+$test = <<EOT
+........
+........
+........
+...BW...
+...WB...
+........
+........
+........
+W
+EOT
+;
+
+@moves = qw(C4 D3 E6 F5);
+
+is_deeply( KataReversi::get_moves($test), \@moves,
+            "with the initial board, White player can play in "
+            . join('/', @moves));
+
+
+# --- random board, white player
+$test = <<EOT
+........
+........
+...W.W..
+..BBWB..
+...WB...
+........
+........
+........
+W
+EOT
+;
+
+@moves = qw(B3 B4 B5 E6 F5 G4);
+
+is_deeply( KataReversi::get_moves($test), \@moves,
+            "with a random board, White player can play in "
+            . join('/', @moves));
+
