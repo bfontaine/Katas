@@ -93,7 +93,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataKarateChop_tests.lisp`
 
 
-[KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Working On)
+[KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Solved)
 ----------------------------
 
 - Language: Perl
