@@ -37,7 +37,7 @@ EOT
 
 isa_ok ( KataReversi::get_moves($test), 'ARRAY', "With good given value, get_moves(…) returns an array." );
 
-is ( KataReversi::get_moves($test), @moves,
+is_deeply( KataReversi::get_moves($test), \@moves,
             "with the initial board, Black player can play in C5/D6/E3/F4");
 
 # ---
