@@ -99,3 +99,11 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Language: Perl
 - Solution: `KataReversi.pl`
 - Tests: `KataReversi_tests.pl`
+
+
+[KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife) (Working On)
+----------------------------
+
+- Language: Groovy
+- Solution: `KataGameOfLife.groovy`
+- Tests: `KataGameOfLife_tests.groovy`
