@@ -67,7 +67,7 @@ class Generation {
             newBoard.push(line)
         }
 
-        new Generation(this.genNum, newBoard)
+        new Generation(this.genNum+1, newBoard)
     }
 
     String toString() {
