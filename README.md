@@ -101,9 +101,9 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataReversi_tests.pl`
 
 
-[KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife) (Working On)
+[KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife) (Solved)
 ----------------------------
 
 - Language: Groovy
 - Solution: `KataGameOfLife.groovy`
-- Tests: `KataGameOfLife_tests.groovy`
+- Tests: `KataGameOfLife_tests.groovy` (see also `junit_gameoflife.sh`)
