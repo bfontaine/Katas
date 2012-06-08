@@ -27,12 +27,13 @@ class Generation {
     private getNbNeighbours(int i, int j) {
         def n = 0
         
-        for (int x = i-1; x <= i+1; x++) {
-            for (int y = j-1; y <= j-1; y++) {
+        for (int x = i-1; x <= i+1 && x < this.lines; x++) {
+            if (x < 0) { continue }
+            for (int y = j-1; y <= j+1 && y < this.cols; y++) {
                 if ((x == i) && (y == j))
                     continue
 
-                if (this.board[x] == null)
+                if (y < 0)
                     continue
 
                 n += (this.board[x][y] && this.board[x][y] == "*") ? 1 : 0
