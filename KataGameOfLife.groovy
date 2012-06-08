@@ -1,26 +1,12 @@
 #! /usr/bin/groovy
 
 class KataGameOfLife {
-
     static parse(String str) {
         def lines = str.split("\n") 
         def num = (lines.first() =~ /Generation (\d+)/)[0][1]
 
         //new Generation(num.toInteger(), [""])
         new Generation(num.toInteger(), lines.drop(2) as List)
-    }
-
-    static unparse(Generation g) { g.toString() }
-
-    // just for tests
-    static void main(String[] args) {
-
-        def g = "Generation 1:\n4 8\n........\n........\n........\n........"
-
-        println(parse(g));
-        println unparse(parse(g))
-        println unparse(parse(g).nextGen())
-    
     }
 }
 
@@ -34,7 +20,7 @@ class Generation {
     }
 
     Generation nextGen() {
-
+        this;
     }
 
     String toString() {
