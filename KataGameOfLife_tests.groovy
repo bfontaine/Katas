@@ -9,4 +9,9 @@ class KataGameOfLife_tests {
     void parse_unparse_empty_gen() {
         assertEquals(empty_gen, KataGameOfLife.parse(empty_gen).toString());
     }
+
+    @Test
+    void empty_next_gen() {
+        assertEquals(empty_gen, KataGameOfLife.parse(empty_gen).nextGen().toString());
+    }
 }
