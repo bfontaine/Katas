@@ -114,4 +114,4 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 
 - Language: Smalltalk
 - Solution: `KataSecretSantas.st`
-- Tests: `KataSecretSantas_tests.st`
+- Tests: `KataSecretSantas_tests.st` (see also `gst_tests.sh`)
