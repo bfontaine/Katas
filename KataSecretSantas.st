@@ -45,7 +45,8 @@ Object subclass: Person [
                     ]
                 ]
             ]
-        ]
+        ].
+        ^p
     ]
 ]
 
