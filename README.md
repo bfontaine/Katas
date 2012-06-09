@@ -109,9 +109,9 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataGameOfLife_tests.groovy` (see also `junit_gameoflife.sh`)
 
 
-[KataYahtzee](http://codingdojo.org/cgi-bin/wiki.pl?KataYahtzee) (Working On)
+[KataSecretSantas](http://rubyquiz.com/quiz2.html) (Working On)
 ----------------------------
 
 - Language: Smalltalk
-- Solution: `KataYahtzee.st`
-- Tests: `KataYahtzee.st`
+- Solution: `KataSecretSantas.st`
+- Tests: `KataSecretSantas_tests.st`
