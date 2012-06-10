@@ -26,8 +26,8 @@ Object subclass: Person [
     sameFamily: other [ ^(self getLastName = other getLastName) ]
 
     canBeSantaOf: other [
-        (self sameFamily: other) ifTrue: [ ^false ]
-                                 ifFalse: [ ^(self ~= other) ].
+        (self sameFamily: other) ifFalse: [ ^(self ~= other) ].
+        ^false.
     ]
 
     Person class >> fromString: str [
