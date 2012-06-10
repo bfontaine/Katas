@@ -13,10 +13,10 @@ Object subclass: Person [
     getEmail    [ ^email ]
 
     = other [
-        (self getFirstName = other getFirstName) ifTrue: [
-            (self getLastName = other getLastName) ifTrue: [
-                (self getEmail = other getEmail) ifTrue: [
-                    ^true.
+        (other class = Person) ifTrue: [
+            (self getFirstName = other getFirstName) ifTrue: [
+                (self getLastName = other getLastName) ifTrue: [
+                    ^(self getEmail = other getEmail)      
                 ].
             ].
         ].
@@ -86,6 +86,33 @@ Object subclass: KataSecretSantas [
         ].
 
         self setPersons: p.
+   ]
+
+   makeSantas [
+        | santas |
+
+        santas := Dictionary new.
+        
+        persons collect: [ :p1 |
+            
+            santas at: p1 put: nil.
+
+            persons collect: [ :p2 |
+                " if p2 does not already have a Santa "
+                (santas values includes: p2) ifFalse: [
+                    " if p1 can be Santa of p2 "
+                    (p1 canBeSantaOf: p2) ifTrue: [
+                        santas at: p1 put: nil.
+                    ].
+                ].
+            ].
+
+        ].
+
+        " if not everybody is someone's Santa "
+        (santas values includes: nil) ifTrue: [ ^nil ].
+
+        ^santas
    ]
 
 ]
