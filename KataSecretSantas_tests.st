@@ -132,6 +132,20 @@ TestCase subclass: KataSecretSantasTestCase [
         self assert: (chuck_norris canBeSantaOf: p) = true.
     ]
 
+    " make Santas "
+
+    testOnePersonneSanta [
+        | s santas |
+        s := Set new.
+        s add: chuck_norris.
+
+        kss setPersons: s.
+
+        santas := kss makeSantas.
+
+        self assert: (santas = nil) = true.
+    ]
+
     " TODO "
 
 ]
