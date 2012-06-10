@@ -1,7 +1,7 @@
 
 TestCase subclass: KataSecretSantasTestCase [
 
-    | kss chuck_norris |
+    | kss chuck_norris foo_bar |
 
     setUp [
         kss := KataSecretSantas new.
@@ -10,6 +10,11 @@ TestCase subclass: KataSecretSantasTestCase [
         chuck_norris setFirstName: 'Chuck'
                    ; setLastName:  'Norris'
                    ; setEmail:     '<ch@ck.nr>'.
+
+        foo_bar := Person new.
+        foo_bar setFirstName: 'Foo'
+              ; setLastName:  'Bar'
+              ; setEmail:     '<foob@r.com>'.
     ]
 
     testNobody [
@@ -120,16 +125,8 @@ TestCase subclass: KataSecretSantasTestCase [
     ]
 
     testCanBeSantaOf [
-        | p |
-
-        p := Person new.
-
-        p setFirstName: 'Foo'
-        ; setLastName:  'Bar'
-        ; setEmail:     '<foob@r.com>'.
-
-        self assert: (p canBeSantaOf: chuck_norris) = true.
-        self assert: (chuck_norris canBeSantaOf: p) = true.
+        self assert: (foo_bar canBeSantaOf: chuck_norris) = true.
+        self assert: (chuck_norris canBeSantaOf: foo_bar) = true.
     ]
 
     " make Santas "
@@ -143,7 +140,21 @@ TestCase subclass: KataSecretSantasTestCase [
 
         santas := kss makeSantas.
 
-        self assert: (santas = nil) = true.
+        self assert: (santas isNil) = true.
+    ]
+
+    testTwoPersonnesSantas [
+        | s santas |
+        s := Set new.
+        s add: chuck_norris.
+        s add: foo_bar.
+
+        kss setPersons: s.
+
+        santas := kss makeSantas.
+
+        self assert: (santas isNil) = false.
+        self assert: (santas size) = 2.
     ]
 
     " TODO "
