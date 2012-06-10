@@ -143,8 +143,9 @@ TestCase subclass: KataSecretSantasTestCase [
         self assert: (santas isNil) = true.
     ]
 
-    testTwoPersonnesSantas [
+    testTwoPersonnesSantasOk [
         | s santas |
+        
         s := Set new.
         s add: chuck_norris.
         s add: foo_bar.
@@ -155,8 +156,109 @@ TestCase subclass: KataSecretSantasTestCase [
 
         self assert: (santas isNil) = false.
         self assert: (santas size) = 2.
+        self assert: (santas at: chuck_norris) = foo_bar.
+        self assert: (santas at: foo_bar) = chuck_norris.
     ]
 
-    " TODO "
+    testTwoPersonnesSantasNotOk [
+        | s santas |
 
+        foo_bar setLastName: (chuck_norris getLastName).
+
+        s := Set new.
+        s add: chuck_norris.
+        s add: foo_bar.
+
+        kss setPersons: s.
+
+        santas := kss makeSantas.
+
+        self assert: (santas isNil) = true.
+    ]
+
+    testFourPersonnesSantasOk [
+        | s santas fb2 cn2 |
+
+        " foo_bar and fb2 are from same family "
+        fb2 := foo_bar copy.
+        fb2 setFirstName: 'Fooo'.
+
+        " chuck_norris and cn2 are from same family "
+        cn2 := chuck_norris copy.
+        cn2 setFirstName: 'Chuckk'.
+
+        s := Set new.
+        s add: chuck_norris.
+        s add: foo_bar.
+        s add: cn2.
+        s add: fb2.
+
+        kss setPersons: s.
+
+        santas := kss makeSantas.
+
+        self assert: (santas isNil) = false.
+        self assert: (santas size) = 4.
+    ]
+
+    testThreePersonnesSantasOk [
+        | s santas p |
+
+        p := Person new.
+        p setFirstName: 'Mike'
+        ; setLastName: 'Ymouse'
+        ; setEmail: 'mm@disn.ey'.
+
+        s := Set new.
+        s add: chuck_norris.
+        s add: foo_bar.
+        s add: p.
+
+        kss setPersons: s.
+
+        santas := kss makeSantas.
+
+        self assert: (santas isNil) = false.
+        self assert: (santas size) = 3.
+    ]
+
+    testThreePersonnesSantasNotOk [
+        | s santas p |
+
+        p := Person new.
+        p setFirstName: 'Mike'
+        ; setLastName: (chuck_norris getLastName)
+        ; setEmail: 'mm@disn.ey'.
+
+        s := Set new.
+        s add: chuck_norris.
+        s add: foo_bar.
+        s add: p.
+
+        kss setPersons: s.
+
+        santas := kss makeSantas.
+
+        self assert: (santas isNil) = true.
+    ]
+
+    testSevenPersonsParseAndMakeSantasOk [
+        | str santas |
+
+        str := ('Luke Skywalker   <luke@theforce.net>\n',
+                'Leia Skywalker   <leia@therebellion.org>\n',
+                'Toula Portokalos <toula@manhunter.org>\n',
+                'Gus Portokalos   <gus@weareallfruit.net>\n',
+                'Bruce Wayne      <bruce@imbatman.com>\n',
+                'Virgil Brigman   <virgil@rigworkersunion.org>\n',
+                'Lindsey Brigman  <lindsey@iseealiens.net>').
+
+        kss parseNamesList: str.
+
+        santas := kss makeSantas.
+
+        self assert: (kss getPersons size) = 7.
+        self assert: (santas isNil) = false.
+        self assert: (santas size) = 7.
+    ]
 ]
