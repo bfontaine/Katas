@@ -12,7 +12,23 @@ Object subclass: Person [
     setEmail: e [ email := e. ]
     getEmail    [ ^email ]
 
+    = other [
+        (self getFirstName = other getFirstName) ifTrue: [
+            (self getLastName = other getLastName) ifTrue: [
+                (self getEmail = other getEmail) ifTrue: [
+                    ^true.
+                ].
+            ].
+        ].
+        ^false.
+    ]
+
     sameFamily: other [ ^(self getLastName = other getLastName) ]
+
+    canBeSantaOf: other [
+        (self sameFamily: other) ifTrue: [ ^false ]
+                                 ifFalse: [ ^(self ~= other) ].
+    ]
 
     Person class >> fromString: str [
         | p arr el |
