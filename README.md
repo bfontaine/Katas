@@ -109,7 +109,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataGameOfLife_tests.groovy` (see also `junit_gameoflife.sh`)
 
 
-[KataSecretSantas](http://rubyquiz.com/quiz2.html) (Working On)
+[KataSecretSantas](http://rubyquiz.com/quiz2.html) (Solved)
 ----------------------------
 
 - Language: Smalltalk
