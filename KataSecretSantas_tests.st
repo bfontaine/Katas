@@ -75,6 +75,40 @@ TestCase subclass: KataSecretSantasTestCase [
         self assert: (p1 sameFamily: p2) = true.
     ]
 
+    testSamePerson [
+        | p1 p2|
+
+        p1 := Person new.
+        p2 := Person new.
+
+        p1 setFirstName: 'Chuck'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        p2 setFirstName: 'Chuck'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        self assert: (p1 = p2) = true.
+    ]
+
+    testNotSamePerson [
+        | p1 p2|
+
+        p1 := Person new.
+        p2 := Person new.
+
+        p1 setFirstName: 'Chuck'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        p2 setFirstName: 'FakeChuck'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        self assert: (p1 = p2) = false.
+    ]
+
     " TODO "
 
 ]
