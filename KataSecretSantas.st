@@ -102,7 +102,7 @@ Object subclass: KataSecretSantas [
                 (santas values includes: p2) ifFalse: [
                     " if p1 can be Santa of p2 "
                     (p1 canBeSantaOf: p2) ifTrue: [
-                        santas at: p1 put: nil.
+                        santas at: p1 put: p2.
                     ].
                 ].
             ].
