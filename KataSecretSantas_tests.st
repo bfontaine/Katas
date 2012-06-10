@@ -1,10 +1,15 @@
 
 TestCase subclass: KataSecretSantasTestCase [
 
-    | kss |
+    | kss chuck_norris |
 
     setUp [
         kss := KataSecretSantas new.
+
+        chuck_norris := Person new.
+        chuck_norris setFirstName: 'Chuck'
+                   ; setLastName:  'Norris'
+                   ; setEmail:     '<ch@ck.nr>'.
     ]
 
     testNobody [
@@ -42,71 +47,89 @@ TestCase subclass: KataSecretSantasTestCase [
     " Persons "
 
     testNotSameFamily [
-        | p1 p2 |
+        | p |
         
-        p1 := Person new.
-        p2 := Person new.
+        p := Person new.
 
-        p1 setFirstName: 'Chuck'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<ch@ck.nr>'.
+        p setFirstName: 'Chuck'
+        ; setLastName:  'Noris'
+        ; setEmail:     '<ch@ck.nr>'.
 
-        p2 setFirstName: 'Chuck'
-         ; setLastName:  'Noris'
-         ; setEmail:     '<ch@ck.nr>'.
-
-        self assert: (p1 sameFamily: p2) = false.
+        self assert: (chuck_norris sameFamily: p) = false.
+        self assert: (p sameFamily: chuck_norris) = false.
     ]
 
     testSameFamily [
-        | p1 p2 |
+        | p |
         
-        p1 := Person new.
-        p2 := Person new.
+        p := Person new.
 
-        p1 setFirstName: 'Chuck'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<ch@ck.nr>'.
+        p setFirstName: 'FooBar'
+        ; setLastName:  (chuck_norris getLastName)
+        ; setEmail:     '<foob@r.nr>'.
 
-        p2 setFirstName: 'FooBar'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<foob@r.nr>'.
-
-        self assert: (p1 sameFamily: p2) = true.
+        self assert: (p sameFamily: chuck_norris) = true.
+        self assert: (chuck_norris sameFamily: p) = true.
     ]
 
     testSamePerson [
-        | p1 p2|
+        | p |
 
-        p1 := Person new.
-        p2 := Person new.
+        p := Person new.
 
-        p1 setFirstName: 'Chuck'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<ch@ck.nr>'.
+        p setFirstName: (chuck_norris getFirstName)
+        ; setLastName:  (chuck_norris getLastName)
+        ; setEmail:     (chuck_norris getEmail).
 
-        p2 setFirstName: 'Chuck'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<ch@ck.nr>'.
-
-        self assert: (p1 = p2) = true.
+        self assert: (p = chuck_norris) = true.
+        self assert: (chuck_norris = p) = true.
+        self assert: (p = p) = true.
     ]
 
     testNotSamePerson [
-        | p1 p2|
+        | p |
 
-        p1 := Person new.
-        p2 := Person new.
+        p := Person new.
 
-        p1 setFirstName: 'Chuck'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<ch@ck.nr>'.
+        p setFirstName: 'FakeChuck'
+        ; setLastName:  'Norris'
+        ; setEmail:     '<ch@ck.nr>'.
 
-        p2 setFirstName: 'FakeChuck'
-         ; setLastName:  'Norris'
-         ; setEmail:     '<ch@ck.nr>'.
+        self assert: (p = chuck_norris) = false.
+        self assert: (chuck_norris = p) = false.
+    ]
 
-        self assert: (p1 = p2) = false.
+    testCannotBeSantaOf [
+        | p |
+
+        p := Person new.
+
+        p setFirstName: (chuck_norris getFirstName)
+        ; setLastName:  (chuck_norris getLastName)
+        ; setEmail:     (chuck_norris getEmail).
+
+        self assert: (p canBeSantaOf: chuck_norris) = false.
+        self assert: (chuck_norris canBeSantaOf: p) = false.
+        self assert: (p canBeSantaOf: p) = false.
+
+        p setFirstName: 'Foo'
+        ; setEmail: '<foob@r.com>'.
+
+        self assert: (p canBeSantaOf: chuck_norris) = false.
+        self assert: (chuck_norris canBeSantaOf: p) = false.
+    ]
+
+    testCanBeSantaOf [
+        | p |
+
+        p := Person new.
+
+        p setFirstName: 'Foo'
+        ; setLastName:  'Bar'
+        ; setEmail:     '<foob@r.com>'.
+
+        self assert: (p canBeSantaOf: chuck_norris) = true.
+        self assert: (chuck_norris canBeSantaOf: p) = true.
     ]
 
     " TODO "
