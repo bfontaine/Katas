@@ -11,6 +11,8 @@ TestCase subclass: KataSecretSantasTestCase [
         self assert: (kss getPersons isNil).
     ]
 
+    " Parsing "
+
     testParseOneName [
         kss parseNamesList: 'Foo Bar <foobar@aol.com>'.
 
@@ -35,6 +37,42 @@ TestCase subclass: KataSecretSantasTestCase [
         kss parseNamesList: 'Bar Foo <barfoo@aol.com>\nChuck Norris <ch@ck.nr>'.
 
         self assert: (kss getPersons size) = 2.
+    ]
+
+    " Persons "
+
+    testNotSameFamily [
+        | p1 p2 |
+        
+        p1 := Person new.
+        p2 := Person new.
+
+        p1 setFirstName: 'Chuck'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        p2 setFirstName: 'Chuck'
+         ; setLastName:  'Noris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        self assert: (p1 sameFamily: p2) = false.
+    ]
+
+    testSameFamily [
+        | p1 p2 |
+        
+        p1 := Person new.
+        p2 := Person new.
+
+        p1 setFirstName: 'Chuck'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<ch@ck.nr>'.
+
+        p2 setFirstName: 'FooBar'
+         ; setLastName:  'Norris'
+         ; setEmail:     '<foob@r.nr>'.
+
+        self assert: (p1 sameFamily: p2) = true.
     ]
 
     " TODO "
