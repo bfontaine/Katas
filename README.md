@@ -124,4 +124,5 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 
 - Language: C++
 - Solution: `KataWordWrap.cpp`
-- Tests: `KataWordWrap_tests.cpp`
+- Tests: `KataWordWrap_tests.cpp` (using
+  [CppUnit](http://cppunit.sourceforge.net/doc/lastest/cppunit_cookbook.html))
