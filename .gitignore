@@ -3,3 +3,4 @@
 __pycache__
 *.jar
 lisp-unit.lisp
+*.o
