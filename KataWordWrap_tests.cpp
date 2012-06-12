@@ -1,6 +1,5 @@
 #include "KataWordWrap.h"
 #include <string>
-#include <cppunit/config/SourcePrefix.h>
 #include <cppunit/TestFixture.h>
 #include <cppunit/ui/text/TestRunner.h>
 #include <cppunit/extensions/HelperMacros.h>
