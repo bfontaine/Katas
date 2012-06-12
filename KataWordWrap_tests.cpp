@@ -9,9 +9,12 @@ using namespace std;
 class KataWordWrapTests : public CppUnit::TestFixture {
 
     CPPUNIT_TEST_SUITE(KataWordWrapTests);
+    
     CPPUNIT_TEST(testEnoughColumns);
     CPPUNIT_TEST(testExactNumberOfColumns);
     CPPUNIT_TEST(testNotEnoughColumns);
+    CPPUNIT_TEST(testBreakOnSpace);
+
     CPPUNIT_TEST_SUITE_END();
 
     private:
@@ -65,6 +68,22 @@ class KataWordWrapTests : public CppUnit::TestFixture {
                     two_words->compare(Wrapper::wrap(two_words, 0)) == 0);
             CPPUNIT_ASSERT(
                     one_sentence->compare(Wrapper::wrap(one_sentence, 0)) == 0);
+        }
+
+        void testBreakOnSpace() {
+            /*
+            empty_s      = new string("");
+            one_char     = new string("a");
+            two_words    = new string("hello world");
+            one_sentence = new string("Hello World, how are you?");
+            */
+        
+            CPPUNIT_ASSERT(
+                    empty_s->compare(Wrapper::wrap(empty_s, 6)) == 0);
+            CPPUNIT_ASSERT(
+                    one_char->compare(Wrapper::wrap(one_char, 6)) == 0);
+            CPPUNIT_ASSERT(
+                    Wrapper::wrap(two_words, 5).compare("hello\nworld") == 0);
         }
 
 
