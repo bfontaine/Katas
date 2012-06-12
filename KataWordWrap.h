@@ -7,7 +7,7 @@ using namespace std;
 
 class Wrapper {
     public:
-        static string wrap(string *s, int cols);
+        static string wrap(const string *s, int cols);
 };
 
 #endif
