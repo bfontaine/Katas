@@ -13,7 +13,7 @@ tests: ${TESTS}
 	./${TESTS}
 
 ${TESTS}: ${OBJ}
-	${CC} ${OPT} ${LINKS} $^ -o $@
+	${CC} ${OPT} $^ -o $@ ${LINKS}
 
 KataWordWrap.o: KataWordWrap.cpp KataWordWrap.h
 KataWordWrap_tests.o: KataWordWrap_tests.cpp
