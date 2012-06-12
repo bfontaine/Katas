@@ -11,6 +11,7 @@ class KataWordWrapTests : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(KataWordWrapTests);
     CPPUNIT_TEST(testEnoughColumns);
     CPPUNIT_TEST(testExactNumberOfColumns);
+    CPPUNIT_TEST(testNotEnoughColumns);
     CPPUNIT_TEST_SUITE_END();
 
     private:
@@ -53,6 +54,17 @@ class KataWordWrapTests : public CppUnit::TestFixture {
             CPPUNIT_ASSERT(
                     one_sentence->compare(Wrapper::wrap(one_sentence,
                                                        one_sentence->length())) == 0);
+        }
+
+        void testNotEnoughColumns() {
+            CPPUNIT_ASSERT(
+                    empty_s->compare(Wrapper::wrap(empty_s, 0)) == 0);
+            CPPUNIT_ASSERT(
+                    one_char->compare(Wrapper::wrap(one_char, 0)) == 0);
+            CPPUNIT_ASSERT(
+                    two_words->compare(Wrapper::wrap(two_words, 0)) == 0);
+            CPPUNIT_ASSERT(
+                    one_sentence->compare(Wrapper::wrap(one_sentence, 0)) == 0);
         }
 
 
