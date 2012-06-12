@@ -1,7 +1,8 @@
 
 CC=g++
-OPT=-Wall
-OBJ=KataWordWrap_tests.o KataWordWrap.o
+OPT=-Wall -pedantic -Wextra
+LINKS=-lcppunit -ldl
+OBJ=KataWordWrap.o KataWordWrap_tests.o
 TESTS=KataWordWrap_tests
 
 default: tests
@@ -11,8 +12,8 @@ default: tests
 tests: ${TESTS}
 	./${TESTS}
 
-KataWordWrap_tests: ${OBJ}
-	${CC} ${OPT} $^ -o $@
+${TESTS}: ${OBJ}
+	${CC} ${OPT} ${LINKS} $^ -o $@
 
 KataWordWrap.o: KataWordWrap.cpp KataWordWrap.h
 KataWordWrap_tests.o: KataWordWrap_tests.cpp
