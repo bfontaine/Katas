@@ -126,3 +126,13 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Solution: `KataWordWrap.cpp`
 - Tests: `KataWordWrap_tests.cpp` (using
   [CppUnit](http://cppunit.sourceforge.net/doc/lastest/cppunit_cookbook.html))
+
+
+[KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html) (Working
+On)
+----------------------------
+
+- Language: Forth
+- Solution: `KataDiversion.fth` 
+- Tests: `KataDiversion_tests.fth` 
+
