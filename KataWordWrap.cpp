@@ -7,29 +7,30 @@ string Wrapper::wrap(const string *s, int cols) {
         return *s;
     }
 
-    unsigned int i = 0;
-    int last_space = -1;
     string s2 = *s;
+
+    unsigned int i = 0;
+    unsigned int len = s2.length();
+    int last_space = -1;
 
     const string newline = "\n";
 
     /* FIXME */
-    for (; i < s2.length(); i++) {
-        if (i%cols == 0) {
+    for (; i < len; i++) {
+        if ((i%cols == 0) && (i!=0)) {
             if (::isspace(s2[i])) {
                 s2[i] = '\n';
             } else if (last_space == -1) {
                 return s2;
             } else {
                 s2.insert(last_space, newline);
+                len = s2.length();
             }
             last_space = -1;
         }
         else if (::isspace(s2[i])) {
             last_space = i;
         }
-
-        
     }
 
     return s2;
