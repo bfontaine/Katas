@@ -119,7 +119,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataSecretSantas_tests.st` (see also `gst_tests.sh`)
 
 
-[KataWordWrap](http://codingdojo.org/cgi-bin/wiki.pl?KataWordWrap) (Working On)
+[KataWordWrap](http://codingdojo.org/cgi-bin/wiki.pl?KataWordWrap) (Solved)
 ----------------------------
 
 - Language: C++
