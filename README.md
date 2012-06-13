@@ -128,8 +128,7 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
   [CppUnit](http://cppunit.sourceforge.net/doc/lastest/cppunit_cookbook.html))
 
 
-[KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html) (Working
-On)
+[KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html) (Working On)
 ----------------------------
 
 - Language: Forth
