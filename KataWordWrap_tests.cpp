@@ -13,9 +13,10 @@ class KataWordWrapTests : public CppUnit::TestFixture {
     CPPUNIT_TEST(testEnoughColumns);
     CPPUNIT_TEST(testExactNumberOfColumns);
     CPPUNIT_TEST(testZeroColumns);
-    CPPUNIT_TEST(testNotEnoughColumns);
+    CPPUNIT_TEST(testBreakBeforeSpace);
     CPPUNIT_TEST(testBreakOnSpace);
     CPPUNIT_TEST(testBreakAfterSpace);
+    CPPUNIT_TEST(testRandomNumberOfColumns);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -24,7 +25,8 @@ class KataWordWrapTests : public CppUnit::TestFixture {
                *one_char,
                *two_words,
                *three_words,
-               *one_sentence;
+               *one_sentence,
+               *big_sentence;
         
     public:
         void setUp() {
@@ -33,6 +35,9 @@ class KataWordWrapTests : public CppUnit::TestFixture {
             two_words    = new string("hello world");
             three_words  = new string("hello big world");
             one_sentence = new string("Hello World, how are you?");
+            big_sentence = new string( (string)"hello world, how are you? i'm"
+                                      +(string)" fine, thank you, the sky is"
+                                      +(string)" blue, the sun is yellow.");
         }
 
         void tearDown() {
@@ -41,6 +46,7 @@ class KataWordWrapTests : public CppUnit::TestFixture {
             delete two_words;
             delete three_words;
             delete one_sentence;
+            delete big_sentence;
         }
 
         void testEnoughColumns() {
@@ -53,7 +59,7 @@ class KataWordWrapTests : public CppUnit::TestFixture {
             CPPUNIT_ASSERT(
                     three_words->compare(Wrapper::wrap(three_words, 42)) == 0);
             CPPUNIT_ASSERT(
-                    one_sentence->compare(Wrapper::wrap(one_sentence, 42)) == 0);
+                  one_sentence->compare(Wrapper::wrap(one_sentence, 42)) == 0);
         }
 
         void testExactNumberOfColumns() {
@@ -63,13 +69,13 @@ class KataWordWrapTests : public CppUnit::TestFixture {
                     one_char->compare(Wrapper::wrap(one_char, 1)) == 0);
             CPPUNIT_ASSERT(
                     two_words->compare(Wrapper::wrap(two_words,
-                                                    two_words->length())) == 0);
+                                                   two_words->length())) == 0);
             CPPUNIT_ASSERT(
                     three_words->compare(Wrapper::wrap(three_words,
-                                                       three_words->length())) == 0);
+                                                 three_words->length())) == 0);
             CPPUNIT_ASSERT(
                     one_sentence->compare(Wrapper::wrap(one_sentence,
-                                                       one_sentence->length())) == 0);
+                                                one_sentence->length())) == 0);
         }
 
         void testZeroColumns() {
@@ -82,28 +88,46 @@ class KataWordWrapTests : public CppUnit::TestFixture {
             CPPUNIT_ASSERT(
                     three_words->compare(Wrapper::wrap(three_words, 0)) == 0);
             CPPUNIT_ASSERT(
-                    one_sentence->compare(Wrapper::wrap(one_sentence, 0)) == 0);
+                   one_sentence->compare(Wrapper::wrap(one_sentence, 0)) == 0);
         }
 
-        void testNotEnoughColumns() {
+        void testBreakBeforeSpace() {
             CPPUNIT_ASSERT(
-                    two_words->compare(Wrapper::wrap(two_words, 3)) == 0);
+                 Wrapper::wrap(two_words, 4).compare("hello\nworld") == 0);
             CPPUNIT_ASSERT(
-                    three_words->compare(Wrapper::wrap(three_words, 4)) == 0);
+              Wrapper::wrap(three_words, 2).compare("hello\nbig\nworld") == 0);
             CPPUNIT_ASSERT(
-                    one_sentence->compare(Wrapper::wrap(one_sentence, 2)) == 0);
+                 Wrapper::wrap(one_sentence, 2)
+                               .compare("Hello\nWorld,\nhow\nare\nyou?") == 0);
         }
 
         void testBreakOnSpace() {
             CPPUNIT_ASSERT(
-                    Wrapper::wrap(two_words, 5).compare("hello\nworld") == 0);
+                     Wrapper::wrap(two_words, 5).compare("hello\nworld") == 0);
         }
 
         void testBreakAfterSpace() {
             CPPUNIT_ASSERT(
                  Wrapper::wrap(two_words, 7).compare("hello\nworld") == 0);
             CPPUNIT_ASSERT(
-                 Wrapper::wrap(three_words, 7).compare("hello\nbig\nworld") == 0);
+              Wrapper::wrap(three_words, 7).compare("hello\nbig\nworld") == 0);
+        }
+
+        void testRandomNumberOfColumns() {
+            CPPUNIT_ASSERT(
+                    Wrapper::wrap(two_words, 8).compare("hello\nworld") == 0);
+
+            CPPUNIT_ASSERT(
+              Wrapper::wrap(three_words, 10).compare("hello big\nworld") == 0);
+
+            CPPUNIT_ASSERT(
+                    Wrapper::wrap(one_sentence, 11)
+                                 .compare("Hello\nWorld, how\nare you?") == 0);
+
+            CPPUNIT_ASSERT(Wrapper::wrap(big_sentence, 10)
+                    .compare( (string)"hello\nworld, how\nare you?\ni'm"
+                             +(string)" fine,\nthank you,\nthe sky is"
+                             +(string)"\nblue, the\nsun is\nyellow."));
         }
 
 };
