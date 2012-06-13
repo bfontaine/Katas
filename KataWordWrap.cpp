@@ -11,21 +11,34 @@ string Wrapper::wrap(const string *s, int cols) {
 
     unsigned int i = 0;
     unsigned int len = s2.length();
+    unsigned int lastBreak = 0;
     int last_space = -1;
 
-    const string newline = "\n";
+    bool breakOnNextSpace = false;
 
-    /* FIXME */
+    const char newline = '\n';
+
     for (; i < len; i++) {
-        if ((i%cols == 0) && (i!=0)) {
+
+        if (breakOnNextSpace && ::isspace(s2[i])) {
+            s2[i] = newline;
+            lastBreak = i;
+            breakOnNextSpace = false;
+        }
+        else if (((i-lastBreak)%cols == 0) && (i!=0)) {
+
             if (::isspace(s2[i])) {
-                s2[i] = '\n';
-            } else if (last_space == -1) {
-                return s2;
-            } else {
-                s2.insert(last_space, newline);
-                len = s2.length();
+                s2[i] = newline;
+                lastBreak = i;
             }
+            else if (last_space == -1) {
+                breakOnNextSpace = true;
+            }
+            else {
+                s2[last_space] = newline;
+                lastBreak = last_space;
+            }
+
             last_space = -1;
         }
         else if (::isspace(s2[i])) {
