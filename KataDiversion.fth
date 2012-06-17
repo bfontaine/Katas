@@ -7,5 +7,8 @@
 : ?TWO-ADJACENT-1-BITS ( n -- bool ) ;
 
 \ return the maximum number which can be made with N (given) bits
-: ?MAX-NB ( n -- m ) DUP IF 2 SWAP ** NIP THEN ;
-
+: ?MAX-NB ( n -- m ) DUP 2DUP ABS <> IF 0 NIP
+                                     ELSE 
+                                         IF 2 SWAP ** NIP
+                                         THEN
+                                     THEN ;
