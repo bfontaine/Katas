@@ -1,7 +1,8 @@
 *~
-*.swp
-__pycache__
 *.jar
-lisp-unit.lisp
 *.o
+*.swp
+*.swo
 KataWordWrap_tests
+lisp-unit.lisp
+__pycache__
