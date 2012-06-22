@@ -15,6 +15,24 @@
 \ test if the top is a negative number
 : ?NEG ( n -- bool ) DUP 0= IF -1 ELSE DUP ABS <> THEN ;
 
+\ log2 (integer)
+: LOG2 ( n -- n log2_n ) DUP 1 < IF 1 ABORT" Log2 need a positive value."
+                                 ELSE DUP 1 = IF 0
+                                              ELSE
+                                                  1 >R
+                                                  BEGIN ( n |R: i)
+                                                      DUP DUP 2 I ( n n n 2 i |R: i)
+                                                      ** ( n n n 2**i )
+                                                      - ( n n n-2**i )
+                                                      2 * ( n n 2*[n-2**i])
+                                                      R> 1 + >R ( … |R: i+1)
+                                                      > ( n n>2*[n-2**i] )
+                                                  UNTIL
+                                                  R> 1 -
+                                              THEN
+                                 THEN ;
+                       
+
 \ -- kata
 
 \ test if the given N has two adjacent 1 bits
