@@ -31,7 +31,20 @@
                                                   R> 1 -
                                               THEN
                                  THEN ;
-                       
+
+\ decimal to binary
+\ e.g. : ( 11 -- 1 0 1 1 )
+\ FIXME n DEC2BIN seems to give the binary value of n-1
+: DEC2BIN ( n -- n1 n2 n3 … ) DUP LOG2 2 SWAP ** >R ( n |R: X = 2 ** n.log2 )
+                                BEGIN
+                                    DUP I - 0 > IF 1 SWAP I - ( 1 n-X )
+                                                ELSE 0 SWAP   ( 0 n )
+                                                THEN
+                                    I 1 =
+                                    R> 2 / >R ( … | X/2 )
+                                UNTIL
+                                R> 2DROP
+                                ;
 
 \ -- kata
 
