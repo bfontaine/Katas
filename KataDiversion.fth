@@ -45,12 +45,22 @@
                                    THEN
                                 ;
 
+
 \ -- kata
 
 \ test if the given N has two adjacent 1 bits
-\ e.g. : 1011 -> -1
-\        1001 -> 0
-: ?TWO-ADJACENT-1-BITS ( n -- bool ) ( TODO ) ;
+\ e.g. : 11 -> 1011 -> -1
+\         9 -> 1001 ->  0
+: ?TWO-ADJACENT-1-BITS ( … n -- bool ) ( FIXME ) DUP DEC2BIN ( n n_bin )
+                                                 0 >R
+                                                 BEGIN
+                                                   1 = IF I 1 = IF R> EMPTY 0 -1 >R
+                                                                ELSE R> DROP 1 >R -1
+                                                                THEN
+                                                       ELSE 0 >R -1
+                                                       THEN
+                                                 UNTIL
+                                                 R> ;
 
 \ return the maximum number which can be made with N (given number) bits
 : ?MAX-NB ( n -- m ) DUP ?NEG IF DROP 0 ( 0 )
