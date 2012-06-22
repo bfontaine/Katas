@@ -16,7 +16,7 @@
 : ?NEG ( n -- bool ) DUP 0= IF -1 ELSE DUP ABS <> THEN ;
 
 \ log2 (integer)
-: LOG2 ( n -- n log2_n ) DUP 1 < IF 1 ABORT" Log2 need a positive value."
+: LOG2 ( n -- log2_n ) DUP 1 < IF 1 ABORT" Log2 need a positive value."
                                  ELSE DUP 1 = IF 0
                                               ELSE
                                                   1 >R
@@ -30,7 +30,7 @@
                                                   UNTIL
                                                   R> 1 -
                                               THEN
-                                 THEN ;
+                                 THEN NIP ;
 
 \ decimal to binary
 \ e.g. : ( 11 -- 1 0 1 1 )
