@@ -17,33 +17,33 @@
 
 \ log2 (integer)
 : LOG2 ( n -- log2_n ) DUP 1 < IF 1 ABORT" Log2 need a positive value."
-                                 ELSE DUP 1 = IF 0
-                                              ELSE
-                                                  1 >R
-                                                  BEGIN ( n |R: i)
-                                                      DUP DUP 2 I ( n n n 2 i |R: i)
-                                                      ** ( n n n 2**i )
-                                                      - ( n n n-2**i )
-                                                      2 * ( n n 2*[n-2**i])
-                                                      R> 1 + >R ( … |R: i+1)
-                                                      > ( n n>2*[n-2**i] )
-                                                  UNTIL
-                                                  R> 1 -
-                                              THEN
-                                 THEN NIP ;
+                               ELSE DUP 1 = IF 0
+                                            ELSE
+                                                1 >R
+                                                BEGIN ( n |R: i=1)
+                                                    DUP DUP 2 I ** - 2 *
+                                                    ( n n 2*[n-2**i])
+                                                    R> 1 + >R ( … |R: i+1)
+                                                    > ( n n>2*[n-2**i] )
+                                                UNTIL
+                                                R> 1 -
+                                            THEN
+                               THEN NIP ;
 
 \ decimal to binary
 \ e.g. : ( 11 -- 1 0 1 1 )
 \ FIXME n DEC2BIN seems to give the binary value of n-1
-: DEC2BIN ( n -- n1 n2 n3 … ) DUP LOG2 2 SWAP ** >R ( n |R: X = 2 ** n.log2 )
-                                BEGIN
-                                    DUP I - 0 > IF 1 SWAP I - ( 1 n-X )
-                                                ELSE 0 SWAP   ( 0 n )
-                                                THEN
-                                    I 1 =
-                                    R> 2 / >R ( … | X/2 )
-                                UNTIL
-                                R> 2DROP
+: DEC2BIN ( n -- n1 n2 n3 … ) DUP 0 <> IF
+                                        LOG2 2 SWAP ** >R ( n |R: X=2 ** n.log2 )
+                                        BEGIN
+                                            DUP I - 0 > IF 1 SWAP I - ( 1 n-X )
+                                                        ELSE 0 SWAP   ( 0 n )
+                                                        THEN
+                                            I 1 =
+                                            R> 2 / >R ( … | X/2 )
+                                        UNTIL
+                                        R> 2DROP
+                                   THEN
                                 ;
 
 \ -- kata
