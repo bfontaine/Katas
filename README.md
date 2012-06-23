@@ -135,3 +135,10 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Solution: `KataDiversion.fth` 
 - Tests: `KataDiversion_tests.fth` 
 
+
+[KataAnimalQuiz](http://rubyquiz.com/quiz15.html) (Working On)
+----------------------------
+
+- Language: Self
+- Solution: `KataAnimalQuiz.self`
+- Tests: `KataAnimalQuiz_tests.self`
