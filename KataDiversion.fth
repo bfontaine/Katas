@@ -58,6 +58,8 @@
                             2 =
                        THEN ;
 
+: ?NOT-TWO-ADJACENT-1-BITS ( n -- bool ) ?TWO-ADJACENT-1-BITS INVERT ;
+
 \ return the maximum number which can be made with N (given number) bits
 : ?MAX-NB ( n -- m ) DUP 1 < IF DROP 0 ( 0 )
                               ELSE 
