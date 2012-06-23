@@ -16,6 +16,8 @@
 : ?NEG ( n -- bool ) DUP 0= IF -1 ELSE DUP ABS <> THEN ;
 
 \ log2 (integer)
+\ TODO remove this word, and add a new word
+\ which compute the value of ( n LOG2 2 SWAP ** )
 : LOG2 ( n -- log2_n ) DUP 1 < IF 1 ABORT" Log2 need a positive value."
                                ELSE DUP 1 = IF 0
                                             ELSE
@@ -30,45 +32,35 @@
                                             THEN
                                THEN NIP ;
 
-\ decimal to binary
-\ e.g. : ( 11 -- 1 0 1 1 )
-: DEC2BIN ( n -- n1 n2 n3 … ) DUP DUP 0 <> IF
-                                        LOG2 2 SWAP ** >R ( n |R: X=2 ** n.log2 )
-                                        BEGIN
-                                            DUP I - 0 >= IF 1 SWAP I - ( 1 n-X )
-                                                         ELSE 0 SWAP   ( 0 n )
-                                                         THEN
-                                            I 1 =
-                                            R> 2 / >R ( … | X/2 )
-                                        UNTIL
-                                        R> 2DROP
-                                   THEN
-                                ;
-
-
 \ -- kata
 
 \ test if the given N has two adjacent 1 bits
 \ e.g. : 11 -> 1011 -> -1
 \         9 -> 1001 ->  0
-: ?TWO-ADJACENT-1-BITS ( n -- bool ) 0 SWAP DUP DUP 0 <> IF ( _ n n )
-                                        LOG2 2 SWAP ** >R ( _ n |R: X=2 ** n.log2 )
-                                        BEGIN
-                                            DUP I - ( _ n n-X )  0 >= IF 
-                                                                        SWAP DUP 1 = IF ( n _ ) 1+ SWAP ( 2 n )
-                                                                                     ELSE ( n _ ) 1+ SWAP ( _ n ) I -
-                                                                                     THEN
-                                                                      ELSE NIP 0 SWAP ( 0 n ) 
-                                                                      THEN
-                                            ( _ n )
-                                            OVER ( _ n _ )
-                                            2 = 
-                                            I 1 = OR
-                                            R> 2 / >R ( … | X/2 )
-                                        UNTIL
-                                        R> 2DROP
-                                        2 =
-                                       THEN ;
+: ?TWO-ADJACENT-1-BITS ( n -- bool )
+    \ the word uses the following algorithm :
+    \ (stack|return stack)
+    \ ( A N | X )  A: 0, X: N LOG2
+    \ loop: if N-X > 0 then A++ else A=0 ; X /= 2
+    \       return -1 if A=2
+    \       if X=1 end loop and return 0
+    0 SWAP DUP DUP 0 <> IF
+                            LOG2 2 SWAP ** >R
+                            BEGIN
+                                DUP I - 0 >= IF 
+                                                SWAP DUP 1 = IF 1+ SWAP
+                                                             ELSE 1+ SWAP I -
+                                                            THEN
+                                             ELSE NIP 0 SWAP
+                                             THEN
+                                OVER
+                                2 =
+                                I 1 = OR
+                                R> 2 / >R
+                            UNTIL
+                            R> 2DROP
+                            2 =
+                       THEN ;
 
 \ return the maximum number which can be made with N (given number) bits
 : ?MAX-NB ( n -- m ) DUP ?NEG IF DROP 0 ( 0 )
