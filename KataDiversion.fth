@@ -51,16 +51,24 @@
 \ test if the given N has two adjacent 1 bits
 \ e.g. : 11 -> 1011 -> -1
 \         9 -> 1001 ->  0
-: ?TWO-ADJACENT-1-BITS ( … n -- bool ) ( FIXME ) DUP DEC2BIN ( n n_bin )
-                                                 0 >R
-                                                 BEGIN
-                                                   1 = IF I 1 = IF R> EMPTY 0 -1 >R
-                                                                ELSE R> DROP 1 >R -1
-                                                                THEN
-                                                       ELSE 0 >R -1
-                                                       THEN
-                                                 UNTIL
-                                                 R> ;
+: ?TWO-ADJACENT-1-BITS ( n -- bool ) 0 SWAP DUP DUP 0 <> IF ( _ n n )
+                                        LOG2 2 SWAP ** >R ( _ n |R: X=2 ** n.log2 )
+                                        BEGIN
+                                            DUP I - ( _ n n-X )  0 >= IF 
+                                                                        SWAP DUP 1 = IF ( n _ ) 1+ SWAP ( 2 n )
+                                                                                     ELSE ( n _ ) 1+ SWAP ( _ n ) I -
+                                                                                     THEN
+                                                                      ELSE NIP 0 SWAP ( 0 n ) 
+                                                                      THEN
+                                            ( _ n )
+                                            OVER ( _ n _ )
+                                            2 = 
+                                            I 1 = OR
+                                            R> 2 / >R ( … | X/2 )
+                                        UNTIL
+                                        R> 2DROP
+                                        2 =
+                                       THEN ;
 
 \ return the maximum number which can be made with N (given number) bits
 : ?MAX-NB ( n -- m ) DUP ?NEG IF DROP 0 ( 0 )
