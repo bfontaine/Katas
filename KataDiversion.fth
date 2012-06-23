@@ -45,7 +45,7 @@
                             BEGIN
                                 DUP I - 0 >= IF 
                                                 SWAP DUP 1 = IF 1+ SWAP
-                                                             ELSE 1+ SWAP I -
+                                                             ELSE DROP 1 SWAP I -
                                                             THEN
                                              ELSE NIP 0 SWAP
                                              THEN
@@ -56,17 +56,24 @@
                             UNTIL
                             R> 2DROP
                             2 <>
-                       THEN ;
+                        ELSE 2DROP INVERT
+                        THEN ;
 
 \ return the maximum number which can be made with N (given number) bits
-: ?MAX-NB ( n -- m ) DUP 1 < IF DROP 0 ( 0 )
-                              ELSE 
-                                  DUP IF DUP 2 SWAP ** NIP ( 2**n )
-                                  THEN
-                              THEN ;
+: MAX-NB ( n -- m ) DUP 1 < IF DROP 0 ( 0 )
+                            ELSE 
+                                DUP IF DUP 2 SWAP ** NIP 1 - ( 2**n - 1 )
+                                    THEN
+                            THEN ;
 
 
 \ return the number of numbers which can be made with N (given number) bits
 \ or less, and which have not two adjacent 1 bits.
 \ see http://www.codekata.com/2007/01/code_kata_fifte.html
-: ?HOW-MANY-NB-NOT-TWO-ADJACENT-1-BITS ( n -- m ) ( TODO ) ;
+: HOW-MANY-NB-NOT-TWO-ADJACENT-1-BITS ( n -- m )
+       DUP 1 < IF DUP 0
+               ELSE
+                   0 SWAP
+                   MAX-NB 1 + 0 DO I ?NOT-TWO-ADJACENT-1-BITS - LOOP
+               THEN ;
+
