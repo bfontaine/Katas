@@ -12,9 +12,6 @@
 \ power
 : ** ( n1 n2 -- n1_pow_n2 ) 1 SWAP ?DUP IF 0 DO OVER * LOOP THEN NIP ;
 
-\ test if the top is a negative number
-: ?NEG ( n -- bool ) 1 < ;
-
 \ compute the highest power of 2 below N.
 \ e.g. : 31 -> 16, 4 -> 4
 : MAXPOW2 ( n -- log2_n ) DUP 1 < IF 1 ABORT" Maxpow2 need a positive value."
@@ -62,7 +59,7 @@
                        THEN ;
 
 \ return the maximum number which can be made with N (given number) bits
-: ?MAX-NB ( n -- m ) DUP ?NEG IF DROP 0 ( 0 )
+: ?MAX-NB ( n -- m ) DUP 1 < IF DROP 0 ( 0 )
                               ELSE 
                                   DUP IF DUP 2 SWAP ** NIP ( 2**n )
                                   THEN
