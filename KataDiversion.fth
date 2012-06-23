@@ -15,20 +15,19 @@
 \ test if the top is a negative number
 : ?NEG ( n -- bool ) DUP 0= IF -1 ELSE DUP ABS <> THEN ;
 
-\ log2 (integer)
-\ TODO remove this word, and add a new word
-\ which compute the value of ( n LOG2 2 SWAP ** )
-: LOG2 ( n -- log2_n ) DUP 1 < IF 1 ABORT" Log2 need a positive value."
-                               ELSE DUP 1 = IF 0
+\ compute the highest power of 2 below N.
+\ e.g. : 31 -> 16, 4 -> 4
+: MAXPOW2 ( n -- log2_n ) DUP 1 < IF 1 ABORT" Maxpow2 need a positive value."
+                               ELSE DUP 1 = IF 1
                                             ELSE
                                                 1 >R
                                                 BEGIN ( n |R: i=1)
-                                                    DUP DUP 2 I ** - 2 *
-                                                    ( n n 2*[n-2**i])
-                                                    R> 1 + >R ( … |R: i+1)
-                                                    > ( n n>2*[n-2**i] )
+                                                    DUP DUP I - 2 *
+                                                    ( n n 2*[n-i])
+                                                    R> 2 * >R ( … |R: i*2)
+                                                    > ( n n>2*[n-i] )
                                                 UNTIL
-                                                R> 1 -
+                                                R> 2 /
                                             THEN
                                THEN NIP ;
 
@@ -45,7 +44,7 @@
     \       return -1 if A=2
     \       if X=1 end loop and return 0
     0 SWAP DUP DUP 0 <> IF
-                            LOG2 2 SWAP ** >R
+                            MAXPOW2 >R
                             BEGIN
                                 DUP I - 0 >= IF 
                                                 SWAP DUP 1 = IF 1+ SWAP
