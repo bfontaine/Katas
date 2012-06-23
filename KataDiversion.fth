@@ -33,13 +33,13 @@
 \ test if the given N has two adjacent 1 bits
 \ e.g. : 11 -> 1011 -> -1
 \         9 -> 1001 ->  0
-: ?TWO-ADJACENT-1-BITS ( n -- bool )
+: ?NOT-TWO-ADJACENT-1-BITS ( n -- bool )
     \ the word uses the following algorithm :
     \ (stack|return stack)
     \ ( A N | X )  A: 0, X: N LOG2
     \ loop: if N-X > 0 then A++ else A=0 ; X /= 2
-    \       return -1 if A=2
-    \       if X=1 end loop and return 0
+    \       return 0 if A=2
+    \       if X=1 end loop and return -1
     0 SWAP DUP DUP 0 <> IF
                             MAXPOW2 >R
                             BEGIN
@@ -55,10 +55,8 @@
                                 R> 2 / >R
                             UNTIL
                             R> 2DROP
-                            2 =
+                            2 <>
                        THEN ;
-
-: ?NOT-TWO-ADJACENT-1-BITS ( n -- bool ) ?TWO-ADJACENT-1-BITS INVERT ;
 
 \ return the maximum number which can be made with N (given number) bits
 : ?MAX-NB ( n -- m ) DUP 1 < IF DROP 0 ( 0 )
