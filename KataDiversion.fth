@@ -13,7 +13,7 @@
 : ** ( n1 n2 -- n1_pow_n2 ) 1 SWAP ?DUP IF 0 DO OVER * LOOP THEN NIP ;
 
 \ test if the top is a negative number
-: ?NEG ( n -- bool ) DUP 0= IF -1 ELSE DUP ABS <> THEN ;
+: ?NEG ( n -- bool ) 1 < ;
 
 \ compute the highest power of 2 below N.
 \ e.g. : 31 -> 16, 4 -> 4
