@@ -141,4 +141,5 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 
 - Language: Lua
 - Solution: `KataAnimalQuiz.lua`
-- Tests: `KataAnimalQuiz_tests.lua`
+- Tests: `KataAnimalQuiz_tests.lua` (using
+  [lunit](https://github.com/dcurrie/lunit))
