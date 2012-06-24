@@ -6,3 +6,5 @@
 KataWordWrap_tests
 lisp-unit.lisp
 __pycache__
+lunit*
+atexit.lua
