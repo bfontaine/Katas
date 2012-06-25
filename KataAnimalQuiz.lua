@@ -1,12 +1,12 @@
 #! /usr/bin/lua
 
 -- utils
-function read_yn()
+function yes()
     local resp
     repeat
         resp = io.read()
     until (resp == 'y') or (resp == 'n')
-    return resp
+    return (resp == 'y')
 end
 
 -- Animal ---------------------
@@ -41,7 +41,7 @@ end
 function Question:ask()
     print(self.string .. '? (y/n) ')
 
-    if (read_yn() == 'y') then
+    if yes() then
         return self.y_resp
     end
     return self.n_resp
@@ -104,7 +104,7 @@ function Quiz:answer()
     print("It's a " .. self.current_node.value.name .. ".")
     print("Am I right? (y/n) ")
 
-    if (read_yn() == 'n') then
+    if not yes() then
         local old_value = self.current_node.value
         print("What were you thinking of? ")
         local good_value = io.read()
@@ -112,14 +112,16 @@ function Quiz:answer()
     end
 
     print("Play again? (y/n) ")
-    if (read_yn() == 'y') then
+    if yes() then
         Quiz.start(self)
     end
+
+    return true
 end
 
 function Quiz:next()
     if (self.current_node.value.is_a == 'Animal') then
-        Quiz.answer(self)
+        return Quiz.answer(self)
     else -- if self.current_node.value.is_a == 'Question'
         self.current_node = Quiz.ask(self)
     end
@@ -132,7 +134,7 @@ end
 function Quiz:start()
     Quiz.init(self)
     print("Think of an animal…\n")
-    Quiz.next(self)
+    return Quiz.next(self)
 end
 
 -------------------------------
