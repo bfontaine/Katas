@@ -11,6 +11,8 @@ function setup()
     -- quiz = Quiz.create('...')
 end
 
+-- initialization
+
 function test_init_nil()
     assert_nil(Quiz.create())
 end
@@ -28,3 +30,5 @@ function test_init_ok()
     assert_equal('dog', quiz.root.value.name)
     assert_equal('Animal', quiz.root.value.is_a)
 end
+
+-- 
