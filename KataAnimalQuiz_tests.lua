@@ -1,33 +1,30 @@
 #! /usr/bin/lua
 
-local quiz = require 'KataAnimalQuiz'
+local Quiz = require 'KataAnimalQuiz'
 local lunit = require 'lunitx'
 
 _ENV = lunit.module('enhanced','seeall')
 
+local quiz
+
 function setup()
-    quiz.init()
+    -- quiz = Quiz.create('...')
 end
 
 function test_init_nil()
-    local animals = quiz.getAnimals()
-
-    assert_table(animals)
-    assert_equal(0, #animals)
+    assert_nil(Quiz.create())
 end
 
 function test_init_number()
-    quiz.init(42)
-    local animals = quiz.getAnimals()
-
-    assert_table(animals)
-    assert_equal(0, #animals)
+    assert_nil(Quiz.create(42))
 end
 
 function test_init_ok()
-    quiz.init('dog')
-    local animals = quiz.getAnimals()
+    quiz = Quiz.create('dog')
 
-    assert_table(animals)
-    assert_equal('dog', animals[1])
+    assert_table(quiz)
+    assert_table(quiz.root)
+    assert_table(quiz.root.value)
+    assert_equal('dog', quiz.root.value.name)
+    assert_equal('Animal', quiz.root.value.is_a)
 end
