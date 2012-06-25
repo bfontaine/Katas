@@ -97,7 +97,7 @@ function Quiz.create_question(q_string, y_resp, n_resp)
 end
 
 function Quiz:ask()
-    return self.current_node.ask()
+    return Question.ask(self.current_node.value)
 end
 
 function Quiz:answer()
@@ -106,20 +106,22 @@ function Quiz:answer()
 
     if (read_yn() == 'n') then
         local old_value = self.current_node.value
+        print("What were you thinking of? ")
+        local good_value = io.read()
         -- TODO
     end
 
     print("Play again? (y/n) ")
     if (read_yn() == 'y') then
-        self.start()
+        Quiz.start(self)
     end
 end
 
 function Quiz:next()
     if (self.current_node.value.is_a == 'Animal') then
-        self.answer()
+        Quiz.answer(self)
     else -- if self.current_node.value.is_a == 'Question'
-        self.current_node = self.ask()
+        self.current_node = Quiz.ask(self)
     end
 end
 
@@ -128,9 +130,9 @@ function Quiz:init()
 end
 
 function Quiz:start()
-    self.init()
+    Quiz.init(self)
     print("Think of an animal…\n")
-    self.next()
+    Quiz.next(self)
 end
 
 -------------------------------
