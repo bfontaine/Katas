@@ -7,23 +7,51 @@ _ENV = lunit.module('enhanced','seeall')
 
 local quiz
 
-function setup()
-    -- quiz = Quiz.create('...')
+local _io_read = io.read
+local _print = print
+
+-- mock
+
+function noprint()
+    print = function() end
 end
 
--- initialization
+function say(resps)
+    local next_resps = {}
+    local index = 0
 
-function test_init_nil()
+    if (type(resps) == 'table' and #resps > 0) then
+        next_resps = resps
+
+        io.read = function()
+            index = index + 1
+            if (index <= #next_resps) then
+                return next_resps[index]
+            else
+                return _io_read()
+            end
+        end
+    end
+end
+
+-- setup
+
+function setup()
+    quiz = Quiz.create('dog')
+    noprint()
+end
+
+-- creation
+
+function test_create_nil()
     assert_nil(Quiz.create())
 end
 
-function test_init_number()
+function test_create_number()
     assert_nil(Quiz.create(42))
 end
 
-function test_init_ok()
-    quiz = Quiz.create('dog')
-
+function test_create_ok()
     assert_table(quiz)
     assert_table(quiz.root)
     assert_table(quiz.root.value)
@@ -31,4 +59,20 @@ function test_init_ok()
     assert_equal('Animal', quiz.root.value.is_a)
 end
 
--- 
+-- initialization
+
+function test_init()
+    Quiz.init(quiz)
+    assert_table(quiz.current_node)
+    assert_table(quiz.current_node.value)
+    assert_equal('dog', quiz.root.value.name)
+    assert_equal('dog', quiz.current_node.value.name)
+end
+
+-- asking
+
+function test_ask_root_yes()
+    -- yes it's a dog, no I don't want to play again
+    say({ 'y', 'n' })
+    assert_true(Quiz.start(quiz))
+end
