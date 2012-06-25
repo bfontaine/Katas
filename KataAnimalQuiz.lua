@@ -29,6 +29,19 @@ function Question.create(s, y_resp, n_resp)
     return q
 end
 
+function Question:ask()
+    local resp
+    print(self.string .. '? (y/n) ')
+    repeat
+       resp = io.read() 
+    until (resp == 'y') or (resp == 'n')
+
+    if (resp == 'y') then
+        return self.y_resp
+    end
+    return self.n_resp
+end
+
 -------------------------------
 -- Node -----------------------
 
@@ -66,7 +79,33 @@ function Quiz.create(root)
          end
     end
     q.root = n
+    q.current_node = n
     return q
+end
+
+function Quiz.create_animal(name)
+    return Animal.create(name)
+end
+
+function Quiz:ask()
+    return self.current_node.ask()
+end
+
+function Quiz:answer()
+    print("It's a " .. self.current_node.value.name)
+    -- TODO ask if it's the good answer
+end
+
+function Quiz:next()
+    if (self.current_node.value.is_a == 'Animal') then
+        self.answer()
+    else -- if self.current_node.value.is_a == 'Question'
+        self.current_node = self.ask()
+    end
+end
+
+function Quiz:run()
+    self.next()
 end
 
 -------------------------------
