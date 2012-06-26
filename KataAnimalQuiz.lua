@@ -9,6 +9,17 @@ function yes()
     return (resp == 'y')
 end
 
+-- returns 'a' or 'an'
+function article(noun)
+    if (type(noun) == 'table') then
+       noun = noun.value or noun.name 
+    end
+   if (string.find(noun, '^[aeiouAEIOU]')) then
+       return 'an'
+   end
+   return 'a'
+end
+
 -- Animal ---------------------
 
 local Animal = {}
@@ -39,7 +50,7 @@ function Question.create(s, y_resp, n_resp)
 end
 
 function Question:ask()
-    print(self.string .. '? (y/n) ')
+    print(self.string .. ' (y/n) ')
 
     if yes() then
         return self.y_resp
@@ -61,7 +72,7 @@ function Node.create(value)
 end
 
 -- change current value into a question
-function Node:Make_question(q_string, y_resp, n_resp)
+function Node:make_question(q_string, y_resp, n_resp)
    self.value = Question.create(q_string, y_resp, n_resp) 
 end
 
@@ -105,10 +116,25 @@ function Quiz:answer()
     print("Am I right? (y/n) ")
 
     if not yes() then
-        local old_value = self.current_node.value
-        print("What were you thinking of? ")
+        local old_value = self.current_node.value.name
+        print("You win. What were you thinking of? ")
         local good_value = io.read()
-        -- TODO
+        print("Give me a question to distinguish "
+              .. article(good_value) .. " " .. good_value
+              .. " from " .. article(old_value) .. " " .. old_value .. ".")
+        local q_s = io.read()
+        print("For " .. article(good_value) .. " " .. good_value
+              .. ", what is the answer to your question")
+
+        if (yes()) then
+            Node.make_question(self.current_node,
+                               Node.create(Animal.create(good_value)),
+                               Node.create(Animal.create(old_value)))
+        else
+            Node.make_question(self.current_node,
+                               Node.create(Animal.create(old_value)),
+                               Node.create(Animal.create(good_value)))
+        end
     end
 
     print("Play again? (y/n) ")
@@ -116,7 +142,7 @@ function Quiz:answer()
         Quiz.start(self)
     end
 
-    return true
+    return self.current_node.value.name
 end
 
 function Quiz:next()
