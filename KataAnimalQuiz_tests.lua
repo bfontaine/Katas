@@ -26,6 +26,7 @@ function say(resps)
         io.read = function()
             index = index + 1
             if (index <= #next_resps) then
+                print(next_resps[index])
                 return next_resps[index]
             else
                 return _io_read()
@@ -38,7 +39,7 @@ end
 
 function setup()
     quiz = Quiz.create('dog')
-    noprint()
+    --    noprint()
 end
 
 -- creation
@@ -72,7 +73,6 @@ end
 -- asking
 
 function test_ask_root_yes()
-    -- yes it's a dog, no I don't want to play again
-    say({ 'y', 'n' })
+    say({ 'y', 'n' }) -- yes it's a dog, no I don't want to play again
     assert_true(Quiz.start(quiz))
 end
