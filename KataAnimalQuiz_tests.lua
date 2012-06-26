@@ -39,7 +39,7 @@ end
 
 function setup()
     quiz = Quiz.create('dog')
-    --    noprint()
+    -- noprint()
 end
 
 -- creation
@@ -74,5 +74,5 @@ end
 
 function test_ask_root_yes()
     say({ 'y', 'n' }) -- yes it's a dog, no I don't want to play again
-    assert_true(Quiz.start(quiz))
+    assert_equal('dog', Quiz.start(quiz))
 end
