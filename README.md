@@ -1,4 +1,4 @@
-Here are some solved katas in various languages, picked from
+Here are 17 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
