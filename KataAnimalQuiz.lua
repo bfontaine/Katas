@@ -164,12 +164,4 @@ function Quiz:start()
     return Quiz.next(self)
 end
 
--------------------------------
-
---[[
-    TODO:
-        - add a .load() and .dump() functions to load/dump "database" (animals)
-          into a file (just for fun)
-]]
-
 return Quiz
