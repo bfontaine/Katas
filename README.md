@@ -145,4 +145,9 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
   [lunit](https://github.com/dcurrie/lunit))
 
 
+[KataEnglishNumerals](http://rubyquiz.com/quiz25.html) (Working On)
+----------------------------
 
+- Language: ?
+- Solution: ?
+- Tests: ?
