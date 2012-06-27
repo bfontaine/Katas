@@ -77,9 +77,34 @@ function test_ask_root_yes()
     assert_equal('dog', Quiz.start(quiz))
 end
 
-function test_ask_root_replay()
+function test_ask_root_yes_replay()
     -- yes it's a dog, yes I want to play again, yes it's still a dog, and no
     -- I don't want to play again
     say({ 'y', 'y', 'y', 'n' })
     assert_equal('dog', Quiz.start(quiz))
+end
+
+function test_ask_root_no()
+    -- no it's not a dog, it's a pig and I don't want to play again
+    say({ 'n', 'pig', 'is it pink?', 'y', 'n' })
+    assert_equal(false, Quiz.start(quiz))
+end
+
+function test_ask_root_no_replay()
+    -- no it's not a dog, it's a pig, yes I want to play again,
+    -- yes it's pink, yes it's a pig, no I don't want to play again
+    say({ 'n', 'pig', 'is it pink?', 'y', 'y', 'y', 'y', 'n' })
+    assert_equal('pig', Quiz.start(quiz))
+end
+
+function test_5_animals()
+    -- 1) it's not a dog, it's pink     -> a pig (play again)
+    -- 2) it's not pink, it eats mouses -> a cat (play again)
+    -- 3) it's not pink nor eats mouses, it's grey -> an elephant (play again)
+    -- 4) it's not pink nor eats mouses, it's grey -> it's an elephant
+    say({           'n', 'pig', 'is it pink?',         'y', 'y',
+               'n', 'n', 'cat', 'does it eat mouses?', 'y', 'y',
+          'n', 'n', 'n', 'elephant', 'is it grey?',    'y', 'y',
+     'n', 'n', 'y', 'y', 'n'})
+    assert_equal('elephant', Quiz.start(quiz))
 end
