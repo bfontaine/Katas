@@ -99,10 +99,6 @@ function Quiz.create(root)
     return q
 end
 
-function Quiz.create_animal(name)
-    return Animal.create(name)
-end
-
 function Quiz.create_question(q_string, y_resp, n_resp)
     return Question.create(q_string, y_resp, n_resp)
 end
@@ -115,7 +111,9 @@ function Quiz:answer()
     print("It's a " .. self.current_node.value.name .. ".")
     print("Am I right? (y/n) ")
 
-    if not yes() then
+    local right = yes()
+
+    if not right then
         local old_value = self.current_node.value.name
         print("You win. What were you thinking of? ")
         local good_value = io.read()
@@ -128,10 +126,12 @@ function Quiz:answer()
 
         if (yes()) then
             Node.make_question(self.current_node,
+                               q_s,
                                Node.create(Animal.create(good_value)),
                                Node.create(Animal.create(old_value)))
         else
             Node.make_question(self.current_node,
+                               q_s,
                                Node.create(Animal.create(old_value)),
                                Node.create(Animal.create(good_value)))
         end
@@ -142,7 +142,7 @@ function Quiz:answer()
         Quiz.start(self)
     end
 
-    return self.current_node.value.name
+    return self.current_node.value.name or right
 end
 
 function Quiz:next()
@@ -150,6 +150,7 @@ function Quiz:next()
         return Quiz.answer(self)
     else -- if self.current_node.value.is_a == 'Question'
         self.current_node = Quiz.ask(self)
+        return Quiz.next(self)
     end
 end
 
@@ -169,14 +170,6 @@ end
     TODO:
         - add a .load() and .dump() functions to load/dump "database" (animals)
           into a file (just for fun)
-        - use a tree structure to store animals, e.g.:
-                            Q1
-                          y/  \n
-                          A1   Q2
-                             y/ \n
-                             A2  A3
-          
-          with Qx = questions, Ax = animals (y: yes, n: no)
 ]]
 
 return Quiz
