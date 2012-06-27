@@ -76,3 +76,10 @@ function test_ask_root_yes()
     say({ 'y', 'n' }) -- yes it's a dog, no I don't want to play again
     assert_equal('dog', Quiz.start(quiz))
 end
+
+function test_ask_root_replay()
+    -- yes it's a dog, yes I want to play again, yes it's still a dog, and no
+    -- I don't want to play again
+    say({ 'y', 'y', 'y', 'n' })
+    assert_equal('dog', Quiz.start(quiz))
+end
