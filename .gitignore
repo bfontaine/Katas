@@ -10,3 +10,6 @@ __pycache__
 lunit*
 atexit.lua
 tags
+/_build
+*.cmi
+*.cmo
