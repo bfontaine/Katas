@@ -153,11 +153,14 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataEnglishNumerals_tests.adb`
 
 
-[KataIndexAndQuery](http://rubyquiz.com/quiz54.html) (Working On)
+KataWordQuery (Working On)
 ----------------------------
 
+This is a slightly modified version of
+[RubyQuiz #54](http://rubyquiz.com/quiz54.html) which doesn't use a bits index.
+
 - Language: OCaml
-- Solution: `index_query.ml`
-- Tests: `index_query_tests.ml` (using
-  [OUnit](http://ounit.forge.ocamlcore.org/), see also `index_query_tests.sh`)
+- Solution: `kataWordQuery.ml`
+- Tests: `kataWordQueryTests.ml` (using
+  [OUnit](http://ounit.forge.ocamlcore.org/), see also `kataWordQueryTests.sh`)
 
