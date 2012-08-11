@@ -13,3 +13,4 @@ tags
 /_build
 *.cmi
 *.cmo
+/test
