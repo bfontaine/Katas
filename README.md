@@ -151,3 +151,13 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Language: Ada
 - Solution: `KataEnglishNumerals.adb`
 - Tests: `KataEnglishNumerals_tests.adb`
+
+
+[KataIndexAndQuery](http://rubyquiz.com/quiz54.html) (Working On)
+----------------------------
+
+- Language: OCaml
+- Solution: `index_query.ml`
+- Tests: `index_query_tests.ml` (using
+  [OUnit](http://ounit.forge.ocamlcore.org/), see also `index_query_tests.sh`)
+
