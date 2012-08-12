@@ -1,4 +1,4 @@
-Here are 17 solved katas in various languages, picked from
+Here are 18 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
@@ -145,14 +145,6 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
   [lunit](https://github.com/dcurrie/lunit))
 
 
-[KataEnglishNumerals](http://rubyquiz.com/quiz25.html) (Working On)
-----------------------------
-
-- Language: Ada
-- Solution: `KataEnglishNumerals.adb`
-- Tests: `KataEnglishNumerals_tests.adb`
-
-
 [KataWordQuery](http://rubyquiz.com/quiz54.html) (Solved)
 ----------------------------
 
@@ -164,3 +156,10 @@ This is a slightly modified version of the
 - Tests: `kataWordQueryTests.ml` (using
   [OUnit](http://ounit.forge.ocamlcore.org/), see also `kataWordQueryTests.sh`)
 
+
+[KataEnglishNumerals](http://rubyquiz.com/quiz25.html) (Working On)
+----------------------------
+
+- Language: Ada
+- Solution: `KataEnglishNumerals.adb`
+- Tests: `KataEnglishNumerals_tests.adb`
