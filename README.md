@@ -163,3 +163,12 @@ This is a slightly modified version of the
 - Language: Ada
 - Solution: `KataEnglishNumerals.adb`
 - Tests: `KataEnglishNumerals_tests.adb`
+
+
+[KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Working On)
+----------------------------
+
+- Language: Erlang
+- Solution: `KataCheckout.erl`
+- Tests: `KataCheckoutTests.erl`
+
