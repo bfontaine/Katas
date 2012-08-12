@@ -153,10 +153,10 @@ All files for solved katas are in `solved/[Kata's name]/` directories.
 - Tests: `KataEnglishNumerals_tests.adb`
 
 
-KataWordQuery (Working On)
+[KataWordQuery](http://rubyquiz.com/quiz54.html) (Solved)
 ----------------------------
 
-This is a slightly modified version of
+This is a slightly modified version of the 
 [RubyQuiz #54](http://rubyquiz.com/quiz54.html) which doesn't use a bits index.
 
 - Language: OCaml

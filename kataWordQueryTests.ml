@@ -37,27 +37,33 @@ let test_multiple_empty_strings () =
   assert_equal [] (KataWordQuery.indexes [""; ""] "b")
 ;;
 
-let test_one_word_multiple_strings () = (* FIXME *)
+let test_multiple_one_word_strings () =
   assert_equal [0]   (KataWordQuery.indexes ["foo"; "bar"] "foo") ;
   assert_equal [1]   (KataWordQuery.indexes ["bar"; "foo"] "foo") ;
-  assert_equal [0;1] (KataWordQuery.indexes ["foo"; "foo"] "foo")
+  assert_equal [0;1] (KataWordQuery.indexes ["foo"; "foo"] "foo") ;
+  assert_equal [1]   (KataWordQuery.indexes ["foo"; "bar" ; "foo"] "bar") ;
+  assert_equal [0;2] (KataWordQuery.indexes ["foo"; "bar" ; "foo"] "foo")
 ;;
 
-(*
-let test_every_string () =
-  assert_equal [0;1] (KataWordQuery.indexes ["foo", "foo bar"])
-;;*)
+let test_multiple_multiple_words_strings () =
+  assert_equal [0]   (KataWordQuery.indexes ["foo bar"; "bar"] "foo") ;
+  assert_equal [1]   (KataWordQuery.indexes ["bar fo o"; "2 foo bar"] "foo") ;
+  assert_equal [0;1] (KataWordQuery.indexes ["f- foo"; "1 2 3 4 foo"] "foo") ;
+  assert_equal [1]   (KataWordQuery.indexes ["bar1"; "bar" ; "foo"] "bar") ;
+  assert_equal [0;2] (KataWordQuery.indexes ["42 foo 42"; "barfoo" ; "foo 1"] "foo")
+;;
 
 let suite =
   "suite">:::
     [
-      "test_empty"                     >:: test_empty ;
-      "test_one_empty_string"          >:: test_one_empty_string ;
-      "test_one_word_one_string"       >:: test_one_word_one_string ;
-      "test_two_words_one_string"      >:: test_two_words_one_string ;
-      "test_multiple_words_one_string" >:: test_multiple_words_one_string ;
-      "test_multiple_empty_strings"    >:: test_multiple_empty_strings ;
-      "test_one_word_multiple_strings" >:: test_one_word_multiple_strings
+      "test_empty"                           >:: test_empty ;
+      "test_one_empty_string"                >:: test_one_empty_string ;
+      "test_one_word_one_string"             >:: test_one_word_one_string ;
+      "test_two_words_one_string"            >:: test_two_words_one_string ;
+      "test_multiple_words_one_string"       >:: test_multiple_words_one_string ;
+      "test_multiple_empty_strings"          >:: test_multiple_empty_strings ;
+      "test_multiple_one_word_strings"       >:: test_multiple_one_word_strings ;
+      "test_multiple_multiple_words_strings" >:: test_multiple_multiple_words_strings
     ]
 ;;
 
