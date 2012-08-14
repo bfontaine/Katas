@@ -14,5 +14,5 @@ tags
 *.cmi
 *.cmo
 /test
-.beam
+*.beam
 
