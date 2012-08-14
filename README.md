@@ -169,6 +169,6 @@ This is a slightly modified version of the
 ----------------------------
 
 - Language: Erlang
-- Solution: `KataCheckout.erl`
-- Tests: `KataCheckoutTests.erl`
+- Solution: `kata_checkout.erl`
+- Tests: `kata_checkout_tests.erl`
 
