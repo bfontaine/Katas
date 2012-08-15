@@ -165,10 +165,12 @@ This is a slightly modified version of the
 - Tests: `KataEnglishNumerals_tests.adb`
 
 
-[KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Working On)
+[KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Solved)
 ----------------------------
 
 - Language: Erlang
 - Solution: `katacheckout.erl`
-- Tests: `katacheckouttests.erl`
+- Tests: `katacheckout_tests.erl` (using
+  [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html), see also
+  `katacheckout_tests.sh`)
 
