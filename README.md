@@ -1,4 +1,4 @@
-Here are 18 solved katas in various languages, picked from
+Here are 19 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
@@ -155,14 +155,6 @@ This is a slightly modified version of the
 - Solution: `kataWordQuery.ml`
 - Tests: `kataWordQueryTests.ml` (using
   [OUnit](http://ounit.forge.ocamlcore.org/), see also `kataWordQueryTests.sh`)
-
-
-[KataEnglishNumerals](http://rubyquiz.com/quiz25.html) (Working On)
-----------------------------
-
-- Language: Ada
-- Solution: `KataEnglishNumerals.adb`
-- Tests: `KataEnglishNumerals_tests.adb`
 
 
 [KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Solved)
