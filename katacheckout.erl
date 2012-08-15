@@ -19,4 +19,14 @@
 %%  -> gives the total price
 
 checkout (_, [], _) -> 0;
-checkout ([], _, _) -> 0.
+checkout ([], _, _) -> 0;
+checkout ([H|T], P, []) ->
+    get_price(H, P) + checkout(T, P, []).
+
+% get_price(Item, Prices_list)
+% returns the price of an item or 0 if it cannot be found.
+get_price(_, []) -> 0;
+get_price(I, [{K, P}|_]) when I =:= K -> P;
+get_price(I, [{K, _}|T]) when I =/= K ->
+    get_price(I, T).
+
