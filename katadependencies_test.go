@@ -34,3 +34,22 @@ func Test_AddOneItemWithUnexistingDependencies(t *testing.T) {
     if len(D.items["B"]) != 0 { t.Error() }
     if D.items["A"][0] != "B" { t.Error() }
 }
+
+func Test_NoDependencies(t *testing.T) {
+    D := New_Dependencies()
+    D.add_direct("A", nil)
+
+    A_dependencies := D.dependencies_for("A")
+
+    if len(A_dependencies) != 0 { t.Error() }
+}
+
+func Test_OneDependencies(t *testing.T) {
+    D := New_Dependencies()
+    D.add_direct("A", []string{"B"})
+
+    A_dependencies := D.dependencies_for("A")
+
+    if len(A_dependencies) != 1 { t.Error() }
+    if A_dependencies[0]   != "B" { t.Error() }
+}
