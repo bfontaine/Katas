@@ -166,3 +166,10 @@ This is a slightly modified version of the
   [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html), see also
   `katacheckout_tests.sh`)
 
+[KataDependencies](http://codekata.pragprog.com/2007/01/kata_eighteen_t.html)
+----------------------------
+
+- Language: Go
+- Solution: `katadependencies.go`
+- Test: `katadependencies_tests.go`
+
