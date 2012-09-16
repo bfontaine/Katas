@@ -177,5 +177,7 @@ This is a slightly modified version of the
 ----------------------------
 
 - Language: Haskell
-- Solution: `katawordchains.hs`
+- Solution: `katawordchains.hs` (using
+  [EOWL](http://dreamsteep.com/projects/the-english-open-word-list.html) as a
+  word list)
 - Tests: `katawordchains_tests.hs`

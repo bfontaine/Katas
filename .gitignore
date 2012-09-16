@@ -15,4 +15,4 @@ tags
 *.cmo
 /test
 *.beam
-
+wordlist.txt
