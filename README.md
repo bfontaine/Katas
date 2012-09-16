@@ -1,4 +1,4 @@
-Here are 19 solved katas in various languages, picked from
+Here are 20 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
@@ -166,10 +166,10 @@ This is a slightly modified version of the
   [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html), see also
   `katacheckout_tests.sh`)
 
-[KataDependencies](http://codekata.pragprog.com/2007/01/kata_eighteen_t.html)
+[KataDependencies](http://codekata.pragprog.com/2007/01/kata_eighteen_t.html) (Solved)
 ----------------------------
 
 - Language: Go
 - Solution: `katadependencies.go`
-- Test: `katadependencies_tests.go`
+- Test: `katadependencies_test.go`
 
