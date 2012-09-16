@@ -171,5 +171,11 @@ This is a slightly modified version of the
 
 - Language: Go
 - Solution: `katadependencies.go`
-- Test: `katadependencies_test.go`
+- Tests: `katadependencies_test.go`
 
+[KataWordChains](http://codekata.pragprog.com/2007/01/kata_nineteen_w.html) (Working On)
+----------------------------
+
+- Language: Haskell
+- Solution: `katawordchains.hs`
+- Tests: `katawordchains_tests.hs`
