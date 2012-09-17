@@ -16,10 +16,10 @@ public class KataFizzBuzz {
     public static String fizzBuzz2(int i) {
         String s = "";
 
-        if ((i/10 == 3) || (i%10 == 3) || (i%3 == 0)) {
+        if ((i/10 == 3) || ((""+i).indexOf('3') > -1) || (i%3 == 0)) {
             s = "Fizz";
         }
-        if ((i/10 == 5) || (i%10 == 5) || (i%5 == 0)) {
+        if ((i/10 == 5) || ((""+i).indexOf('5') > -1) || (i%5 == 0)) {
             s+= "Buzz";
         }
 
