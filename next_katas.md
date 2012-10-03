@@ -6,6 +6,7 @@ Next Katas
 - [KataSortChars](http://codekata.pragprog.com/2007/01/kata_eleven_sor.html):
   sorting letters of a string.
 - [KatasEnglishNumerals](http://rubyquiz.com/quiz25.html)
+- [KataBestBefore](http://www.spotify.com/fr/jobs/tech/best-before/)
 
 
 Next Languages
