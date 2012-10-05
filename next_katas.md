@@ -13,7 +13,7 @@ Next Languages
 --------------
 
 - Ada
-- C# (Mono)
-- Clojure
+- [Clojure](http://clojure.org/getting_started)
+- [D](http://dlang.org/)
 - Factor
 - Scheme
