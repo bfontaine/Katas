@@ -19,7 +19,6 @@ Next Languages
 - [Ceylon][ceylon]
 - [Clojure][clj]
 - [D][d-lang]
-- [Elixir][elixir]
 - [Factor][factor]
 - Haskell
 - [Haxe][haxe]
@@ -31,7 +30,6 @@ Next Languages
 [ceylon]: http://ceylon-lang.org/
 [clj]: http://clojure.org/getting_started
 [d-lang]: http://dlang.org/
-[elixir]: http://elixir-lang.org/
 [factor]: http://factorcode.org/
 [haxe]: http://haxe.org/
 [ioke]: http://ioke.org/
