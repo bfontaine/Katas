@@ -21,7 +21,6 @@ Next Languages
 - [D][d-lang]
 - [Elixir][elixir]
 - [Factor][factor]
-- [Fancy][fancy]
 - Haskell
 - [Haxe][haxe]
 - [Ioke][ioke]
@@ -34,7 +33,6 @@ Next Languages
 [d-lang]: http://dlang.org/
 [elixir]: http://elixir-lang.org/
 [factor]: http://factorcode.org/
-[fancy]: http://www.fancy-lang.org/
 [haxe]: http://haxe.org/
 [ioke]: http://ioke.org/
 [julia]: http://julialang.org/
