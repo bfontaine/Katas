@@ -6,10 +6,11 @@ Next Katas
 - [KataSortChars][k-sortchars]
   sorting letters of a string.
 - [KatasEnglishNumerals][k-english-num]
+[KataWordChains][k-wordchains]
 
 [k-english-num]: http://rubyquiz.com/quiz25.html
 [k-sortchars]: http://codekata.pragprog.com/2007/01/kata_eleven_sor.html
-
+[k-wordchain]: http://codekata.pragprog.com/2007/01/kata_nineteen_w.html
 
 Next Languages
 --------------
@@ -21,6 +22,7 @@ Next Languages
 - [Elixir][elixir]
 - [Factor][factor]
 - [Fancy][fancy]
+- Haskell
 - [Haxe][haxe]
 - [Ioke][ioke]
 - [Julia][julia]
