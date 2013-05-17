@@ -17,7 +17,6 @@ Next Languages
 
 - Ada
 - [Ceylon][ceylon]
-- [Clojure][clj]
 - [D][d-lang]
 - [Factor][factor]
 - Haskell
@@ -28,7 +27,6 @@ Next Languages
 - Scheme
 
 [ceylon]: http://ceylon-lang.org/
-[clj]: http://clojure.org/getting_started
 [d-lang]: http://dlang.org/
 [factor]: http://factorcode.org/
 [haxe]: http://haxe.org/
