@@ -1,18 +1,31 @@
+# Vim tmp files
 *~
-*.ali
-*.jar
-*.o
-*.swp
 *.swo
-KataWordWrap_tests
-lisp-unit.lisp
-__pycache__
-lunit*
-atexit.lua
-tags
-/_build
+*.swp
+
+# Other extensions
+*.ali
+*.beam
 *.cmi
 *.cmo
-/test
-*.beam
+*.jar
+*.o
+
+lunit*
+
+# Specific files
+.lein-deps-sum
+.lein-failures
+atexit.lua
+lisp-unit.lisp
+pom.xml
 wordlist.txt
+/solved/KataWordQuery/test
+
+# Specific directories
+_build/
+KataWordWrap_tests/
+__pycache__/
+tags/
+classes/
+native/

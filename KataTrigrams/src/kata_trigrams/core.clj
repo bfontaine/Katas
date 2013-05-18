@@ -1,5 +1,5 @@
 #! /usr/bin/clojure
-(ns katas.trigrams)
+(ns kata-trigrams.core)
 
 (defn index
   "Index all trigrams from filename-in and store them in filename-out."
