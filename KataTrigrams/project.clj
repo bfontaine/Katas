@@ -1,7 +1,6 @@
 (defproject kata-trigrams "1.0.0-SNAPSHOT"
-  :description "Random text generator using trigrams.
-                See github.com/bfontaine/Katas."
+  :description "Random text generator using trigrams."
+  :url "https://github.com/bfontaine/Katas"
   :dependencies [[org.clojure/clojure "1.3.0"]]
-  
   :main kata-trigrams.cli
   :repl-init kata-trigrams.core)
