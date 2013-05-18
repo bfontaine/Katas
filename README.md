@@ -183,7 +183,7 @@ the [Gutenberg Project][gutenberg-swift]. You don’t need it to run the tests,
 and can in fact use any text you want.
 
 - Language: Clojure
-- Solution: `src/kata_trigrams/core.clj`
+- Solution: `src/kata_trigrams/cli.clj` (use `lein run`)
 - Tests: `test/kata_trigrams/test/core.clj`
 
 [gutenberg-swift]: http://www.gutenberg.org/cache/epub/3005/pg3005.txt
