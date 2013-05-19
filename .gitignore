@@ -10,6 +10,7 @@
 *.cmo
 *.data.txt
 *.jar
+*.json
 *.o
 
 lunit*
