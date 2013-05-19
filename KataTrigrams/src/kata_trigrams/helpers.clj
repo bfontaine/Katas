@@ -52,12 +52,12 @@
   [trigrams]
   (-?> trigrams keys rand-nth (split #" ")))
 
-(defn before-last ; TEST ME
+(defn before-last
   "return the element before the last one of a seq."
   [sq]
   (nth sq (- (count sq) 2)))
 
-(defn generate-words ; TEST ME
+(defn generate-words
   "Given a vector of already-generated words, a trigrams map and a words count,
    add more words to the vector, based on the trigrams map, and up to the words
    count."
@@ -66,6 +66,12 @@
     (if (>= wc max-count)
       wl
       (if (= 0 wc)
-        (vec (rand-2-words trigrams))
-        (conj wl
-              (next-word (before-last wl) (last wl) trigrams))))))
+        (generate-words
+          (vec (rand-2-words trigrams))
+          trigrams
+          (- max-count 2))
+        (generate-words
+          (conj wl
+                (next-word (before-last wl) (last wl) trigrams))
+          trigrams
+          (dec max-count))))))
