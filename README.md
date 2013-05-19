@@ -180,5 +180,5 @@ This is a slightly modified version of the
 
 - Language: Clojure
 - Solution: `src/kata_trigrams/cli.clj` (use `lein run`)
-- Tests: `test/kata_trigrams/test/core.clj`
+- Tests: `test/kata_trigrams/test/core.clj` (use `lein test`)
 
