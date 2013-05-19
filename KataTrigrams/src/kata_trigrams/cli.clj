@@ -1,4 +1,3 @@
-#! /usr/bin/clojure
 (ns kata-trigrams.cli
   (:use [kata-trigrams.core]))
 
