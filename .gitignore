@@ -8,6 +8,7 @@
 *.beam
 *.cmi
 *.cmo
+*.data.txt
 *.jar
 *.o
 
