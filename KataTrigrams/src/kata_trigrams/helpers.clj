@@ -44,5 +44,4 @@
   [w1 w2 m] ; word1 word2 trigrams-map
   (let [wl (m (join-2-words w1 w2))] ; words list
     (if (seq wl)
-      (rand-nth wl)
-      nil)))
+      (rand-nth wl))))
