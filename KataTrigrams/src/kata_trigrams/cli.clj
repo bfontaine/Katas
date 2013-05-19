@@ -15,7 +15,7 @@
       (if (= "index" action)
         (index arg1 arg2)
         (if (= "generate" action)
-          (generate arg1 arg2)
+          (generate arg1 (. Integer parseInt arg2))
           (do
             (println (str "Unknown action: '" action "'."))
             (System/exit 1)))))))
