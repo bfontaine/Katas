@@ -58,24 +58,24 @@
          (kt/add-trigram {"a b" #{"d"}} '("a" "b" "d")))))
 
 
-;; test kt/join-2-words
-(deftest test-join-2-words
+;; test kt/join-space
+(deftest test-join-space
 
   ;; empty strings
   (is (= " "
-         (kt/join-2-words "" "")))
+         (kt/join-space "" "")))
 
   ;; only one empty string
   (is (= "a "
-         (kt/join-2-words "a" "")))
+         (kt/join-space "a" "")))
   (is (= " b"
-         (kt/join-2-words "" "b")))
+         (kt/join-space "" "b")))
 
   ;; 'normal' strings
   (is (= "a b"
-         (kt/join-2-words "a" "b")))
+         (kt/join-space "a" "b")))
   (is (= "a b c"
-         (kt/join-2-words "a b" "c"))))
+         (kt/join-space "a b" "c"))))
 
 
 ;; test kt/trigrams->json
@@ -117,6 +117,23 @@
   (is (#{"c" "d"} (kt/next-word "a" "b" {"a b" ["c" "d"]})))
 
   ;; no possible word
-  (is (= nil
-         (kt/next-word "a" "b" {}))))
+  (is (nil? (kt/next-word "a" "b" {}))))
 
+
+;; test kt/rand-2-words
+(deftest test-rand-2-words
+
+  ;; empty map
+  (is (nil? (kt/rand-2-words {})))
+
+  ;; one possibility
+  (is (= '("a" "b")
+         (kt/rand-2-words {"a b" ["c"]}))))
+
+
+;; test kt/before-last
+(deftest test-before-last
+  (is (= 2
+         (kt/before-last [2 3])))
+  (is (= 2
+         (kt/before-last [1 2 3]))))
