@@ -1,5 +1,4 @@
 (ns kata-trigrams.core
-  (:require [clojure.data.json :as json])
   (:use     [kata-trigrams.helpers]))
 
 ;;; -- these functions are called by cli.clj
@@ -14,11 +13,13 @@
   [filename-in filename-out]
   (let [trigrams (str->trigrams (slurp filename-in))]
     (spit filename-out
-          (json/write-str (reduce add-trigram {} trigrams)))))
+          (trigrams->json trigrams))))
 
 (defn generate
   "Generate a random text from trigrams stored in index-filename with
    words-count words in it."
   [index-filename words-count]
-  ;; TODO
-  )
+  (let [trigrams (json->trigrams-map (slurp index-filename))]
+    ;; TODO    
+    ))
+

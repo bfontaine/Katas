@@ -51,4 +51,72 @@
 
   ;; trigram with first two words already in the map
   (is (= {"a b" #{"c" "d"}}
-         (kt/add-trigram {"a b" #{"c"}} '("a" "b" "d")))))
+         (kt/add-trigram {"a b" #{"c"}} '("a" "b" "d"))))
+
+  ;; trigram already in the map
+  (is (= {"a b" #{"d"}}
+         (kt/add-trigram {"a b" #{"d"}} '("a" "b" "d")))))
+
+
+;; test kt/join-2-words
+(deftest test-join-2-words
+
+  ;; empty strings
+  (is (= " "
+         (kt/join-2-words "" "")))
+
+  ;; only one empty string
+  (is (= "a "
+         (kt/join-2-words "a" "")))
+  (is (= " b"
+         (kt/join-2-words "" "b")))
+
+  ;; 'normal' strings
+  (is (= "a b"
+         (kt/join-2-words "a" "b")))
+  (is (= "a b c"
+         (kt/join-2-words "a b" "c"))))
+
+
+;; test kt/trigrams->json
+(deftest test-trigrams->json
+  
+  ;; empty list
+  (is (= "{}"
+         (kt/trigrams->json ())))
+
+  ;; one trigram
+  (is (= "{\"a b\":[\"c\"]}"
+         (kt/trigrams->json '(("a" "b" "c")))))
+
+  ;; two trigrams, with the same first two words
+  (is (= "{\"a b\":[\"c\",\"d\"]}"
+         (kt/trigrams->json '(("a" "b" "c") ("a" "b" "d"))))))
+
+
+;; test kt/json->trigrams-map
+(deftest test-json->trigrams-map
+  
+  ;; empty map
+  (is (= {}
+         (kt/json->trigrams-map "{}"))
+
+  ;; one trigram
+  (is (= {"a b" ["c"]}
+         (kt/json->trigrams-map "{\"a b\":[\"c\"]}")))))
+
+
+;; test kt/next-word
+(deftest test-next-word
+
+  ;; only one possible word
+  (is (= "c"
+         (kt/next-word "a" "b" {"a b" ["c"]})))
+
+  ;; multiple possibilities
+  (is (#{"c" "d"} (kt/next-word "a" "b" {"a b" ["c" "d"]})))
+
+  ;; no possible word
+  (is (= nil
+         (kt/next-word "a" "b" {}))))
+
