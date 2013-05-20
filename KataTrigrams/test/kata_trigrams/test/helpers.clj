@@ -127,7 +127,7 @@
   (is (nil? (kt/rand-2-words {})))
 
   ;; one possibility
-  (is (= '("a" "b")
+  (is (= ["a" "b"]
          (kt/rand-2-words {"a b" ["c"]}))))
 
 

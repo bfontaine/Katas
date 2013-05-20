@@ -50,7 +50,7 @@
 (defn rand-2-words
   "Return two random words from a map of trigrams, or nil if it's empty."
   [trigrams]
-  (-?> trigrams keys rand-nth (split #" ")))
+  (-?> trigrams keys rand-nth (split #" ") vec))
 
 (defn before-last
   "return the element before the last one of a seq."
@@ -63,11 +63,11 @@
    count."
   [wl trigrams max-count]
   (let [wc (count wl)]
-    (if (>= wc max-count)
+    (if (= 0 max-count)
       wl
       (if (= 0 wc)
         (generate-words
-          (vec (rand-2-words trigrams))
+          (rand-2-words trigrams)
           trigrams
           (- max-count 2))
         (generate-words
