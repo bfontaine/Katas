@@ -1,4 +1,4 @@
-Here are 20 solved katas in various languages, picked from
+Here are 21 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
@@ -175,10 +175,12 @@ This is a slightly modified version of the
 - Tests: `katadependencies_test.go`
 
 
-[KataTrigrams](http://codekata.pragprog.com/2007/01/kata_fourteen_t.html) (Working On)
+[KataTrigrams](http://codekata.pragprog.com/2007/01/kata_fourteen_t.html) (Solved)
 ----------------------------
 
 - Language: Clojure
-- Solution: `src/kata_trigrams/core.clj` (use `lein run`)
+- Solution: `src/kata_trigrams/core.clj` (use `lein run generate f1.txt f2.json`
+  to index `f1.txt` into `f2.json`, then `lein run generate f2.json 42` to
+  generate 42 random words from the file `f2.json`)
 - Tests: `test/kata_trigrams/test/*.clj` (use `lein test`)
 
