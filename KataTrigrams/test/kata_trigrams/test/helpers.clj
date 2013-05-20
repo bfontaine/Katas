@@ -150,6 +150,10 @@
   (is (= ["a" "b" "c"]
          (generate-words [] {"a b" ["c"]} 3)))
 
+  ;; non-empty vector, no word to add
+  (is (= ["a" "b"]
+         (generate-words ["a" "b"] {"a b" ["c"]} 0)))
+
   ;; non-empty vector, one possibility
   (is (= ["a" "b" "c"]
-         (generate-words ["a" "b"] {"a b" ["c"]} 3))))
+         (generate-words ["a" "b"] {"a b" ["c"]} 1))))

@@ -61,17 +61,16 @@
   "Given a vector of already-generated words, a trigrams map and a words count,
    add more words to the vector, based on the trigrams map, and up to the words
    count."
-  [wl trigrams max-count]
-  (let [wc (count wl)]
-    (if (= 0 max-count)
-      wl
-      (if (= 0 wc)
-        (generate-words
-          (rand-2-words trigrams)
-          trigrams
-          (- max-count 2))
-        (generate-words
-          (conj wl
-                (next-word (before-last wl) (last wl) trigrams))
-          trigrams
-          (dec max-count))))))
+  [wl trigrams wc]
+  (if (>= 0 wc)
+    wl
+    (if (= 0 (count wl))
+      (generate-words
+        (rand-2-words trigrams)
+        trigrams
+        (- wc 2))
+      (generate-words
+        (conj wl
+              (next-word (before-last wl) (last wl) trigrams))
+        trigrams
+        (dec wc)))))
