@@ -20,5 +20,5 @@
    words-count words in it."
   [index-filename words-count]
   (let [trigrams (json->trigrams-map (slurp index-filename))]
-    (join-space (generate-words [] trigrams words-count))))
+   (generate-words [] trigrams words-count)))
 
