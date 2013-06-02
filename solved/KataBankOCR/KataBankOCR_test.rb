@@ -123,26 +123,26 @@ class KataBankOCRTest < Test::Unit::TestCase
     ]
 
     def test_u1
-        @@tests_u1.each {|val, ref|
+        @@tests_u1.each do |val, ref|
             assert_equal(read_number(val), ref)
-        }
+        end
     end
 
     def test_u2
-        @@tests_u2.each {|val, ref|
+        @@tests_u2.each do |val, ref|
             assert_equal(check_validity(val), ref, val)
-        }
+        end
     end
 
     def test_u3
-        @@tests_u3.each {|val, ref|
+        @@tests_u3.each do |val, ref|
             assert_equal(read_and_check(val), ref)
-        }
+        end
     end
 
     def test_u4
-        @@tests_u4.each {|val, ref|
+        @@tests_u4.each do |val, ref|
             assert_equal(read_and_correct(val), ref)
-        }
+        end
     end
 end
