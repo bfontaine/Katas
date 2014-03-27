@@ -184,3 +184,9 @@ This is a slightly modified version of the
   generate 42 random words from the file `f2.json`)
 - Tests: `test/kata_trigrams/test/*.clj` (use `lein test`)
 
+[KataEnglishWords](http://rubyquiz.com/quiz25.html) (doing)
+----------------------------
+
+- Language: Rust
+- Solution: `kata_english_words.rs`
+- Tests: `kata_english_words_tests.rs` (compile and run with `make`)
