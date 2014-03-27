@@ -1,5 +1,58 @@
+fn million_prefix(num : u64) -> ~str {
+    match num {
+        1000000          => ~"m",
+        1000000000       => ~"b",
+        1000000000000    => ~"tr",
+        1000000000000000 => ~"quadr",
 
-pub fn number_to_english(num : int) -> ~str {
+        // ...
+        _    => ~"gaz"
+    }
+}
+
+fn power_of_ten(num : u64) -> ~str {
+    if num == 1000 {
+        ~"thousand"
+    } else {
+        million_prefix(num) + "illion"
+    }
+}
+
+pub fn number_to_english(num : u64) -> ~str {
+
+    // hundreds
+    let h  = num/100;
+    let hm = num%100;
+
+    if h > 0 && h < 10 {
+        let mut partial = number_to_english(h) + " hundred";
+        if hm != 0 {
+            partial = partial + " and " + number_to_english(hm);
+        }
+        return partial;
+    }
+
+    // thousands + *illions
+    let mut threshold = 1000;
+
+    while threshold <= num {
+        let d = num/threshold;
+        let m = num%threshold;
+
+        if d > 0 && d < 1000 {
+            let mut partial = number_to_english(d) + " " + power_of_ten(threshold);
+            if m != 0 {
+                if m < 100 {
+                    partial = partial + " and";
+                }
+                partial = partial + " " + number_to_english(m);
+            }
+            return partial;
+        }
+
+        threshold *= 1000;
+    }
+
     match num {
         // simple numbers
          0 => ~"zero",
@@ -30,6 +83,8 @@ pub fn number_to_english(num : int) -> ~str {
 
         60 | 70 | 90 =>
             number_to_english(num/10) + "ty",
+
+        21..99 => number_to_english((num/10)*10) + "-" + number_to_english(num%10),
 
         _  => ~"TODO"
     }

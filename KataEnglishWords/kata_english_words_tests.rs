@@ -79,3 +79,11 @@ fn test_seven_digits() {
     assert!(number_to_english(1000000) == ~"one million");
     assert!(number_to_english(1000001) == ~"one million and one");
 }
+
+#[test]
+fn test_large_numbers() {
+    assert!(number_to_english(1000000000u64) == ~"one billion");
+    assert!(number_to_english(1000000000000u64) == ~"one trillion");
+    assert!(number_to_english(1000000000000000u64) == ~"one quadrillion");
+    assert!(number_to_english(1000000000000000000u64) == ~"one gazillion");
+}
