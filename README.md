@@ -187,6 +187,6 @@ This is a slightly modified version of the
 [KataEnglishWords](http://rubyquiz.com/quiz25.html) (doing)
 ----------------------------
 
-- Language: Rust
+- Language: Rust (0.9)
 - Solution: `kata_english_words.rs`
 - Tests: `kata_english_words_tests.rs` (compile and run with `make`)
