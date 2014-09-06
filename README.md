@@ -188,3 +188,8 @@ This is a slightly modified version of the
 - Language: Rust (0.9)
 - Solution: `kata_english_words.rs`
 - Tests: `kata_english_words_tests.rs` (compile and run with `make`)
+
+[KataWordChains](http://codekata.com/kata/kata19-word-chains/)
+----------------------------
+
+- Language: Crystal (0.4.3)

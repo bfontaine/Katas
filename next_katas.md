@@ -4,10 +4,8 @@ Next Katas
 ----------
 
 - [KataSortChars][k-sortchars]: sorting letters of a string.
-- [KataWordChains][k-wordchain]
 
 [k-sortchars]: http://codekata.pragprog.com/2007/01/kata_eleven_sor.html
-[k-wordchain]: http://codekata.pragprog.com/2007/01/kata_nineteen_w.html
 
 Next Languages
 --------------
