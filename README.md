@@ -3,8 +3,6 @@ Here are 22 solved katas in various languages, picked from
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
 
-All files for solved katas are in `solved/[Kata's name]/` directories.
-
 [KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR) (Solved)
 --------------------
 
