@@ -1,7 +1,7 @@
 Here are 23 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
-[CodeKata](http://codekata.pragprog.com/).
+[CodeKata](http://codekata.com/).
 
 [KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR) (Done)
 --------------------
@@ -85,7 +85,7 @@ Here are 23 solved katas in various languages, picked from
 - Tests: `KataMinesweeper_tests.io`
 
 
-[KataKarateChop](http://codekata.pragprog.com/2007/01/kata_two_karate.html) (Done)
+[KataKarateChop](http://codekata.com/kata/kata02-karate-chop/) (Done)
 ----------------------------
 
 - Language: Lisp
@@ -155,7 +155,7 @@ This is a slightly modified version of the
   [OUnit](http://ounit.forge.ocamlcore.org/), see also `kataWordQueryTests.sh`)
 
 
-[KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Done)
+[KataCheckout](http://codekata.com/kata/kata09-back-to-the-checkout/) (Done)
 ----------------------------
 
 - Language: Erlang
@@ -165,7 +165,7 @@ This is a slightly modified version of the
   `katacheckout_tests.sh`)
 
 
-[KataDependencies](http://codekata.pragprog.com/2007/01/kata_eighteen_t.html) (Done)
+[KataDependencies](http://codekata.com/kata/kata18-transitive-dependencies/) (Done)
 ----------------------------
 
 - Language: Go
@@ -173,7 +173,7 @@ This is a slightly modified version of the
 - Tests: `katadependencies_test.go`
 
 
-[KataTrigrams](http://codekata.pragprog.com/2007/01/kata_fourteen_t.html) (Done)
+[KataTrigrams](http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/) (Done)
 ----------------------------
 
 - Language: Clojure
