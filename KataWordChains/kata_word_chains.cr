@@ -105,13 +105,14 @@ def run(word1, word2)
   0
 end
 
+unless $TESTS
+  if ARGV.length != 2
+    # re the executable's name, see:
+    # https://groups.google.com/forum/#!topic/crystal-lang/ztgcRSkY__I
+    puts "Usage:\n\t./kata_word_chains <word1> <word2>\n"
+    exit 1
+  end
 
-if ARGV.length != 2
-  # re the executable's name, see:
-  # https://groups.google.com/forum/#!topic/crystal-lang/ztgcRSkY__I
-  puts "Usage:\n\t./kata_word_chains <word1> <word2>\n"
-  exit 1
+  word1, word2 = ARGV
+  exit run(word1, word2)
 end
-
-word1, word2 = ARGV
-exit run(word1, word2)
