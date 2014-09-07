@@ -1,9 +1,9 @@
-Here are 22 solved katas in various languages, picked from
+Here are 23 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.pragprog.com/).
 
-[KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR) (Solved)
+[KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR) (Done)
 --------------------
 
 - Language: Ruby
@@ -11,7 +11,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataBankOCR_test.rb`
 
 
-[KataFizzBuzz](http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz) (Solved)
+[KataFizzBuzz](http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz) (Done)
 ---------------------
 
 - Language: Java
@@ -19,7 +19,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataFizzBuzzTest.java` (see also `junit.sh`)
 
 
-[KataPotter](http://codingdojo.org/cgi-bin/wiki.pl?KataPotter) (Solved)
+[KataPotter](http://codingdojo.org/cgi-bin/wiki.pl?KataPotter) (Done)
 -------------------
 
 - Language: Python
@@ -28,7 +28,7 @@ Here are 22 solved katas in various languages, picked from
 - Remark:   Need more tests to know if it's *really* solved
 
 
-[KataRomanNumerals](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals) (Solved)
+[KataRomanNumerals](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals) (Done)
 --------------------------
 
 - Language: Bash
@@ -36,7 +36,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataRomanNumerals_test.sh` (see also `assert.sh`)
 
 
-[KataRomanCalculator](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator) (Solved)
+[KataRomanCalculator](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator) (Done)
 ----------------------------
 
 - Language: JavaScript
@@ -44,7 +44,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataRomanCalculator_tests.js`
 
 
-[KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD) (Solved)
+[KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD) (Done)
 ----------------------------
 
 - Language: PHP
@@ -52,7 +52,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataNumberToLCD_tests.php`
 
 
-[KataTennis](http://codingdojo.org/cgi-bin/wiki.pl?KataTennis) (Solved)
+[KataTennis](http://codingdojo.org/cgi-bin/wiki.pl?KataTennis) (Done)
 ----------------------------
 
 - Language: C
@@ -60,7 +60,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataTennis_tests.c`
 
 
-[KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling) (Solved)
+[KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling) (Done)
 ----------------------------
 
 - Language: Scala
@@ -68,7 +68,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests:    `KataBowlingTest.scala` (Using [ScalaTest](http://www.scalatest.org/) 1.7.1, see also `KataBowling_tests.sh` for command-line shortcuts)
 
 
-[KataPokerHands](http://codingdojo.org/cgi-bin/wiki.pl?KataPokerHands) (Solved)
+[KataPokerHands](http://codingdojo.org/cgi-bin/wiki.pl?KataPokerHands) (Done)
 ----------------------------
 
 - Language: CoffeeScript
@@ -77,7 +77,7 @@ Here are 22 solved katas in various languages, picked from
   [`jasmine-node`](https://github.com/mhevery/jasmine-node))
 
 
-[KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper) (Solved)
+[KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper) (Done)
 ----------------------------
 
 - Language: Io
@@ -85,7 +85,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests: `KataMinesweeper_tests.io`
 
 
-[KataKarateChop](http://codekata.pragprog.com/2007/01/kata_two_karate.html) (Solved)
+[KataKarateChop](http://codekata.pragprog.com/2007/01/kata_two_karate.html) (Done)
 ----------------------------
 
 - Language: Lisp
@@ -93,7 +93,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests: `KataKarateChop_tests.lisp`
 
 
-[KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Solved)
+[KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Done)
 ----------------------------
 
 - Language: Perl
@@ -101,7 +101,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests: `KataReversi_tests.pl`
 
 
-[KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife) (Solved)
+[KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife) (Done)
 ----------------------------
 
 - Language: Groovy
@@ -109,7 +109,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests: `KataGameOfLife_tests.groovy` (see also `junit_gameoflife.sh`)
 
 
-[KataSecretSantas](http://rubyquiz.com/quiz2.html) (Solved)
+[KataSecretSantas](http://rubyquiz.com/quiz2.html) (Done)
 ----------------------------
 
 - Language: Smalltalk
@@ -117,7 +117,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests: `KataSecretSantas_tests.st` (see also `gst_tests.sh`)
 
 
-[KataWordWrap](http://codingdojo.org/cgi-bin/wiki.pl?KataWordWrap) (Solved)
+[KataWordWrap](http://codingdojo.org/cgi-bin/wiki.pl?KataWordWrap) (Done)
 ----------------------------
 
 - Language: C++
@@ -126,7 +126,7 @@ Here are 22 solved katas in various languages, picked from
   [CppUnit](http://cppunit.sourceforge.net/doc/lastest/cppunit_cookbook.html))
 
 
-[KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html) (Solved)
+[KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html) (Done)
 ----------------------------
 
 - Language: Forth
@@ -134,7 +134,7 @@ Here are 22 solved katas in various languages, picked from
 - Tests: `KataDiversion_tests.fth` 
 
 
-[KataAnimalQuiz](http://rubyquiz.com/quiz15.html) (Solved)
+[KataAnimalQuiz](http://rubyquiz.com/quiz15.html) (Done)
 ----------------------------
 
 - Language: Lua
@@ -143,7 +143,7 @@ Here are 22 solved katas in various languages, picked from
   [lunit](https://github.com/dcurrie/lunit))
 
 
-[KataWordQuery](http://rubyquiz.com/quiz54.html) (Solved)
+[KataWordQuery](http://rubyquiz.com/quiz54.html) (Done)
 ----------------------------
 
 This is a slightly modified version of the 
@@ -155,7 +155,7 @@ This is a slightly modified version of the
   [OUnit](http://ounit.forge.ocamlcore.org/), see also `kataWordQueryTests.sh`)
 
 
-[KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Solved)
+[KataCheckout](http://codekata.pragprog.com/2007/01/kata_nine_back_.html) (Done)
 ----------------------------
 
 - Language: Erlang
@@ -165,7 +165,7 @@ This is a slightly modified version of the
   `katacheckout_tests.sh`)
 
 
-[KataDependencies](http://codekata.pragprog.com/2007/01/kata_eighteen_t.html) (Solved)
+[KataDependencies](http://codekata.pragprog.com/2007/01/kata_eighteen_t.html) (Done)
 ----------------------------
 
 - Language: Go
@@ -173,7 +173,7 @@ This is a slightly modified version of the
 - Tests: `katadependencies_test.go`
 
 
-[KataTrigrams](http://codekata.pragprog.com/2007/01/kata_fourteen_t.html) (Solved)
+[KataTrigrams](http://codekata.pragprog.com/2007/01/kata_fourteen_t.html) (Done)
 ----------------------------
 
 - Language: Clojure
@@ -182,14 +182,14 @@ This is a slightly modified version of the
   generate 42 random words from the file `f2.json`)
 - Tests: `test/kata_trigrams/test/*.clj` (use `lein test`)
 
-[KataEnglishWords](http://rubyquiz.com/quiz25.html) (Solved)
+[KataEnglishWords](http://rubyquiz.com/quiz25.html) (Done)
 ----------------------------
 
 - Language: Rust (0.9)
 - Solution: `kata_english_words.rs`
 - Tests: `kata_english_words_tests.rs` (compile and run with `make`)
 
-[KataWordChains](http://codekata.com/kata/kata19-word-chains/) (Solved)
+[KataWordChains](http://codekata.com/kata/kata19-word-chains/) (Done)
 ----------------------------
 
 - Language: Crystal (0.4.3)
