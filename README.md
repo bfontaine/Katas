@@ -189,7 +189,9 @@ This is a slightly modified version of the
 - Solution: `kata_english_words.rs`
 - Tests: `kata_english_words_tests.rs` (compile and run with `make`)
 
-[KataWordChains](http://codekata.com/kata/kata19-word-chains/)
+[KataWordChains](http://codekata.com/kata/kata19-word-chains/) (Solved)
 ----------------------------
 
 - Language: Crystal (0.4.3)
+- Solution: `kata_word_chains.cr`
+- Tests: `kata_word_chains_test.cr`

@@ -35,11 +35,16 @@ class Dict
   def empty?
     @words.empty?
   end
+
+  def ==(other : Dict)
+    @words == other.words
+  end
 end
 
 class Chain
 
   getter :words
+  getter :dict
 
   def initialize(startword : String, @dict : Dict)
     @words = [startword]
@@ -55,9 +60,13 @@ class Chain
     dict = @dict.pop(last)
 
     chs.map do |word|
-      words = self.words.clone.push(word)
+      words = @words.clone.push(word)
       Chain.new(words, dict)
     end
+  end
+
+  def ==(other : Chain)
+    return @words == other.words && @dict == other.dict
   end
 end
 

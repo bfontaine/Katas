@@ -22,7 +22,7 @@ class TestsRunner
 
   def assert(text, &block)
     @asserts += 1
-    raise AssertError.new(text) unless block.call()
+    raise AssertError.new(text) unless yield
   end
 
   def assert_equal(ref, value)
@@ -35,6 +35,10 @@ class TestsRunner
 
   def assert_false(value)
     assert("#{value} is not falsy") { !value }
+  end
+
+  def assert_nil(value)
+    assert("#{value} is not nil") { value.nil? }
   end
 
   def test(name="", &block)
