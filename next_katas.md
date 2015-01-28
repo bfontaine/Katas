@@ -1,12 +1,5 @@
 Here is some ideas for next katas/languages.
 
-Next Katas
-----------
-
-- [KataSortChars][k-sortchars]: sorting letters of a string.
-
-[k-sortchars]: http://codekata.pragprog.com/2007/01/kata_eleven_sor.html
-
 Next Languages
 --------------
 

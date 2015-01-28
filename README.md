@@ -195,3 +195,10 @@ This is a slightly modified version of the
 - Language: Crystal (0.4.3)
 - Solution: `kata_word_chains.cr`
 - Tests: `kata_word_chains_test.cr`
+
+[KataSortChars](http://codekata.com/kata/kata11-sorting-it-out/) (Doing)
+----------------------------
+
+- Language: Commodore BASIC
+- Solution: `kata_sort_chars.bas`
+- Tests: TODO
