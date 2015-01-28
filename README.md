@@ -1,4 +1,4 @@
-Here are 23 solved katas in various languages, picked from
+Here are 24 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.com/).
@@ -196,9 +196,9 @@ This is a slightly modified version of the
 - Solution: `kata_word_chains.cr`
 - Tests: `kata_word_chains_test.cr`
 
-[KataSortChars](http://codekata.com/kata/kata11-sorting-it-out/) (Doing)
+[KataSortChars](http://codekata.com/kata/kata11-sorting-it-out/) (Done)
 ----------------------------
 
 - Language: Commodore BASIC
 - Solution: `kata_sort_chars.bas`
-- Tests: TODO
+- Tests: `kata_sort_chars_tests.sh`
