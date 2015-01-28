@@ -200,5 +200,6 @@ This is a slightly modified version of the
 ----------------------------
 
 - Language: Commodore BASIC
-- Solution: `kata_sort_chars.bas`
+- Solution: `kata_sort_chars.bas` (and a homemade crunched version,
+  `kata_sort_chars.crunch.bas`)
 - Tests: `kata_sort_chars_tests.sh`

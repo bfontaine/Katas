@@ -2,7 +2,7 @@
 
 __t() {
 
-    local PROG=kata_sort_chars.bas
+    local PROG=$1
     local CMD="cbmbasic $PROG"
     local ret=0
 
@@ -14,6 +14,7 @@ __t() {
             echo "FAIL! input='$input'"
             echo "   expected='$expected'"
             echo "     result='$result'"
+            echo "    program='$PROG'"
             ret=1
         fi
     }
@@ -33,4 +34,5 @@ __t() {
     exit $ret
 }
 
-__t $*
+__t kata_sort_chars.bas
+__t kata_sort_chars.crunch.bas
