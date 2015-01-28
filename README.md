@@ -4,7 +4,7 @@ Here are 24 solved katas in various languages, picked from
 [CodeKata](http://codekata.com/).
 
 [KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR) (Done)
---------------------
+----------------------------
 
 - Language: Ruby
 - Solution: `KataBankOCR.rb`
@@ -12,7 +12,7 @@ Here are 24 solved katas in various languages, picked from
 
 
 [KataFizzBuzz](http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz) (Done)
----------------------
+----------------------------
 
 - Language: Java
 - Solution: `KataFizzBuzz.java`
@@ -20,7 +20,7 @@ Here are 24 solved katas in various languages, picked from
 
 
 [KataPotter](http://codingdojo.org/cgi-bin/wiki.pl?KataPotter) (Done)
--------------------
+----------------------------
 
 - Language: Python
 - Solution: `KataPotter.py`
@@ -29,7 +29,7 @@ Here are 24 solved katas in various languages, picked from
 
 
 [KataRomanNumerals](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals) (Done)
---------------------------
+----------------------------
 
 - Language: Bash
 - Solution: `KataRomanNumerals.sh`
