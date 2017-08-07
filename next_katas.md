@@ -1,7 +1,6 @@
 Here is some ideas for next katas/languages.
 
-Next Languages
---------------
+## Next Languages
 
 - Ada
 - [Caledon][caledon]
@@ -12,7 +11,6 @@ Next Languages
 - [Fantom][fantom]
 - Haskell
 - [Haxe][haxe]
-- [Ioke][ioke]
 - [Julia][julia]
 - [Mirah][mirah]
 - [Opa][opa] ([tests][opa-tests])
@@ -27,7 +25,6 @@ Next Languages
 [factor]: http://factorcode.org/
 [fantom]: http://fantom.org/
 [haxe]: http://haxe.org/
-[ioke]: http://ioke.org/
 [julia]: http://julialang.org/
 [mirah]: http://www.mirah.org/
 [opa]: http://opalang.org
