@@ -1,26 +1,25 @@
+# Katas
+
 Here are 24 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.com/).
 
-[KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR) (Done)
-----------------------------
+## [KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
 
 - Language: Ruby
 - Solution: `KataBankOCR.rb`
 - Tests:    `KataBankOCR_test.rb`
 
 
-[KataFizzBuzz](http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz) (Done)
-----------------------------
+## [KataFizzBuzz](http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz)
 
 - Language: Java
 - Solution: `KataFizzBuzz.java`
 - Tests:    `KataFizzBuzzTest.java` (see also `junit.sh`)
 
 
-[KataPotter](http://codingdojo.org/cgi-bin/wiki.pl?KataPotter) (Done)
-----------------------------
+## [KataPotter](http://codingdojo.org/cgi-bin/wiki.pl?KataPotter)
 
 - Language: Python
 - Solution: `KataPotter.py`
@@ -28,48 +27,44 @@ Here are 24 solved katas in various languages, picked from
 - Remark:   Need more tests to know if it's *really* solved
 
 
-[KataRomanNumerals](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals) (Done)
-----------------------------
+## [KataRomanNumerals](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals)
 
 - Language: Bash
 - Solution: `KataRomanNumerals.sh`
 - Tests:    `KataRomanNumerals_test.sh` (see also `assert.sh`)
 
 
-[KataRomanCalculator](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator) (Done)
-----------------------------
+## [KataRomanCalculator](http://codingdojo.org/cgi-bin/wiki.pl?KataRomanCalculator)
 
 - Language: JavaScript
 - Solution: `KataRomanCalculator.js`
 - Tests:    `KataRomanCalculator_tests.js`
 
 
-[KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD) (Done)
-----------------------------
+## [KataNumberToLCD](http://codingdojo.org/cgi-bin/wiki.pl?KataNumberToLCD)
 
 - Language: PHP
 - Solution: `KataNumberToLCD.php`
 - Tests:    `KataNumberToLCD_tests.php`
 
 
-[KataTennis](http://codingdojo.org/cgi-bin/wiki.pl?KataTennis) (Done)
-----------------------------
+## [KataTennis](http://codingdojo.org/cgi-bin/wiki.pl?KataTennis)
 
 - Language: C
 - Solution: `KataTennis.c`
 - Tests:    `KataTennis_tests.c`
 
 
-[KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling) (Done)
-----------------------------
+## [KataBowling](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling)
 
 - Language: Scala
 - Solution: `KataBowling.scala`
-- Tests:    `KataBowlingTest.scala` (Using [ScalaTest](http://www.scalatest.org/) 1.7.1, see also `KataBowling_tests.sh` for command-line shortcuts)
+- Tests:    `KataBowlingTest.scala` (Using
+  [ScalaTest](http://www.scalatest.org/) 1.7.1, see also `KataBowling_tests.sh`
+  for command-line shortcuts)
 
 
-[KataPokerHands](http://codingdojo.org/cgi-bin/wiki.pl?KataPokerHands) (Done)
-----------------------------
+## [KataPokerHands](http://codingdojo.org/cgi-bin/wiki.pl?KataPokerHands)
 
 - Language: CoffeeScript
 - Solution: `KataPokerHands.coffee`
@@ -77,48 +72,42 @@ Here are 24 solved katas in various languages, picked from
   [`jasmine-node`](https://github.com/mhevery/jasmine-node))
 
 
-[KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper) (Done)
-----------------------------
+## [KataMinesweeper](http://codingdojo.org/cgi-bin/wiki.pl?KataMinesweeper)
 
 - Language: Io
 - Solution: `KataMinesweeper.io`
 - Tests: `KataMinesweeper_tests.io`
 
 
-[KataKarateChop](http://codekata.com/kata/kata02-karate-chop/) (Done)
-----------------------------
+## [KataKarateChop](http://codekata.com/kata/kata02-karate-chop/)
 
 - Language: Lisp
 - Solution: `KataKarateChop.lisp`
 - Tests: `KataKarateChop_tests.lisp`
 
 
-[KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi) (Done)
-----------------------------
+## [KataReversi](http://codingdojo.org/cgi-bin/wiki.pl?KataReversi)
 
 - Language: Perl
 - Solution: `KataReversi.pl`
 - Tests: `KataReversi_tests.pl`
 
 
-[KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife) (Done)
-----------------------------
+## [KataGameOfLife](http://codingdojo.org/cgi-bin/wiki.pl?KataGameOfLife)
 
 - Language: Groovy
 - Solution: `KataGameOfLife.groovy`
 - Tests: `KataGameOfLife_tests.groovy` (see also `junit_gameoflife.sh`)
 
 
-[KataSecretSantas](http://rubyquiz.com/quiz2.html) (Done)
-----------------------------
+## [KataSecretSantas](http://rubyquiz.com/quiz2.html)
 
 - Language: Smalltalk
 - Solution: `KataSecretSantas.st`
 - Tests: `KataSecretSantas_tests.st` (see also `gst_tests.sh`)
 
 
-[KataWordWrap](http://codingdojo.org/cgi-bin/wiki.pl?KataWordWrap) (Done)
-----------------------------
+## [KataWordWrap](http://codingdojo.org/cgi-bin/wiki.pl?KataWordWrap)
 
 - Language: C++
 - Solution: `KataWordWrap.cpp`
@@ -126,16 +115,14 @@ Here are 24 solved katas in various languages, picked from
   [CppUnit](http://cppunit.sourceforge.net/doc/lastest/cppunit_cookbook.html))
 
 
-[KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html) (Done)
-----------------------------
+## [KataDiversion](http://www.codekata.com/2007/01/code_kata_fifte.html)
 
 - Language: Forth
-- Solution: `KataDiversion.fth` 
-- Tests: `KataDiversion_tests.fth` 
+- Solution: `KataDiversion.fth`
+- Tests: `KataDiversion_tests.fth`
 
 
-[KataAnimalQuiz](http://rubyquiz.com/quiz15.html) (Done)
-----------------------------
+## [KataAnimalQuiz](http://rubyquiz.com/quiz15.html)
 
 - Language: Lua
 - Solution: `KataAnimalQuiz.lua`
@@ -143,11 +130,10 @@ Here are 24 solved katas in various languages, picked from
   [lunit](https://github.com/dcurrie/lunit))
 
 
-[KataWordQuery](http://rubyquiz.com/quiz54.html) (Done)
-----------------------------
+## [KataWordQuery](http://rubyquiz.com/quiz54.html)
 
-This is a slightly modified version of the 
-[RubyQuiz #54](http://rubyquiz.com/quiz54.html) which doesn't use a bits index.
+This is a slightly modified version of the
+[RubyQuiz #54](http://rubyquiz.com/quiz54.html) that doesn't use a bits index.
 
 - Language: OCaml
 - Solution: `kataWordQuery.ml`
@@ -155,8 +141,7 @@ This is a slightly modified version of the
   [OUnit](http://ounit.forge.ocamlcore.org/), see also `kataWordQueryTests.sh`)
 
 
-[KataCheckout](http://codekata.com/kata/kata09-back-to-the-checkout/) (Done)
-----------------------------
+## [KataCheckout](http://codekata.com/kata/kata09-back-to-the-checkout/)
 
 - Language: Erlang
 - Solution: `katacheckout.erl`
@@ -165,16 +150,14 @@ This is a slightly modified version of the
   `katacheckout_tests.sh`)
 
 
-[KataDependencies](http://codekata.com/kata/kata18-transitive-dependencies/) (Done)
-----------------------------
+## [KataDependencies](http://codekata.com/kata/kata18-transitive-dependencies/)
 
 - Language: Go
 - Solution: `katadependencies.go`
 - Tests: `katadependencies_test.go`
 
 
-[KataTrigrams](http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/) (Done)
-----------------------------
+## [KataTrigrams](http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/)
 
 - Language: Clojure
 - Solution: `src/kata_trigrams/core.clj` (use `lein run generate f1.txt f2.json`
@@ -182,22 +165,19 @@ This is a slightly modified version of the
   generate 42 random words from the file `f2.json`)
 - Tests: `test/kata_trigrams/test/*.clj` (use `lein test`)
 
-[KataEnglishWords](http://rubyquiz.com/quiz25.html) (Done)
-----------------------------
+## [KataEnglishWords](http://rubyquiz.com/quiz25.html)
 
 - Language: Rust (0.9)
 - Solution: `kata_english_words.rs`
 - Tests: `kata_english_words_tests.rs` (compile and run with `make`)
 
-[KataWordChains](http://codekata.com/kata/kata19-word-chains/) (Done)
-----------------------------
+## [KataWordChains](http://codekata.com/kata/kata19-word-chains/)
 
 - Language: Crystal (0.4.3)
 - Solution: `kata_word_chains.cr`
 - Tests: `kata_word_chains_test.cr`
 
-[KataSortChars](http://codekata.com/kata/kata11-sorting-it-out/) (Done)
-----------------------------
+## [KataSortChars](http://codekata.com/kata/kata11-sorting-it-out/)
 
 - Language: Commodore BASIC
 - Solution: `kata_sort_chars.bas` (and a homemade crunched version,
