@@ -5,7 +5,6 @@ Here is some ideas for next katas/languages.
 - Ada
 - [Caledon][caledon]
 - [Ceylon][ceylon]
-- [Clean][clean]
 - [D][d-lang]
 - [Factor][factor]
 - [Fantom][fantom]
@@ -19,7 +18,6 @@ Here is some ideas for next katas/languages.
 - [Shen][shen]
 
 [caledon]: https://github.com/mmirman/caledon
-[clean]: http://wiki.clean.cs.ru.nl/Clean
 [ceylon]: http://ceylon-lang.org/
 [d-lang]: http://dlang.org/
 [factor]: http://factorcode.org/
