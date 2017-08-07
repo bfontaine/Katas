@@ -1,6 +1,6 @@
 # Katas
 
-Here are 24 solved katas in various languages, picked from
+Here are 25 solved katas in various languages, picked from
 [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue), 
 [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.com/).
@@ -183,3 +183,8 @@ This is a slightly modified version of the
 - Solution: `kata_sort_chars.bas` (and a homemade crunched version,
   `kata_sort_chars.crunch.bas`)
 - Tests: `kata_sort_chars_tests.sh`
+
+## [KataChange](http://rubyquiz.com/quiz154.html) (WIP)
+
+- Language: Prolog
+- Solution: `kata_change.pl`
