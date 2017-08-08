@@ -2,23 +2,29 @@
 
 % TODO make a proper program that can read CLI args and stuff
 
-make_some_change(0, _, []).
+make_some_change(0, _, [], _).
 
-make_some_change(Sum, Coins, [N|Change]) :-
+make_some_change(Sum, Coins, [N|Change], MaxCoins) :-
   Sum > 0,
+  MaxCoins =\= 0,
   member(N, Coins),
   Sum2 is Sum-N,
-  make_some_change(Sum2, Coins, Change).
+  MaxCoins2 is MaxCoins-1,
+  make_some_change(Sum2, Coins, Change, MaxCoins2).
 
 longer_or_equal(List, Length) :-
   length(List, L),
   L >= Length.
 
+better_solution(Sum, Coins, Length) :-
+  Length > 1,
+  ShorterLength is Length-1,
+  make_some_change(Sum, Coins, _, ShorterLength).
+
 make_change(Sum, Coins, C1) :-
-  make_some_change(Sum, Coins, C1),
+  make_some_change(Sum, Coins, C1, -1),
   length(C1, L1),
-  % note this takes a lot of time on Sum >= 50
-  forall(make_some_change(Sum, Coins, C2), longer_or_equal(C2, L1)).
+  \+ better_solution(Sum, Coins, L1).
 
 % convenient alias
 make_usa_change(Sum, Change) :-
