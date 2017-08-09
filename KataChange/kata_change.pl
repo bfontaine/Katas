@@ -10,10 +10,6 @@ make_some_change(Sum, Coins, [N|Change], MaxCoins) :-
   MaxCoins2 is MaxCoins-1,
   make_some_change(Sum2, Coins, Change, MaxCoins2).
 
-longer_or_equal(List, Length) :-
-  length(List, L),
-  L >= Length.
-
 better_solution(Sum, Coins, Length) :-
   Length > 1,
   ShorterLength is Length-1,
