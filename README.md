@@ -187,4 +187,6 @@ This is a slightly modified version of the
 ## [KataChange](http://rubyquiz.com/quiz154.html) (WIP)
 
 - Language: Prolog
-- Solution: `kata_change.pl`
+- Solution: `kata_change.pl` and `kata_change_cli.pl`. Use `make` then
+  `./kata_change <sum>`.
+- Tests: `kata_change_tests.pl`
