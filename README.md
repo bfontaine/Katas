@@ -184,7 +184,7 @@ This is a slightly modified version of the
   `kata_sort_chars.crunch.bas`)
 - Tests: `kata_sort_chars_tests.sh`
 
-## [KataChange](http://rubyquiz.com/quiz154.html) (WIP)
+## [KataChange](http://rubyquiz.com/quiz154.html)
 
 - Language: Prolog
 - Solution: `kata_change.pl` and `kata_change_cli.pl`. Use `make` then

@@ -13,7 +13,6 @@ Here is some ideas for next katas/languages.
 - [Julia][julia]
 - [Mirah][mirah]
 - [Opa][opa] ([tests][opa-tests])
-- Prolog
 - Scheme
 - [Shen][shen]
 
