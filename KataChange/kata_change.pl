@@ -46,8 +46,20 @@ print_usa_change(Sum) :-
   make_usa_change(Sum, Change),
   print_int_list('You need the following coins: ', Change).
 
-main :-
-  print_usa_change(27),
+main(2) :-
+  argument_value(1, S),
+  number_atom(Sum, S),
+  print_usa_change(Sum),
   halt.
 
-:- initialization(main).
+main(N) :-
+  N =\= 2,
+  argument_value(0, Exe),
+  format('Usage: ~a <sum>\n', [Exe|[]]),
+  halt.
+
+init :-
+  argument_counter(NArgs),
+  main(NArgs).
+
+:- initialization(init).
