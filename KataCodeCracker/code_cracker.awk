@@ -2,7 +2,7 @@
 
 # Usage:
 #
-#  $ awk -f code_cracker.awk -v key=<decryption key> [-v debug=1 ] [<your file>]
+#  $ ./code_cracker.awk -v key=<decryption key> [<your file>]
 #
 # See http://codingdojo.org/kata/CodeCracker/. The key must be 26-chars long.
 
