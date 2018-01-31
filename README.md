@@ -194,5 +194,6 @@ This is a slightly modified version of the
 ## [KataCodeCracker](http://codingdojo.org/kata/CodeCracker/)
 
 - Language: awk
-- Solution: `code_cracker.awk`
-- Tests: TBD
+- Solution: `./code_cracker.awk -v key=<key>`. It reads (and prints) one
+  message per line.
+- Tests: `./code_cracker_tests.sh`
