@@ -190,3 +190,9 @@ This is a slightly modified version of the
 - Solution: `kata_change.pl` and `kata_change_cli.pl`. Use `make` then
   `./kata_change <sum>`.
 - Tests: `kata_change_tests.pl`
+
+## [KataCodeCracker](http://codingdojo.org/kata/CodeCracker/)
+
+- Language: awk
+- Solution: `code_cracker.awk`
+- Tests: TBD
