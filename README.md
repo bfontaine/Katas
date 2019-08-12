@@ -2,8 +2,10 @@
 
 Here are 26 solved katas; each in a different language.
 
-Sources: [CodingDojo](http://codingdojo.org/cgi-bin/wiki.pl?KataCatalogue),
-[Ruby Quiz](http://rubyquiz.com/), and [CodeKata](http://codekata.com/).
+Sources: [CodingDojo][], [Ruby Quiz](http://rubyquiz.com/), and
+[CodeKata](http://codekata.com/).
+
+[CodingDojo]: http://codingdojo.org/kata/
 
 ## [KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
 
