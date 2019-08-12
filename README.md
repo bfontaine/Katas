@@ -203,5 +203,5 @@ This is a slightly modified version of the
 ## [KataID3](http://rubyquiz.com/quiz136.html)
 
 - Language: Julia
-- Solution: `./parse_id3.jl <file1> [...]`
-- Tests: TBD `./parse_id3_test.jl`
+- Solution: `./parse_id3.jl <file1.mp3> [...]`
+- Tests: `./parse_id3_test.jl`

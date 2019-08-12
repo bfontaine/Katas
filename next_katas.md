@@ -10,7 +10,6 @@ Here is some ideas for next katas/languages.
 - [Fantom][fantom]
 - Haskell
 - [Haxe][haxe]
-- [Julia][julia]
 - [Mirah][mirah]
 - [Opa][opa] ([tests][opa-tests])
 - Scheme
@@ -22,7 +21,6 @@ Here is some ideas for next katas/languages.
 [factor]: http://factorcode.org/
 [fantom]: http://fantom.org/
 [haxe]: http://haxe.org/
-[julia]: http://julialang.org/
 [mirah]: http://www.mirah.org/
 [opa]: http://opalang.org
 [opa-tests]: https://github.com/alokmenghrajani/riskybird/blob/master/utils/test.opa
