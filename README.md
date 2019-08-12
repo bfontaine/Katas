@@ -1,6 +1,6 @@
 # Katas
 
-Here are 26 solved katas; each in a different language.
+Here are 27 solved katas; each in a different language.
 
 Sources: [CodingDojo][], [Ruby Quiz](http://rubyquiz.com/), and
 [CodeKata](http://codekata.com/).
@@ -199,3 +199,9 @@ This is a slightly modified version of the
 - Solution: `./code_cracker.awk -v key=<key>`. It reads (and prints) one
   message per line.
 - Tests: `./code_cracker_tests.sh`
+
+## [KataID3](http://rubyquiz.com/quiz136.html)
+
+- Language: Julia
+- Solution: `./parse_id3.jl <file1> [...]`
+- Tests: TBD `./parse_id3_test.jl`
