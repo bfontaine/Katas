@@ -1,6 +1,6 @@
 #! /usr/local/bin/io
 
-# cheat
+# define 'at' on nil to avoid checks everywhere
 nil at := method(e, nil)
 
 KataMinesweeper := Object clone do (
