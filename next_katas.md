@@ -7,6 +7,7 @@ Here is some ideas for next katas/languages.
 - [Ceylon][ceylon]
 - [D][d-lang]
 - [Factor][factor]
+- Elixir
 - [Fantom][fantom]
 - Haskell
 - [Haxe][haxe]
